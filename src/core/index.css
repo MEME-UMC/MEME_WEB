@@ -1,0 +1,30 @@
+html {
+  overflow: hidden !important;
+}
+body {
+  font-family: 'SCoreDream';
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  align-items: center;
+  #root {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 768px; /* iPad Mini 768*/
+    width: 100%;
+  }
+  &:has(.navigation) {
+    #root {
+      height: calc(100% - 56px);
+    }
+  }
+  &:has(.bg-ivory) {
+    background-color: #fefcfa;
+  }
+}
