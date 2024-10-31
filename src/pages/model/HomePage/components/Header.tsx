@@ -7,7 +7,10 @@ export const Header = () => {
   return (
     <Row justifyContent={'space-between'} paddingX={2}>
       <img src={logo} />
-      <JButton sx={{ borderRadius: 6, width: 40, height: 40 }}>
+      <JButton
+        sx={{ borderRadius: 6, width: 40, height: 40 }}
+        to="/notification"
+      >
         <img src={notice} />
       </JButton>
     </Row>
