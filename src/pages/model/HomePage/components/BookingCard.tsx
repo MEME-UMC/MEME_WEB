@@ -19,6 +19,19 @@ type Booking = {
 type Props = {
   booking: Booking;
 };
+
+const lg = {
+  color: COLORS.white,
+  fontSize: 16,
+  fontWeight: 600,
+};
+
+const md = {
+  color: COLORS.white,
+  fontSIze: 14,
+  fontWeight: 400,
+};
+
 export const BookingCard = ({ booking }: Props) => {
   return (
     <JButton
@@ -34,35 +47,25 @@ export const BookingCard = ({ booking }: Props) => {
       rippleColor={COLORS.white}
     >
       <Row width={'100%'} justifyContent={'space-between'}>
-        <Typography color={COLORS.white} fontSize={16} fontWeight={600}>
-          {booking.name}
-        </Typography>
-        <Typography color={COLORS.white} fontSize={16} fontWeight={600}>
+        <Typography {...lg}>{booking.name}</Typography>
+        <Typography {...lg}>
           {format(booking.at, 'M/d (EEE)', { locale: ko })}
-          <Span color={COLORS.primary} fontSize={16} fontWeight={600}>
-            {format(booking.at, ' HH:mm ', { locale: ko })}
-          </Span>
+          <Span {...lg}>{format(booking.at, ' HH:mm ', { locale: ko })}</Span>
           예약
         </Typography>
       </Row>
-      <Typography color={COLORS.white} fontSize={16} fontWeight={600}>
-        {booking.artist}
-      </Typography>
+      <Typography {...lg}>{booking.artist}</Typography>
       <Row>
         <Row width={24}>
           <img src={location} />
         </Row>
-        <Typography color={COLORS.white} fontSize={14} fontWeight={400}>
-          {booking.location}
-        </Typography>
+        <Typography {...md}>{booking.location}</Typography>
       </Row>
       <Row>
         <Row width={24}>
           <img src={price} />
         </Row>
-        <Typography color={COLORS.white} fontSize={14} fontWeight={400}>
-          {booking.price.toLocaleString()}원
-        </Typography>
+        <Typography {...md}>{booking.price.toLocaleString()}원</Typography>
       </Row>
     </JButton>
   );
