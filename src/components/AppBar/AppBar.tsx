@@ -9,7 +9,7 @@ type AppBarProps = {
 export const AppBar = ({ title, backIcon }: AppBarProps) => {
   return (
     <Stack px={1} sx={{ position: 'relative', width: '100%', height: '48px' }}>
-      {backIcon === false ? null : (
+      {backIcon && (
         <JButton
           sx={{
             width: 40,
@@ -19,11 +19,7 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
           }}
           to={-1}
         >
-          <img
-            style={{ width: 8, height: 16 }}
-            src={leftArrow}
-            alt="뒤로가는 버튼 추가"
-          />
+          <img width={8} height={16} src={leftArrow} alt="뒤로가는 버튼" />
         </JButton>
       )}
 
