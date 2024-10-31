@@ -5,14 +5,12 @@ import { COLORS } from '../core/colors';
 type Props = {
   children: ReactNode;
   rippleColor?: string;
-  onClick?: () => void;
 } & ButtonBaseProps;
 
 export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
   return (
     <ButtonBase
       component="div"
-      onClick={props.onClick}
       sx={[
         {
           height: '100%',
