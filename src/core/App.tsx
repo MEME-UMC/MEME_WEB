@@ -1,6 +1,23 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { COLORS } from './colors';
+
+const theme = createTheme({
+  // typography: {
+  //   fontFamily: 'AppleFont',
+  // },
+  palette: {
+    primary: {
+      main: COLORS.primary,
+    },
+  },
+});
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 };

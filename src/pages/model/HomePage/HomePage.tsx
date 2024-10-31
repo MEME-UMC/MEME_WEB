@@ -15,7 +15,7 @@ export const HomePage = () => {
   ]);
 
   return (
-    <Stack>
+    <Stack pt={1}>
       <Header />
       <SearchBar />
       <Typography>OOO 님, 환영합니다!</Typography>
