@@ -15,7 +15,7 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
         <JButton
           sx={{
             width: 40,
-            height: 40,
+            height: '100%',
             justifyContent: 'center',
             borderRadius: '50%',
           }}
