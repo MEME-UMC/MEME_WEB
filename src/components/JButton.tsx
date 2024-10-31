@@ -1,11 +1,13 @@
 import { ButtonBase, ButtonBaseProps } from '@mui/material';
 import { ReactNode } from 'react';
+import { COLORS } from '../core/colors';
 
 type Props = {
   children: ReactNode;
+  rippleColor?: string;
 } & ButtonBaseProps;
 
-export const JButton = ({ children, sx, ...props }: Props) => {
+export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
   return (
     <ButtonBase
       component="div"
@@ -14,7 +16,7 @@ export const JButton = ({ children, sx, ...props }: Props) => {
           height: '100%',
           width: '100%',
           '&& .MuiTouchRipple-child': {
-            backgroundColor: 'white',
+            backgroundColor: rippleColor ?? COLORS.primary,
           },
         },
         ...(Array.isArray(sx) ? sx : [sx]),
