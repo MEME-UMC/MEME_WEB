@@ -8,17 +8,11 @@ type Props = {
   onClick?: () => void;
 } & ButtonBaseProps;
 
-export const JButton = ({
-  children,
-  rippleColor,
-  sx,
-  onClick,
-  ...props
-}: Props) => {
+export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
   return (
     <ButtonBase
       component="div"
-      onClick={onClick}
+      onClick={props.onClick}
       sx={[
         {
           height: '100%',
