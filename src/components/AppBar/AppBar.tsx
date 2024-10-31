@@ -17,6 +17,7 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
             justifyContent: 'center',
             borderRadius: '50%',
           }}
+          to={-1}
         >
           <img
             style={{ width: 8, height: 16 }}
