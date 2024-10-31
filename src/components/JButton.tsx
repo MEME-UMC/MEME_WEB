@@ -1,16 +1,24 @@
 import { ButtonBase, ButtonBaseProps } from '@mui/material';
 import { ReactNode } from 'react';
 import { COLORS } from '../core/colors';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   children: ReactNode;
   rippleColor?: string;
+  to?: string | number;
 } & ButtonBaseProps;
 
-export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
+export const JButton = ({ children, rippleColor, sx, to, ...props }: Props) => {
+  const navigate = useNavigate();
   return (
     <ButtonBase
       component="div"
+      onClick={() => {
+        if (to !== undefined) {
+          navigate(to as string);
+        }
+      }}
       sx={[
         {
           height: '100%',
