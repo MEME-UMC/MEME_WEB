@@ -6,7 +6,7 @@ import { NotificationList } from './components/NotificationList';
 export const NotificationPage = () => {
   return (
     <Stack>
-      <AppBar title="" />
+      <AppBar title="알림" />
       <Stack>
         <NotificationList read={false} />
         <NotificationList read={true} />
