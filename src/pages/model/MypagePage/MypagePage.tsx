@@ -1,22 +1,17 @@
 import { Stack, Typography } from '@mui/material';
 import { JButton } from '../../../components/JButton';
 import { Row } from '../../../components/Row';
-import { AppBar } from '../../../components/AppBar';
-import ProfileIcon from '/src/assets/profile.svg';
 import rightArrow from '/src/assets/right-arrow.png';
-import UserPlus from '/src/assets/user-plus.svg';
-import HeartOutline from '/src/assets/heart-outline.svg';
-import Message from '/src/assets/message.svg';
+import { AppBar } from '../../../components/AppBar';
 import { COLORS } from '../../../core/colors';
+import { JIcon } from '../../../components/JIcon';
 
 export const MypagePage = () => {
   return (
     <Stack>
       <AppBar title="마이페이지" />
       <Stack alignItems={'center'} gap={1} py={1}>
-        <Stack height={80} justifyContent={'center'}>
-          <ProfileIcon />
-        </Stack>
+        <JIcon height={80} icon="profile" />
         <JButton
           sx={{ width: 'auto', paddingX: 1.5, paddingY: 0.5, borderRadius: 4 }}
         >
@@ -38,21 +33,15 @@ export const MypagePage = () => {
           }}
         >
           <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-            <Stack height={26} justifyContent={'center'}>
-              <UserPlus color={COLORS.primary} />
-            </Stack>
+            <JIcon height={26} icon="user-plus" color={COLORS.primary} />
             <Typography fontSize={12}>관심 아티스트</Typography>
           </JButton>
           <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-            <Stack height={26} justifyContent={'center'}>
-              <HeartOutline color={COLORS.primary} />
-            </Stack>
+            <JIcon height={26} icon="heart-outline" color={COLORS.primary} />
             <Typography fontSize={12}>관심 메이크업</Typography>
           </JButton>
           <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-            <Stack height={26} justifyContent={'center'}>
-              <Message />
-            </Stack>
+            <JIcon height={26} icon="message" color={COLORS.primary} />
             <Typography fontSize={12}>나의 리뷰</Typography>
           </JButton>
         </Row>
