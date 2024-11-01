@@ -1,42 +1,30 @@
-import { Stack } from '@mui/material';
-import Booking from '../assets/booking.svg';
-import HeartOutline from '../assets/heart-outline.svg';
-import Home from '../assets/home.svg';
-import Message from '../assets/message.svg';
-import Profile from '../assets/profile.svg';
-import UserPlus from '../assets/user-plus.svg';
-import User from '../assets/user.svg';
-
-type Icon =
-  | 'booking'
-  | 'heart-outline'
-  | 'home'
-  | 'message'
-  | 'profile'
-  | 'user-plus'
-  | 'user';
+import { Suspense, lazy } from 'react';
+import { CircularProgress, Stack } from '@mui/material';
 
 const IconMap = {
-  booking: Booking,
-  'heart-outline': HeartOutline,
-  home: Home,
-  message: Message,
-  profile: Profile,
-  'user-plus': UserPlus,
-  user: User,
+  booking: () => import('../assets/booking.svg'),
+  'heart-outline': () => import('../assets/heart-outline.svg'),
+  home: () => import('../assets/home.svg'),
+  message: () => import('../assets/message.svg'),
+  profile: () => import('../assets/profile.svg'),
+  'user-plus': () => import('../assets/user-plus.svg'),
+  user: () => import('../assets/user.svg'),
 };
 
 type Props = {
-  icon: Icon;
+  icon: keyof typeof IconMap;
   height?: number;
   color?: string;
 };
 
 export const JIcon = ({ icon, height, color }: Props) => {
-  const IconComp = IconMap[icon];
+  const IconComp = lazy(IconMap[icon]);
+
   return (
-    <Stack height={height} justifyContent={'center'}>
-      <IconComp color={color} />
+    <Stack height={height} justifyContent="center">
+      <Suspense fallback={<CircularProgress />}>
+        <IconComp color={color} width={height} height={height} />
+      </Suspense>
     </Stack>
   );
 };

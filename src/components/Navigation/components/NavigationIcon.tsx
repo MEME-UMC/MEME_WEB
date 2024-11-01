@@ -1,7 +1,4 @@
-import { SvgIcon } from '@mui/material';
-import Home from '/src/assets/home.svg';
-import Booking from '/src/assets/booking.svg';
-import User from '/src/assets/user.svg';
+import { JIcon } from '../../JIcon';
 type Props = {
   type: string;
 };
@@ -9,24 +6,11 @@ type Props = {
 export const NavigationIcon = ({ type }: Props) => {
   switch (type) {
     case 'home':
-      return (
-        <SvgIcon sx={{ width: 24, height: 24 }}>
-          <Home />
-        </SvgIcon>
-      );
+      return <JIcon height={22} icon="home"></JIcon>;
     case 'book':
-      return (
-        <SvgIcon sx={{ width: 22, height: 22 }}>
-          <Booking />
-        </SvgIcon>
-      );
+      return <JIcon height={22} icon="booking"></JIcon>;
     case 'my':
-      return (
-        <SvgIcon sx={{ width: 24, height: 24, pl: 1 }}>
-          <User />
-        </SvgIcon>
-      );
-
+      return <JIcon height={22} icon="user"></JIcon>;
     default:
       return null;
   }
