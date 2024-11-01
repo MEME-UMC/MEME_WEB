@@ -28,7 +28,7 @@ const lg = {
 
 const md = {
   color: COLORS.white,
-  fontSIze: 14,
+  fontSize: 14,
   fontWeight: 400,
 };
 
