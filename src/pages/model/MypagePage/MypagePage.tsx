@@ -2,11 +2,11 @@ import { Stack, Typography } from '@mui/material';
 import { JButton } from '../../../components/JButton';
 import { Row } from '../../../components/Row';
 import { AppBar } from '../../../components/AppBar';
-import userIcon from '../../../assets/profile.svg';
-import rightArrow from '../../../assets/right-arrow.png';
-import UserPlus from '../../../assets/user-plus.svg?react';
-import heartOutline from '../../../assets/heart-outline.svg';
-import message from '../../../assets/message.svg';
+import ProfileIcon from '/src/assets/profile.svg';
+import rightArrow from '/src/assets/right-arrow.png';
+import UserPlus from '/src/assets/user-plus.svg';
+import HeartOutline from '/src/assets/heart-outline.svg';
+import Message from '/src/assets/message.svg';
 import { COLORS } from '../../../core/colors';
 
 export const MypagePage = () => {
@@ -14,7 +14,9 @@ export const MypagePage = () => {
     <Stack>
       <AppBar title="마이페이지" />
       <Stack alignItems={'center'} gap={1} py={1}>
-        <img src={userIcon} width={80} />
+        <Stack height={80} justifyContent={'center'}>
+          <ProfileIcon />
+        </Stack>
         <JButton
           sx={{ width: 'auto', paddingX: 1.5, paddingY: 0.5, borderRadius: 4 }}
         >
@@ -35,21 +37,21 @@ export const MypagePage = () => {
             gap: 1,
           }}
         >
-          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 4 }}>
+          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
             <Stack height={26} justifyContent={'center'}>
               <UserPlus color={COLORS.primary} />
             </Stack>
             <Typography fontSize={12}>관심 아티스트</Typography>
           </JButton>
-          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 4 }}>
+          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
             <Stack height={26} justifyContent={'center'}>
-              <img src={heartOutline} />
+              <HeartOutline color={COLORS.primary} />
             </Stack>
             <Typography fontSize={12}>관심 메이크업</Typography>
           </JButton>
-          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 4 }}>
+          <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
             <Stack height={26} justifyContent={'center'}>
-              <img src={message} />
+              <Message />
             </Stack>
             <Typography fontSize={12}>나의 리뷰</Typography>
           </JButton>
