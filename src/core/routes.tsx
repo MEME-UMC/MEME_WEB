@@ -4,6 +4,7 @@ import { JoinPage } from '../pages/common/LoginPage/LoginPage';
 import { EmailPage } from '../pages/common/EmailPage/EmailPage';
 import { PasswordPage } from '../pages/common/PasswordPage/PasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
+import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
 
 export const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
   {
     path: '/password',
     element: <PasswordPage />,
+  },
+  {
+    path: '/notification',
+    element: <NotificationPage />,
   },
   {
     element: (
