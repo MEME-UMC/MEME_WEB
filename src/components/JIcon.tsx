@@ -23,7 +23,7 @@ export const JIcon = ({ icon, height, color }: Props) => {
   return (
     <Stack height={height} justifyContent="center">
       <Suspense fallback={<CircularProgress />}>
-        <IconComp color={color} width={height} height={height} />
+        <IconComp color={color} />
       </Suspense>
     </Stack>
   );

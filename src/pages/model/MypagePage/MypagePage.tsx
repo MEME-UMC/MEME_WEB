@@ -6,8 +6,10 @@ import { AppBar } from '../../../components/AppBar';
 import { COLORS } from '../../../core/colors';
 import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
+import { useNavigate } from 'react-router-dom';
 
 export const MypagePage = () => {
+  const navigate = useNavigate();
   return (
     <MotionWrapper>
       <Stack>
@@ -51,6 +53,38 @@ export const MypagePage = () => {
               <JIcon height={26} icon="message" color={COLORS.primary} />
               <Typography fontSize={12}>나의 리뷰</Typography>
             </JButton>
+          </Row>
+        </Stack>
+        <Stack px={2}>
+          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
+            <Typography fontSize={14}>프로필 수정</Typography>
+          </JButton>
+          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
+            <Typography fontSize={14}>약관 및 정책</Typography>
+          </JButton>
+          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
+            <Typography fontSize={14}>문의하기</Typography>
+          </JButton>
+          <JButton
+            onClick={() => {
+              navigate('/enter');
+            }}
+            sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}
+          >
+            <Typography fontSize={14}>로그아웃</Typography>
+          </JButton>
+          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
+            <Typography fontSize={14}>탈퇴하기</Typography>
+          </JButton>
+          <Row
+            sx={{ justifyContent: 'space-between', paddingY: 1.5, paddingX: 1 }}
+          >
+            <Typography fontSize={12} color={COLORS.gray300}>
+              앱 버전
+            </Typography>
+            <Typography fontSize={12} color={COLORS.gray300}>
+              v1.0.0
+            </Typography>
           </Row>
         </Stack>
       </Stack>
