@@ -20,7 +20,7 @@ export const HomePage = () => {
 
   return (
     <MotionWrapper>
-      <Stack pt={1} sx={{ overflowY: 'scroll', overflowX: 'hidden' }}>
+      <Stack pt={1}>
         <Header />
         <SearchBar />
         <Stack px={2}>

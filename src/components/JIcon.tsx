@@ -9,6 +9,9 @@ const IconMap = {
   profile: () => import('../assets/profile.svg'),
   'user-plus': () => import('../assets/user-plus.svg'),
   user: () => import('../assets/user.svg'),
+  'email-login': () => import('../assets/email-login.svg'),
+  'kakao-login': () => import('../assets/kakao-login.svg'),
+  'apple-login': () => import('../assets/apple-login.svg'),
 };
 
 type Props = {
