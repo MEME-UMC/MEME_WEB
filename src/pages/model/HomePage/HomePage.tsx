@@ -49,7 +49,12 @@ export const HomePage = () => {
             후기가 많은 포트폴리오를 알아봐요
           </Typography>
         </Stack>
-        <Row gap={2} py={2} sx={{ overflowX: 'scroll' }}>
+        <Row
+          gap={2}
+          p={2}
+          sx={{ overflowX: 'scroll' }}
+          justifyContent={'start'}
+        >
           <PortfolioCard />
           <PortfolioCard />
           <PortfolioCard />
@@ -65,7 +70,12 @@ export const HomePage = () => {
             가장 최근에 올라온 포트폴리오를 알아봐요
           </Typography>
         </Stack>
-        <Row gap={2} py={2} sx={{ overflowX: 'scroll' }}>
+        <Row
+          gap={2}
+          p={2}
+          sx={{ overflowX: 'scroll' }}
+          justifyContent={'start'}
+        >
           <PortfolioCard />
           <PortfolioCard />
           <PortfolioCard />
