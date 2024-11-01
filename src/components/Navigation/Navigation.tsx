@@ -1,18 +1,21 @@
 import { createPortal } from 'react-dom';
 import { BottomNavigation } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { NavigationIcon } from './components/NavigationIcon';
 import { NavigationButton } from './components/NavigationButton';
 
 export const Navigation = () => {
   const location = useLocation();
   const value = location.pathname;
+  const navigate = useNavigate();
 
   return createPortal(
     <BottomNavigation
       showLabels
       value={value}
-      onChange={() => {}}
+      onChange={(_, to) => {
+        navigate(to);
+      }}
       sx={{
         width: '100%',
         maxWidth: 768,

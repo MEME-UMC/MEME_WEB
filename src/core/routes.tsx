@@ -6,6 +6,7 @@ import { PasswordPage } from '../pages/common/PasswordPage/PasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
+import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage />,
+      },
+      {
+        path: '/my',
+        element: <MypagePage />,
       },
     ],
   },

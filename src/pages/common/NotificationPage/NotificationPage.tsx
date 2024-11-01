@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 
-import { AppBar } from '../../../components/AppBar/AppBar';
+import { AppBar } from '../../../components/AppBar';
 import { NotificationItem } from './components/NotificationItem';
 
 export const NotificationPage = () => {
