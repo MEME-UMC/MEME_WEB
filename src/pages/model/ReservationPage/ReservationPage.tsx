@@ -6,6 +6,7 @@ import { JButton } from '../../../components/JButton';
 import { JIcon } from '../../../components/JIcon';
 import ReservationsortItem from './components/ReservationsortItem';
 import ReservationListItem from './components/ReservationListItem';
+import { COLORS } from '../../../core/colors';
 
 export const ReservationPage = () => {
   const makeupSort = [
@@ -52,7 +53,7 @@ export const ReservationPage = () => {
               sx={{
                 width: '81px',
                 height: '27px',
-                border: '1px solid #FF633E',
+                border: `1px solid ${COLORS.primary}`,
                 borderRadius: '20px',
               }}
             >

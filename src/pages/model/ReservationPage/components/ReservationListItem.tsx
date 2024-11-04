@@ -1,6 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
+import { COLORS } from '../../../../core/colors';
 
 const ReservationListItem = () => {
   return (
@@ -54,7 +55,7 @@ const ReservationListItem = () => {
               <Row gap={'1px'}>
                 <Typography
                   width={'19px'}
-                  border={'1px solid #FF985E'}
+                  border={`1px solid ${COLORS.primaryLight}`}
                   borderRadius={'50%'}
                   textAlign={'center'}
                   lineHeight={'19px'}
@@ -69,7 +70,7 @@ const ReservationListItem = () => {
               </Row>
               <Row gap={'1px'}>
                 <Typography
-                  border={'1px solid #FF985E'}
+                  border={`1px solid ${COLORS.primaryLight}`}
                   borderRadius={'60px'}
                   lineHeight={'19px'}
                   fontSize={'10px'}
