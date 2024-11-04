@@ -33,7 +33,7 @@ const ReservationListItem = () => {
               </Stack>
             </Stack>
           </Stack>
-          <Stack gap={'4px'}>
+          <Stack gap={'2px'}>
             <Stack flexDirection={'row'}>
               <Typography
                 lineHeight={'19px'}
