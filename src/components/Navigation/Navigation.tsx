@@ -24,8 +24,8 @@ export const Navigation = () => {
       <NavigationButton label="홈" value="/">
         <NavigationIcon type="home" />
       </NavigationButton>
-      <NavigationButton label="예약" value="/book">
-        <NavigationIcon type="book" />
+      <NavigationButton label="예약" value="/reservation">
+        <NavigationIcon type="reservation" />
       </NavigationButton>
       <NavigationButton label="MY" value="/my">
         <NavigationIcon type="my" />

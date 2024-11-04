@@ -2,7 +2,7 @@ import { Suspense, lazy } from 'react';
 import { CircularProgress, Stack } from '@mui/material';
 
 const IconMap = {
-  booking: () => import('../assets/booking.svg'),
+  reservation: () => import('../assets/booking.svg'),
   'heart-outline': () => import('../assets/heart-outline.svg'),
   home: () => import('../assets/home.svg'),
   message: () => import('../assets/message.svg'),
@@ -12,6 +12,7 @@ const IconMap = {
   'email-login': () => import('../assets/email-login.svg'),
   'kakao-login': () => import('../assets/kakao-login.svg'),
   'apple-login': () => import('../assets/apple-login.svg'),
+  filter: () => import('../assets/filter.svg'),
 };
 
 type Props = {
