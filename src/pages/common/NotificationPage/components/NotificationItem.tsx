@@ -13,7 +13,7 @@ export const NotificationItem = ({ isRead }: NotificationItemProps) => {
   return (
     <JButton
       onClick={() => {
-        navigate('/notification');
+        navigate('/notification', { replace: true });
       }}
     >
       <Stack
