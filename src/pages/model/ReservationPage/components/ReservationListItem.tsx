@@ -40,7 +40,6 @@ const ReservationListItem = () => {
                 lineHeight={'19px'}
                 px={1}
                 fontSize={'10px'}
-                color="#222"
                 textAlign={'center'}
                 sx={{ background: '#FFC8B0' }}
                 borderRadius={'5px'}
@@ -48,9 +47,7 @@ const ReservationListItem = () => {
                 면접 메이크업
               </Typography>
             </Stack>
-            <Typography fontSize={'10px'} color="#222">
-              차차 아티스트
-            </Typography>
+            <Typography fontSize={'10px'}>차차 아티스트</Typography>
             <Row gap={1}>
               <Row gap={'1px'}>
                 <Typography
@@ -60,13 +57,10 @@ const ReservationListItem = () => {
                   textAlign={'center'}
                   lineHeight={'19px'}
                   fontSize={'10px'}
-                  color="#222"
                 >
                   샵
                 </Typography>
-                <Typography fontSize={'10px'} color="#222">
-                  서울 강남구
-                </Typography>
+                <Typography fontSize={'10px'}>서울 강남구</Typography>
               </Row>
               <Row gap={'1px'}>
                 <Typography
@@ -74,25 +68,20 @@ const ReservationListItem = () => {
                   borderRadius={'60px'}
                   lineHeight={'19px'}
                   fontSize={'10px'}
-                  color="#222"
                   px={'5px'}
                 >
                   방문
                 </Typography>
-                <Typography fontSize={'10px'} color="#222">
-                  서울 강남구
-                </Typography>
+                <Typography fontSize={'10px'}>서울 강남구</Typography>
               </Row>
             </Row>
-            <Typography fontSize={'14px'} fontWeight={600} color="#222">
+            <Typography fontSize={'14px'} fontWeight={600}>
               메이크업명
             </Typography>
-            <Typography fontSize={'12px'} fontWeight={600} color="#222">
+            <Typography fontSize={'12px'} fontWeight={600}>
               100,000원
             </Typography>
-            <Stack fontSize={'10px'} color="#222">
-              ⭐️ 4.74 (리뷰 수)
-            </Stack>
+            <Stack fontSize={'10px'}>⭐️ 4.74 (리뷰 수)</Stack>
           </Stack>
         </Row>
       </JButton>
