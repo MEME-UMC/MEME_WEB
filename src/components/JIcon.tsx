@@ -12,6 +12,7 @@ const IconMap = {
   'email-login': () => import('../assets/email-login.svg'),
   'kakao-login': () => import('../assets/kakao-login.svg'),
   'apple-login': () => import('../assets/apple-login.svg'),
+  filter: () => import('../assets/filter.svg'),
 };
 
 type Props = {
