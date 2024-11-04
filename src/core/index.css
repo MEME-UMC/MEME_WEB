@@ -35,7 +35,6 @@ html {
   overflow: hidden !important;
 }
 body {
-  font-family: 'Pretendard';
   overflow: hidden !important;
   display: flex;
   flex-direction: column;
@@ -44,6 +43,7 @@ body {
   width: 100%;
   margin: 0px;
   align-items: center;
+  color: #222;
   background-color: #fff2eb;
   #root {
     overflow: hidden;
