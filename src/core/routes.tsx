@@ -7,7 +7,7 @@ import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
-import ReservationPage from '../pages/common/ReservationPage/ReservationPage';
+import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
 
 export const router = createBrowserRouter([
   {
