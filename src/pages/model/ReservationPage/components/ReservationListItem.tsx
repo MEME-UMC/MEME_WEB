@@ -2,6 +2,7 @@ import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 import { COLORS } from '../../../../core/colors';
+import Counter from '../../../../components/Counter';
 
 const ReservationListItem = () => {
   return (
@@ -78,9 +79,10 @@ const ReservationListItem = () => {
             <Typography fontSize={'14px'} fontWeight={600}>
               메이크업명
             </Typography>
-            <Typography fontSize={'12px'} fontWeight={600}>
-              100,000원
-            </Typography>
+            <Row justifyContent={'left'}>
+              <Counter fontSize={16} targetNumber={'100,000'} />
+              <Typography>원</Typography>
+            </Row>
             <Stack fontSize={'10px'}>⭐️ 4.74 (리뷰 수)</Stack>
           </Stack>
         </Row>

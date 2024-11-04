@@ -7,6 +7,7 @@ import { JIcon } from '../../../components/JIcon';
 import ReservationsortItem from './components/ReservationsortItem';
 import ReservationListItem from './components/ReservationListItem';
 import { COLORS } from '../../../core/colors';
+import Counter from '../../../components/Counter';
 
 export const ReservationPage = () => {
   const makeupSort = [
@@ -40,9 +41,7 @@ export const ReservationPage = () => {
         >
           <Stack>
             <Row>
-              <Typography fontSize={12} fontWeight={600}>
-                100
-              </Typography>
+              <Counter fontSize={12} targetNumber={100} />
               <Typography fontSize={12} fontWeight={400}>
                 개의 검색 결과
               </Typography>
