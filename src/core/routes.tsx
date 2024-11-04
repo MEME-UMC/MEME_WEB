@@ -7,6 +7,7 @@ import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
+import ReservationPage from '../pages/common/ReservationPage/ReservationPage';
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
   {
     path: '/notification',
     element: <NotificationPage />,
+  },
+  {
+    path: '/reservation',
+    element: <ReservationPage />,
   },
   {
     element: (
