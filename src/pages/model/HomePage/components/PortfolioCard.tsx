@@ -36,7 +36,7 @@ export const PortfolioCard = ({}: Props) => {
             127
           </Typography>
         </Row>
-        <Typography fontSize={10} color={COLORS.grey500}>
+        <Typography fontSize={10} color={COLORS.gray500}>
           kim_jennie@naver.com
         </Typography>
       </Stack>
