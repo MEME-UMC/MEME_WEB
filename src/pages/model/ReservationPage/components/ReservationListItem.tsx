@@ -1,5 +1,4 @@
 import { Stack, Typography } from '@mui/material';
-import React from 'react';
 import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 

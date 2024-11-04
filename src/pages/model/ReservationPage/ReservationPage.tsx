@@ -1,4 +1,3 @@
-import React from 'react';
 import { MotionWrapper } from '../../../components/MotionWrapper';
 import { AppBar } from '../../../components/AppBar';
 import { Stack, Typography } from '@mui/material';
