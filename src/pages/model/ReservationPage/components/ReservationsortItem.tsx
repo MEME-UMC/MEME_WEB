@@ -14,7 +14,7 @@ const ReservationsortItem = ({ defaultValue }: ReservationsortItemProps) => {
         borderRadius: '20px',
       }}
       onClick={() => {
-        alert(`${defaultValue}`);
+        // alert(`${defaultValue}`);
       }}
     >
       <Typography fontSize={10} whiteSpace={'nowrap'} lineHeight={'30px'}>
