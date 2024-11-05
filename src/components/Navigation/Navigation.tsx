@@ -1,9 +1,9 @@
 import { createPortal } from 'react-dom';
 import { BottomNavigation } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { NavigationIcon } from './components/NavigationIcon';
 import { NavigationButton } from './components/NavigationButton';
 import { useJNavigate } from '../../core/routes';
+import { JIcon } from '../JIcon';
 
 export const Navigation = () => {
   const location = useLocation();
@@ -23,13 +23,13 @@ export const Navigation = () => {
       }}
     >
       <NavigationButton label="홈" value="/">
-        <NavigationIcon type="home" />
+        <JIcon height={22} icon="home"/>
       </NavigationButton>
       <NavigationButton label="예약" value="/reservation">
-        <NavigationIcon type="reservation" />
+        <JIcon height={22} icon="reservation"/>
       </NavigationButton>
       <NavigationButton label="MY" value="/my">
-        <NavigationIcon type="my" />
+        <JIcon height={22} icon="user"/>
       </NavigationButton>
     </BottomNavigation>,
     document.body
