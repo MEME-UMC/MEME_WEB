@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 
 import { JButton } from '../../../../components/JButton';
-import { useNavigate } from 'react-router-dom';
+import { useJNavigate } from '../../../../core/routes';
 import { JIcon } from '../../../../components/JIcon';
 
 type NotificationItemProps = {
@@ -10,7 +10,7 @@ type NotificationItemProps = {
 };
 
 export const NotificationItem = ({ isRead }: NotificationItemProps) => {
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
   return (
     <JButton
       onClick={() => {
