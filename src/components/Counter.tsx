@@ -27,7 +27,6 @@ const Counter = ({ targetNumber, fontSize }: CounterProps) => {
         });
       }, (index * 1000) / numberArray.length); // 각 숫자가 순서대로 나타나도록 딜레이
     });
-    console.log('asd');
   }, [targetNumber]);
   return (
     <Row
