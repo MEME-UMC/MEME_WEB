@@ -1,8 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
-import bell from '../../../../assets/bell.png';
+
 import { JButton } from '../../../../components/JButton';
 import { useJNavigate } from '../../../../core/routes';
+import { JIcon } from '../../../../components/JIcon';
 
 type NotificationItemProps = {
   isRead: boolean;
@@ -28,7 +29,7 @@ export const NotificationItem = ({ isRead }: NotificationItemProps) => {
       >
         <Row justifyContent={'top'} alignItems={'top'}>
           <Box width={30} height={30} marginRight={1}>
-            <img src={bell} alt="종모양 아이콘" />
+            <JIcon icon="noticeCircle" />
           </Box>
           <Stack>
             <Typography

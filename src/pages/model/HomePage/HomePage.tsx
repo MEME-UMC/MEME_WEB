@@ -4,10 +4,10 @@ import { Header } from './components/Header';
 import { SearchBar } from './components/SearchBar';
 import { JButton } from '../../../components/JButton';
 import { Row } from '../../../components/Row';
-import rightArrow from '../../../assets/right-arrow.png';
 import { BookingCard } from './components/BookingCard';
 import { PortfolioCard } from './components/PortfolioCard';
 import { MotionWrapper } from '../../../components/MotionWrapper';
+import { JIcon } from '../../../components/JIcon';
 
 export const HomePage = () => {
   const [booking] = useState({
@@ -37,7 +37,7 @@ export const HomePage = () => {
           <Row justifyContent={'end'}>
             <JButton sx={{ gap: 0.7, width: 'auto', px: 1, borderRadius: 8 }}>
               <Typography fontSize={14}>전체 예약 보기</Typography>
-              <img src={rightArrow} width={8} />
+              <JIcon icon="rightArrow" />
             </JButton>
           </Row>
           <BookingCard booking={booking} />

@@ -1,6 +1,6 @@
 import logo from '../../../../assets/logo-sm.png';
-import notice from '../../../../assets/notice.png';
 import { JButton } from '../../../../components/JButton';
+import { JIcon } from '../../../../components/JIcon';
 import { Row } from '../../../../components/Row';
 import { useJNavigate } from '../../../../core/routes';
 
@@ -13,7 +13,7 @@ export const Header = () => {
         sx={{ borderRadius: 6, width: 40, height: 40 }}
         onClick={() => navigate('/notification')}
       >
-        <img src={notice} />
+        <JIcon icon="notice" />
       </JButton>
     </Row>
   );

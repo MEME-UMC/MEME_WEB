@@ -3,6 +3,7 @@ import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 import { COLORS } from '../../../../core/colors';
 import Counter from '../../../../components/Counter';
+import ReservationBedge from './ReservationBedge';
 
 const ReservationListItem = () => {
   return (
@@ -36,18 +37,7 @@ const ReservationListItem = () => {
             </Stack>
           </Stack>
           <Stack gap={'2px'}>
-            <Stack flexDirection={'row'}>
-              <Typography
-                lineHeight={'19px'}
-                px={1}
-                fontSize={'10px'}
-                textAlign={'center'}
-                sx={{ background: '#FFC8B0' }}
-                borderRadius={'5px'}
-              >
-                면접 메이크업
-              </Typography>
-            </Stack>
+            <ReservationBedge />
             <Typography fontSize={'10px'}>차차 아티스트</Typography>
             <Row gap={1}>
               <Row gap={'1px'}>

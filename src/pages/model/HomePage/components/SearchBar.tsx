@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 import { COLORS } from '../../../../core/colors';
-import search from '../../../../assets/search.png';
+import { JIcon } from '../../../../components/JIcon';
 
 export const SearchBar = () => {
   return (
@@ -19,7 +19,7 @@ export const SearchBar = () => {
           <Typography color={COLORS.gray300}>
             원하는 메이크업을 검색해보세요!
           </Typography>
-          <img src={search} />
+          <JIcon icon="search" />
         </Row>
       </JButton>
     </Row>
