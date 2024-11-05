@@ -1,4 +1,4 @@
-import logo from '../../../../assets/logo_sm.png';
+import logo from '../../../../assets/logo-sm.png';
 import notice from '../../../../assets/notice.png';
 import { JButton } from '../../../../components/JButton';
 import { Row } from '../../../../components/Row';
