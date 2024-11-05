@@ -1,19 +1,15 @@
-import { ReactNode } from 'react';
 import { BottomNavigationAction, Typography } from '@mui/material';
 import { COLORS } from '../../../core/colors';
+import { Path } from '../../../core/routes';
+import { Icon, JIcon } from '../../JIcon';
 
 type Props = {
-  value: string;
+  value: Path;
   label: string;
-  children: ReactNode | ReactNode[];
+  icon: Icon;
 };
 
-export const NavigationButton = ({
-  value,
-  label,
-  children,
-  ...props
-}: Props) => {
+export const NavigationButton = ({ value, label, icon, ...props }: Props) => {
   return (
     <BottomNavigationAction
       value={value}
@@ -30,7 +26,7 @@ export const NavigationButton = ({
         },
         maxWidth: 'none',
       }}
-      icon={children}
+      icon={<JIcon height={22} icon={icon} />}
       {...props}
     />
   );

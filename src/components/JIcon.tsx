@@ -23,8 +23,10 @@ const IconMap = {
   noticeCircle: () => import('../assets/notice-circle.svg'),
 };
 
+export type Icon = keyof typeof IconMap;
+
 type Props = {
-  icon: keyof typeof IconMap;
+  icon: Icon;
   height?: number;
   color?: string;
 };

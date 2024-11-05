@@ -3,7 +3,6 @@ import { BottomNavigation } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { NavigationButton } from './components/NavigationButton';
 import { useJNavigate } from '../../core/routes';
-import { JIcon } from '../JIcon';
 
 export const Navigation = () => {
   const location = useLocation();
@@ -22,15 +21,9 @@ export const Navigation = () => {
         maxWidth: 768,
       }}
     >
-      <NavigationButton label="홈" value="/">
-        <JIcon height={22} icon="home"/>
-      </NavigationButton>
-      <NavigationButton label="예약" value="/reservation">
-        <JIcon height={22} icon="reservation"/>
-      </NavigationButton>
-      <NavigationButton label="MY" value="/my">
-        <JIcon height={22} icon="user"/>
-      </NavigationButton>
+      <NavigationButton label="홈" value="/" icon="home" />
+      <NavigationButton label="예약" value="/reservation" icon="reservation" />
+      <NavigationButton label="MY" value="/my" icon="user" />
     </BottomNavigation>,
     document.body
   );
