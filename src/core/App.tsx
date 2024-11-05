@@ -4,9 +4,9 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { COLORS } from './colors';
 
 const theme = createTheme({
-  // typography: {
-  //   fontFamily: 'AppleFont',
-  // },
+  typography: {
+    fontFamily: " 'Pretendard', sans-serif",
+  },
   palette: {
     primary: {
       main: COLORS.primary,

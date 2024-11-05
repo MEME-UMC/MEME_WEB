@@ -1,6 +1,8 @@
 import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
+import { COLORS } from '../../../../core/colors';
+import Counter from '../../../../components/Counter';
 
 const ReservationListItem = () => {
   return (
@@ -39,7 +41,6 @@ const ReservationListItem = () => {
                 lineHeight={'19px'}
                 px={1}
                 fontSize={'10px'}
-                color="#222"
                 textAlign={'center'}
                 sx={{ background: '#FFC8B0' }}
                 borderRadius={'5px'}
@@ -47,51 +48,42 @@ const ReservationListItem = () => {
                 면접 메이크업
               </Typography>
             </Stack>
-            <Typography fontSize={'10px'} color="#222">
-              차차 아티스트
-            </Typography>
+            <Typography fontSize={'10px'}>차차 아티스트</Typography>
             <Row gap={1}>
               <Row gap={'1px'}>
                 <Typography
                   width={'19px'}
-                  border={'1px solid #FF985E'}
+                  border={`1px solid ${COLORS.primaryLight}`}
                   borderRadius={'50%'}
                   textAlign={'center'}
                   lineHeight={'19px'}
                   fontSize={'10px'}
-                  color="#222"
                 >
                   샵
                 </Typography>
-                <Typography fontSize={'10px'} color="#222">
-                  서울 강남구
-                </Typography>
+                <Typography fontSize={'10px'}>서울 강남구</Typography>
               </Row>
               <Row gap={'1px'}>
                 <Typography
-                  border={'1px solid #FF985E'}
+                  border={`1px solid ${COLORS.primaryLight}`}
                   borderRadius={'60px'}
                   lineHeight={'19px'}
                   fontSize={'10px'}
-                  color="#222"
                   px={'5px'}
                 >
                   방문
                 </Typography>
-                <Typography fontSize={'10px'} color="#222">
-                  서울 강남구
-                </Typography>
+                <Typography fontSize={'10px'}>서울 강남구</Typography>
               </Row>
             </Row>
-            <Typography fontSize={'14px'} fontWeight={600} color="#222">
+            <Typography fontSize={'14px'} fontWeight={600}>
               메이크업명
             </Typography>
-            <Typography fontSize={'12px'} fontWeight={600} color="#222">
-              100,000원
-            </Typography>
-            <Stack fontSize={'10px'} color="#222">
-              ⭐️ 4.74 (리뷰 수)
-            </Stack>
+            <Row justifyContent={'left'}>
+              <Counter fontSize={16} targetNumber={'100,000'} />
+              <Typography>원</Typography>
+            </Row>
+            <Stack fontSize={'10px'}>⭐️ 4.74 (리뷰 수)</Stack>
           </Stack>
         </Row>
       </JButton>
