@@ -1,4 +1,10 @@
-import { createBrowserRouter, Outlet } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  NavigateOptions,
+  Outlet,
+  // eslint-disable-next-line no-restricted-imports
+  useNavigate,
+} from 'react-router-dom';
 import { EnterPage } from '../pages/common/EnterPage/EnterPage';
 import { JoinPage } from '../pages/common/LoginPage/LoginPage';
 import { EmailPage } from '../pages/common/EmailPage/EmailPage';
@@ -9,29 +15,40 @@ import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
 
+const paths = {
+  enter: '/enter',
+  join: '/join',
+  email: '/email',
+  password: '/password',
+  notification: '/notification',
+  reservation: '/reservation',
+  home: '/',
+  mypage: '/my',
+} as const;
+
 export const router = createBrowserRouter([
   {
-    path: '/enter',
+    path: paths.enter,
     element: <EnterPage />,
   },
   {
-    path: '/join',
+    path: paths.join,
     element: <JoinPage />,
   },
   {
-    path: '/email',
+    path: paths.email,
     element: <EmailPage />,
   },
   {
-    path: '/password',
+    path: paths.password,
     element: <PasswordPage />,
   },
   {
-    path: '/notification',
+    path: paths.notification,
     element: <NotificationPage />,
   },
   {
-    path: '/reservation',
+    path: paths.reservation,
     element: <ReservationPage />,
   },
   {
@@ -43,13 +60,31 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/',
+        path: paths.home,
         element: <HomePage />,
       },
       {
-        path: '/my',
+        path: paths.mypage,
         element: <MypagePage />,
       },
     ],
   },
 ]);
+
+type Paths = (typeof paths)[keyof typeof paths];
+
+type UseJNavigate = () => {
+  (
+    to:
+      | Paths
+      | {
+          pathname: Paths | undefined;
+          search: string | undefined;
+          hash: string | undefined;
+        },
+    options?: NavigateOptions
+  ): void;
+  (delta: number): void;
+};
+
+export const useJNavigate: UseJNavigate = useNavigate;

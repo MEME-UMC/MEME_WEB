@@ -1,14 +1,14 @@
 import { Stack, Typography } from '@mui/material';
 import { JButton } from './JButton';
 import leftArrow from '../assets/left-arrow.png';
-import { useNavigate } from 'react-router-dom';
+import { useJNavigate } from '../core/routes';
 
 type AppBarProps = {
   title: string;
   backIcon?: boolean;
 };
 export const AppBar = ({ title, backIcon }: AppBarProps) => {
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
   return (
     <Stack
       sx={{ position: 'relative', width: '100%', height: '48px' }}

@@ -6,10 +6,10 @@ import { AppBar } from '../../../components/AppBar';
 import { COLORS } from '../../../core/colors';
 import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
-import { useNavigate } from 'react-router-dom';
+import { useJNavigate } from '../../../core/routes';
 
 export const MypagePage = () => {
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
   return (
     <MotionWrapper>
       <Stack>

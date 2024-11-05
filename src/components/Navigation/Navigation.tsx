@@ -1,13 +1,14 @@
 import { createPortal } from 'react-dom';
 import { BottomNavigation } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { NavigationIcon } from './components/NavigationIcon';
 import { NavigationButton } from './components/NavigationButton';
+import { useJNavigate } from '../../core/routes';
 
 export const Navigation = () => {
   const location = useLocation();
   const value = location.pathname;
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
 
   return createPortal(
     <BottomNavigation

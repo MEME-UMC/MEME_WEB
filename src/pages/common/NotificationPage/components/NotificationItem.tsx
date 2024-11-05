@@ -2,14 +2,14 @@ import { Box, Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
 import bell from '../../../../assets/bell.png';
 import { JButton } from '../../../../components/JButton';
-import { useNavigate } from 'react-router-dom';
+import { useJNavigate } from '../../../../core/routes';
 
 type NotificationItemProps = {
   isRead: boolean;
 };
 
 export const NotificationItem = ({ isRead }: NotificationItemProps) => {
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
   return (
     <JButton
       onClick={() => {
