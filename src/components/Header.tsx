@@ -4,7 +4,7 @@ import { Row } from './Row';
 import BackButton from '/back-button.png';
 import CloseButton from '/close-button.png';
 import { ReactNode } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useJNavigate } from '../core/routes';
 
 type Props = {
   useClose?: boolean;
@@ -12,7 +12,7 @@ type Props = {
   onBack?: () => void;
 };
 export const Header = ({ useClose, children, onBack }: Props) => {
-  const navigate = useNavigate();
+  const navigate = useJNavigate();
   return (
     <Row justifyContent={'space-between'}>
       <Box>
