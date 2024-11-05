@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import { JButton } from './JButton';
-import leftArrow from '../assets/left-arrow.png';
 import { useNavigate } from 'react-router-dom';
+import { JIcon } from './JIcon';
 
 type AppBarProps = {
   title: string;
@@ -27,7 +27,7 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
             navigate(-1);
           }}
         >
-          <img width={8} height={16} src={leftArrow} alt="뒤로가기" />
+          <JIcon icon="leftArrow" />
         </JButton>
       )}
 

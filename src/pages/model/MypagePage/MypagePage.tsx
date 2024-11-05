@@ -1,7 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { JButton } from '../../../components/JButton';
 import { Row } from '../../../components/Row';
-import rightArrow from '/src/assets/right-arrow.png';
 import { AppBar } from '../../../components/AppBar';
 import { COLORS } from '../../../core/colors';
 import { JIcon } from '../../../components/JIcon';
@@ -28,7 +27,7 @@ export const MypagePage = () => {
               <Typography fontSize={16} fontWeight={600}>
                 차차
               </Typography>
-              <img src={rightArrow} width={8} />
+              <JIcon icon="rightArrow" />
             </Row>
           </JButton>
         </Stack>

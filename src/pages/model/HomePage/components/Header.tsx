@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/logo_sm.png';
-import notice from '../../../../assets/notice.png';
 import { JButton } from '../../../../components/JButton';
 import { Row } from '../../../../components/Row';
+import { JIcon } from '../../../../components/JIcon';
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const Header = () => {
         sx={{ borderRadius: 6, width: 40, height: 40 }}
         onClick={() => navigate('/notification')}
       >
-        <img src={notice} />
+        <JIcon icon="notice" />
       </JButton>
     </Row>
   );

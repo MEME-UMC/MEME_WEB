@@ -5,8 +5,7 @@ import { JButton } from '../../../../components/JButton';
 import { Row } from '../../../../components/Row';
 import { Span } from '../../../../components/Span';
 import { COLORS } from '../../../../core/colors';
-import location from '../../../../assets/location.png';
-import price from '../../../../assets/price.png';
+import { JIcon } from '../../../../components/JIcon';
 
 type Booking = {
   name: string;
@@ -57,13 +56,13 @@ export const BookingCard = ({ booking }: Props) => {
       <Typography {...lg}>{booking.artist}</Typography>
       <Row>
         <Row width={24}>
-          <img src={location} />
+          <JIcon icon="location" />
         </Row>
         <Typography {...md}>{booking.location}</Typography>
       </Row>
       <Row>
         <Row width={24}>
-          <img src={price} />
+          <JIcon icon="price" />
         </Row>
         <Typography {...md}>{booking.price.toLocaleString()}원</Typography>
       </Row>

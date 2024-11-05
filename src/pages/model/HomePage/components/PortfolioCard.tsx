@@ -5,7 +5,7 @@ import { JButton } from '../../../../components/JButton';
 import { Row } from '../../../../components/Row';
 import { COLORS } from '../../../../core/colors';
 import sampleMakeup from '../../../../assets/sample-makeup.png';
-import heart from '../../../../assets/heart.png';
+import { JIcon } from '../../../../components/JIcon';
 
 type Props = {};
 
@@ -31,7 +31,7 @@ export const PortfolioCard = ({}: Props) => {
           </Typography>
         </Stack>
         <Row justifyContent={'start'} gap={0.3}>
-          <img src={heart} />
+          <JIcon icon="heart" />
           <Typography fontSize={14} color={COLORS.p_black}>
             127
           </Typography>

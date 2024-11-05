@@ -13,6 +13,14 @@ const IconMap = {
   'kakao-login': () => import('../assets/kakao-login.svg'),
   'apple-login': () => import('../assets/apple-login.svg'),
   filter: () => import('../assets/filter.svg'),
+  notice: () => import('../assets/notice.svg'),
+  search: () => import('../assets/search.svg'),
+  heart: () => import('../assets/heart.svg'),
+  location: () => import('../assets/location.svg'),
+  price: () => import('../assets/price.svg'),
+  leftArrow: () => import('../assets/left-arrow.svg'),
+  rightArrow: () => import('../assets/right-arrow.svg'),
+  noticeCircle: () => import('../assets/notice-circle.svg'),
 };
 
 type Props = {
