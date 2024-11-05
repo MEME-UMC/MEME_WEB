@@ -71,14 +71,14 @@ export const router = createBrowserRouter([
   },
 ]);
 
-type Paths = (typeof paths)[keyof typeof paths];
+export type Path = (typeof paths)[keyof typeof paths];
 
 type UseJNavigate = () => {
   (
     to:
-      | Paths
+      | Path
       | {
-          pathname: Paths | undefined;
+          pathname: Path | undefined;
           search: string | undefined;
           hash: string | undefined;
         },
