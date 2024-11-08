@@ -26,7 +26,7 @@ export const NavigationButton = ({ value, label, icon, ...props }: Props) => {
         },
         maxWidth: 'none',
       }}
-      icon={<JIcon height={22} icon={icon} />}
+      icon={<JIcon icon={icon} />}
       {...props}
     />
   );
