@@ -14,7 +14,7 @@ export const MypagePage = () => {
       <Stack>
         <AppBar title="마이페이지" />
         <Stack alignItems={'center'} gap={1} py={1}>
-          <JIcon height={80} icon="profile" />
+          <JIcon icon="profile" />
           <JButton
             sx={{
               width: 'auto',
@@ -41,15 +41,21 @@ export const MypagePage = () => {
             }}
           >
             <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-              <JIcon height={26} icon="user-plus" color={COLORS.primary} />
+              <Stack justifyContent={'center'} height={24}>
+                <JIcon icon="user-plus" color={COLORS.primary} />
+              </Stack>
               <Typography fontSize={12}>관심 아티스트</Typography>
             </JButton>
             <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-              <JIcon height={26} icon="heart-outline" color={COLORS.primary} />
+              <Stack justifyContent={'center'} height={24}>
+                <JIcon icon="heart-outline" color={COLORS.primary} />
+              </Stack>
               <Typography fontSize={12}>관심 메이크업</Typography>
             </JButton>
             <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
-              <JIcon height={26} icon="message" color={COLORS.primary} />
+              <Stack justifyContent={'center'} height={24}>
+                <JIcon icon="message" color={COLORS.primary} />
+              </Stack>
               <Typography fontSize={12}>나의 리뷰</Typography>
             </JButton>
           </Row>

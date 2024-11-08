@@ -1,44 +1,126 @@
-import { Suspense, lazy } from 'react';
-import { CircularProgress, Stack } from '@mui/material';
+import { Suspense, lazy, memo } from 'react';
+import { Skeleton } from '@mui/material';
 
 const IconMap = {
-  reservation: () => import('../assets/booking.svg'),
-  'heart-outline': () => import('../assets/heart-outline.svg'),
-  home: () => import('../assets/home.svg'),
-  message: () => import('../assets/message.svg'),
-  profile: () => import('../assets/profile.svg'),
-  'user-plus': () => import('../assets/user-plus.svg'),
-  user: () => import('../assets/user.svg'),
-  'email-login': () => import('../assets/email-login.svg'),
-  'kakao-login': () => import('../assets/kakao-login.svg'),
-  'apple-login': () => import('../assets/apple-login.svg'),
-  filter: () => import('../assets/filter.svg'),
-  notice: () => import('../assets/notice.svg'),
-  search: () => import('../assets/search.svg'),
-  heart: () => import('../assets/heart.svg'),
-  location: () => import('../assets/location.svg'),
-  price: () => import('../assets/price.svg'),
-  leftArrow: () => import('../assets/left-arrow.svg'),
-  rightArrow: () => import('../assets/right-arrow.svg'),
-  noticeCircle: () => import('../assets/notice-circle.svg'),
+  reservation: {
+    src: () => import('../assets/booking.svg'),
+    width: 16,
+    height: 20,
+  },
+  'heart-outline': {
+    src: () => import('../assets/heart-outline.svg'),
+    width: 24,
+    height: 20,
+  },
+  home: {
+    src: () => import('../assets/home.svg'),
+    width: 19,
+    height: 20,
+  },
+  message: {
+    src: () => import('../assets/message.svg'),
+    width: 23,
+    height: 23,
+  },
+  profile: {
+    src: () => import('../assets/profile.svg'),
+    width: 94,
+    height: 95,
+  },
+  'user-plus': {
+    src: () => import('../assets/user-plus.svg'),
+    width: 24,
+    height: 25,
+  },
+  user: {
+    src: () => import('../assets/user.svg'),
+    width: 17,
+    height: 20,
+  },
+  'email-login': {
+    src: () => import('../assets/email-login.svg'),
+    width: 300,
+    height: 46,
+  },
+  'kakao-login': {
+    src: () => import('../assets/kakao-login.svg'),
+    width: 300,
+    height: 46,
+  },
+  'apple-login': {
+    src: () => import('../assets/apple-login.svg'),
+    width: 300,
+    height: 46,
+  },
+  filter: {
+    src: () => import('../assets/filter.svg'),
+    width: 15,
+    height: 22,
+  },
+  notice: {
+    src: () => import('../assets/notice.svg'),
+    width: 18,
+    height: 23,
+  },
+  search: {
+    src: () => import('../assets/search.svg'),
+    width: 17,
+    height: 17,
+  },
+  heart: {
+    src: () => import('../assets/heart.svg'),
+    width: 12,
+    height: 9,
+  },
+  location: {
+    src: () => import('../assets/location.svg'),
+    width: 15,
+    height: 21,
+  },
+  price: {
+    src: () => import('../assets/price.svg'),
+    width: 16,
+    height: 13,
+  },
+  leftArrow: {
+    src: () => import('../assets/left-arrow.svg'),
+    width: 10,
+    height: 18,
+  },
+  rightArrow: {
+    src: () => import('../assets/right-arrow.svg'),
+    width: 8,
+    height: 14,
+  },
+  noticeCircle: {
+    src: () => import('../assets/notice-circle.svg'),
+    width: 30,
+    height: 30,
+  },
 };
 
 export type Icon = keyof typeof IconMap;
 
 type Props = {
   icon: Icon;
-  height?: number;
   color?: string;
+  height?: number;
+  width?: number;
 };
 
-export const JIcon = ({ icon, height, color }: Props) => {
-  const IconComp = lazy(IconMap[icon]);
+export const JIcon = memo(({ icon, color, height, width }: Props) => {
+  const obj = IconMap[icon];
+  const IconComp = lazy(obj.src);
+  const iconWidth = width ?? obj.width;
+  const iconHeight = height ?? obj.height;
 
   return (
-    <Stack height={height} justifyContent="center">
-      <Suspense fallback={<CircularProgress />}>
-        <IconComp color={color} />
-      </Suspense>
-    </Stack>
+    <Suspense
+      fallback={
+        <Skeleton variant="rounded" width={iconWidth} height={iconHeight} />
+      }
+    >
+      <IconComp width={iconWidth} height={iconHeight} color={color} />
+    </Suspense>
   );
-};
+});
