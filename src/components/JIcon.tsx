@@ -1,7 +1,14 @@
 import { Suspense, lazy, memo } from 'react';
 import { Skeleton } from '@mui/material';
 
-const IconMap = {
+type IconMapItem = {
+  src: () => Promise<typeof import('*.svg')>;
+  width: number;
+  height: number;
+  variant?: 'circular' | 'rounded' | 'text' | 'rectangular';
+};
+
+const IconMap: Record<string, IconMapItem> = {
   reservation: {
     src: () => import('../assets/booking.svg'),
     width: 16,
@@ -26,6 +33,7 @@ const IconMap = {
     src: () => import('../assets/profile.svg'),
     width: 94,
     height: 95,
+    variant: 'circular',
   },
   'user-plus': {
     src: () => import('../assets/user-plus.svg'),
@@ -113,13 +121,15 @@ export const JIcon = memo(({ icon, color, height, width }: Props) => {
   const IconComp = lazy(obj.src);
   const iconWidth = width ?? obj.width;
   const iconHeight = height ?? obj.height;
+  const variant = obj.variant ?? 'rounded';
 
   return (
     <Suspense
       fallback={
-        <Skeleton variant="rounded" width={iconWidth} height={iconHeight} />
+        <Skeleton variant={variant} width={iconWidth} height={iconHeight} />
       }
     >
+      {/* <Skeleton variant={variant} width={iconWidth} height={iconHeight} /> */}
       <IconComp width={iconWidth} height={iconHeight} color={color} />
     </Suspense>
   );

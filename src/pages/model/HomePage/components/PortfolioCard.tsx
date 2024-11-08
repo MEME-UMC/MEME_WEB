@@ -6,6 +6,7 @@ import { Row } from '../../../../components/Row';
 import { COLORS } from '../../../../core/colors';
 import sampleMakeup from '../../../../assets/sample-makeup.png';
 import { JIcon } from '../../../../components/JIcon';
+import { JImage } from '../../../../components/JImage';
 
 type Props = {};
 
@@ -20,7 +21,7 @@ export const PortfolioCard = ({}: Props) => {
         alignItems: 'start',
       }}
     >
-      <img src={sampleMakeup} width={160} height={160} />
+      <JImage src={sampleMakeup} width={160} height={160} />
       <Stack py={1} px={2}>
         <Stack>
           <Typography fontSize={10} color={COLORS.text_grey}>
