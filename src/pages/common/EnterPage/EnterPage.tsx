@@ -5,8 +5,10 @@ import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
 import logoLg from '../../../assets/logo-lg.png';
 import { JImage } from '../../../components/JImage';
+import { useJNavigate } from '../../../core/routes';
 
 export const EnterPage = () => {
+  const navigate = useJNavigate();
   return (
     <MotionWrapper>
       <Stack flex={1} height={'100%'}>
@@ -23,7 +25,13 @@ export const EnterPage = () => {
         </Stack>
         <Stack flex={1} justifyContent={'center'}>
           <Stack gap={1} px={5} alignItems={'center'}>
-            <JButton rippleColor={COLORS.white} sx={{ width: 300 }}>
+            <JButton
+              rippleColor={COLORS.white}
+              sx={{ width: 300 }}
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
               <JIcon icon="email-login" />
             </JButton>
             <JButton rippleColor={COLORS.white} sx={{ width: 300 }}>

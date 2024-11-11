@@ -1,9 +1,13 @@
-import { Box, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
+import { JTextField } from '../../../components/JTextField';
 
-export const JoinPage = () => {
+export const LoginPage = () => {
   return (
-    <Box>
-      <Typography>Apple</Typography>
-    </Box>
+    <Stack px={2}>
+      <Stack gap={1}>
+        <JTextField label="이메일" />
+        <JTextField label="비밀번호" />
+      </Stack>
+    </Stack>
   );
 };
