@@ -115,6 +115,16 @@ const IconMap = {
     width: 47,
     height: 47,
   },
+  'circle-checked': {
+    src: () => import('../assets/circle-checked.svg'),
+    width: 20,
+    height: 20,
+  },
+  'circle-unchecked': {
+    src: () => import('../assets/circle-unchecked.svg'),
+    width: 20,
+    height: 20,
+  },
 };
 
 export type Icon = keyof typeof IconMap;

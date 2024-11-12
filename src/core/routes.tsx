@@ -15,6 +15,7 @@ import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
+import { AppBar } from '../components/AppBar';
 
 const paths = {
   enter: '/enter',
@@ -35,7 +36,12 @@ export const router = createBrowserRouter([
   },
   {
     path: paths.join,
-    element: <JoinPage />,
+    element: (
+      <>
+        <AppBar backIcon />
+        <JoinPage />
+      </>
+    ),
   },
   {
     path: paths.login,
