@@ -12,7 +12,7 @@ import { MotionWrapper } from '../../../components/MotionWrapper';
 export const LoginPage = () => {
   return (
     <MotionWrapper>
-      <AppBar title="" backIcon />
+      <AppBar backIcon />
       <Stack px={2} alignItems={'center'}>
         <Stack maxWidth={'375px'} width={'100%'}>
           <Stack alignItems={'center'} py={6}>

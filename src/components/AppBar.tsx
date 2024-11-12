@@ -4,7 +4,7 @@ import { JIcon } from './JIcon';
 import { useJNavigate } from '../core/routes';
 
 type AppBarProps = {
-  title: string;
+  title?: string;
   backIcon?: boolean;
 };
 export const AppBar = ({ title, backIcon }: AppBarProps) => {
@@ -30,17 +30,18 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
           <JIcon icon="leftArrow" />
         </JButton>
       )}
-
-      <Typography
-        sx={{
-          position: 'absolute',
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}
-      >
-        {title}
-      </Typography>
+      {title && (
+        <Typography
+          sx={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
+          {title}
+        </Typography>
+      )}
     </Stack>
   );
 };
