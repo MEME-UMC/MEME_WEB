@@ -14,6 +14,7 @@ import { NotificationPage } from '../pages/common/NotificationPage/NotificationP
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
+import ReserVationViewPage from '../pages/model/ReservationPage/ReserVationViewPage';
 
 const paths = {
   enter: '/enter',
@@ -22,6 +23,7 @@ const paths = {
   password: '/password',
   notification: '/notification',
   reservation: '/reservation',
+  reservationView: '/reservation/view/:num',
   home: '/',
   mypage: '/my',
 } as const;
@@ -51,6 +53,11 @@ export const router = createBrowserRouter([
     path: paths.reservation,
     element: <ReservationPage />,
   },
+  {
+    path: paths.reservationView,
+    element: <ReserVationViewPage />,
+  },
+
   {
     element: (
       <>
