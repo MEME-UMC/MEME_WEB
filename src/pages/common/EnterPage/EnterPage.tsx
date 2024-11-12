@@ -4,13 +4,16 @@ import { JIcon } from '../../../components/JIcon';
 import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
 import logoLg from '../../../assets/logo-lg.png';
+import { JImage } from '../../../components/JImage';
+import { useJNavigate } from '../../../core/routes';
 
 export const EnterPage = () => {
+  const navigate = useJNavigate();
   return (
     <MotionWrapper>
       <Stack flex={1} height={'100%'}>
         <Stack flex={1} justifyContent={'end'} alignItems={'center'} gap={1}>
-          <img src={logoLg} width={162} />
+          <JImage src={logoLg} width={162} height={101} />
           <Typography fontSize={18} color={COLORS.primary} fontWeight={600}>
             나만의 메이크업 메이트, 메메!
           </Typography>
@@ -22,7 +25,13 @@ export const EnterPage = () => {
         </Stack>
         <Stack flex={1} justifyContent={'center'}>
           <Stack gap={1} px={5} alignItems={'center'}>
-            <JButton rippleColor={COLORS.white} sx={{ width: 300 }}>
+            <JButton
+              rippleColor={COLORS.white}
+              sx={{ width: 300 }}
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
               <JIcon icon="email-login" />
             </JButton>
             <JButton rippleColor={COLORS.white} sx={{ width: 300 }}>
