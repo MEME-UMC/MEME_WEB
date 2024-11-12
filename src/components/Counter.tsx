@@ -5,9 +5,14 @@ import { Row } from './Row';
 type CounterProps = {
   targetNumber: number | string;
   fontSize: number;
+  fontWeight?: number;
 };
 
-const Counter = ({ targetNumber, fontSize }: CounterProps) => {
+const Counter = ({
+  targetNumber,
+  fontSize,
+  fontWeight = 400,
+}: CounterProps) => {
   const [displayedNumbers, setDisplayedNumbers] = useState<string[]>([]);
   // 쉼표가 포함된 숫자 문자열을 처리하여 배열로 변환
   const numberString = String(targetNumber).replace(/,/g, '');
@@ -42,6 +47,7 @@ const Counter = ({ targetNumber, fontSize }: CounterProps) => {
             opacity: num ? 1 : 0,
             transition: 'transform 0.4s ease, opacity 0.4s ease',
             transitionDelay: `${index * 0.1}s`,
+            fontWeight: fontWeight,
           }}
         >
           {num}
