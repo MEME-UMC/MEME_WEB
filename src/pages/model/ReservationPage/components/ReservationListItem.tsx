@@ -5,10 +5,13 @@ import { COLORS } from '../../../../core/colors';
 import Counter from '../../../../components/Counter';
 import ReservationBedge from './ReservationBedge';
 
-const ReservationListItem = () => {
+type reservationListItemProps = {
+  onClick: () => void;
+};
+const ReservationListItem = ({ onClick }: reservationListItemProps) => {
   return (
     <Stack>
-      <JButton>
+      <JButton onClick={onClick}>
         <Row
           width={'100%'}
           justifyContent={'start'}

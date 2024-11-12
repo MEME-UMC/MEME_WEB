@@ -11,6 +11,7 @@ import Counter from '../../../components/Counter';
 import Drawer from './components/Drawer';
 import DrawerItem from './components/DrawerItem';
 import { useState } from 'react';
+import { useJNavigate } from '../../../core/routes';
 
 export const ReservationPage = () => {
   const makeupSort = [
@@ -25,7 +26,7 @@ export const ReservationPage = () => {
   ];
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+  const navigate = useJNavigate();
   return (
     <>
       <MotionWrapper>
@@ -73,13 +74,9 @@ export const ReservationPage = () => {
           </Row>
         </Stack>
         <Stack px={'19px'}>
-          <ReservationListItem />
-          <ReservationListItem />
-          <ReservationListItem />
-          <ReservationListItem />
-          <ReservationListItem />
-          <ReservationListItem />
-          <ReservationListItem />
+          <ReservationListItem
+            onClick={() => navigate(`/reservation/view/:num`)}
+          />
         </Stack>
       </MotionWrapper>
       <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
