@@ -8,7 +8,7 @@ type IconMapItem = {
   variant?: 'circular' | 'rounded' | 'text' | 'rectangular';
 };
 
-const IconMap: Record<string, IconMapItem> = {
+const IconMap = {
   reservation: {
     src: () => import('../assets/booking.svg'),
     width: 16,
@@ -105,6 +105,16 @@ const IconMap: Record<string, IconMapItem> = {
     width: 30,
     height: 30,
   },
+  kakaoSm: {
+    src: () => import('../assets/kakao-sm.svg'),
+    width: 47,
+    height: 47,
+  },
+  appleSm: {
+    src: () => import('../assets/apple-sm.svg'),
+    width: 47,
+    height: 47,
+  },
 };
 
 export type Icon = keyof typeof IconMap;
@@ -117,7 +127,7 @@ type Props = {
 };
 
 export const JIcon = memo(({ icon, color, height, width }: Props) => {
-  const obj = IconMap[icon];
+  const obj = IconMap[icon] as IconMapItem;
   const IconComp = lazy(obj.src);
   const iconWidth = width ?? obj.width;
   const iconHeight = height ?? obj.height;
