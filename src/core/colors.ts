@@ -26,4 +26,6 @@ export const COLORS = {
   gray400: '#B9B9B9',
   gray500: '#B0B0B0',
   text_grey: '#999999',
+
+  transparent: 'transparent',
 };
