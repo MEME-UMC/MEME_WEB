@@ -1,4 +1,3 @@
-import React from 'react';
 import { JIcon } from '../../../../components/JIcon';
 import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
