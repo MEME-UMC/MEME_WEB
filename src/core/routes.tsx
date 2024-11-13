@@ -61,10 +61,7 @@ export const router = createBrowserRouter([
     path: paths.notification,
     element: <NotificationPage />,
   },
-  {
-    path: paths.reservation,
-    element: <ReservationPage />,
-  },
+
   {
     path: paths.reservationView,
     element: <ReserVationViewPage />,
@@ -85,6 +82,10 @@ export const router = createBrowserRouter([
       {
         path: paths.mypage,
         element: <MypagePage />,
+      },
+      {
+        path: paths.reservation,
+        element: <ReservationPage />,
       },
     ],
   },
