@@ -9,7 +9,7 @@ import { Tabs, TabItem } from './components/Tabs';
 import { ReservationViewInfo } from './ReservationViewInfo';
 import { ReservationViewReview } from './ReservationViewReview';
 import { useState } from 'react';
-import { LikeButton } from './components/likeButton';
+import { LikeButton } from './components/LikeButton';
 
 export const ReserVationViewPage = () => {
   const [activeTab, setActiveTab] = useState(0);
