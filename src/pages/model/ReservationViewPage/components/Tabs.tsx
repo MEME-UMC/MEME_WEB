@@ -1,9 +1,9 @@
 import { Stack, Typography } from '@mui/material';
 
-import { COLORS } from '../../../../core/colors';
-import { JButton } from '../../../../components/JButton';
 import React from 'react';
+import { JButton } from '../../../../components/JButton';
 import { Row } from '../../../../components/Row';
+import { COLORS } from '../../../../core/colors';
 
 interface TabItemProps {
   children: React.ReactNode;
