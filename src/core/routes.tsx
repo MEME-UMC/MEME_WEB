@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
     path: paths.join,
     element: (
       <>
-        <AppBar backIcon />
+        <AppBar backIcon title="회원가입" />
         <JoinPage />
       </>
     ),

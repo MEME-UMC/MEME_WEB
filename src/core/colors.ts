@@ -7,6 +7,7 @@ export const COLORS = {
   red_light: '#FCE3D5',
   red_peach: '#FFD2E0',
   red_orange: '#FF985E',
+  red_etc: '#FF3030',
 
   // Yellow Shades
   yellow_light: '#FFEEB0',
