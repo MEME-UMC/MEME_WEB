@@ -24,7 +24,7 @@ export const COLORS = {
   gray100: '#F4F6F8',
   gray300: '#D9D9D9',
   gray400: '#B9B9B9',
-  gray500: '#B0B0B0',
+  gray500: '#5C5C5C',
   text_grey: '#999999',
 
   transparent: 'transparent',
