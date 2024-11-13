@@ -16,9 +16,11 @@ import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage'
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
 import { AppBar } from '../components/AppBar';
+import { PolicyPage } from '../pages/common/PolicyPage/PolicyPage';
 
 const paths = {
   enter: '/enter',
+  policy: '/policy',
   join: '/join',
   login: '/login',
   email: '/email',
@@ -40,6 +42,15 @@ export const router = createBrowserRouter([
       <>
         <AppBar backIcon />
         <JoinPage />
+      </>
+    ),
+  },
+  {
+    path: paths.policy,
+    element: (
+      <>
+        <AppBar backIcon />
+        <PolicyPage />
       </>
     ),
   },

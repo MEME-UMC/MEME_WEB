@@ -49,7 +49,7 @@ export const LoginPage = () => {
               <JButton
                 sx={{ px: 0.5, borderRadius: 4 }}
                 onClick={() => {
-                  navigate('/join');
+                  navigate('/policy');
                 }}
               >
                 <Typography fontSize={14} color={COLORS.primary}>
