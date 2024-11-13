@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 
-const ReservationBedge = () => {
+export const ReservationBadge = () => {
   return (
     <Stack flexDirection={'row'}>
       <Typography
@@ -16,5 +16,3 @@ const ReservationBedge = () => {
     </Stack>
   );
 };
-
-export default ReservationBedge;
