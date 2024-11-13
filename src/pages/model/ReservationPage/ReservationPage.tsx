@@ -4,12 +4,12 @@ import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../components/Row';
 import { JButton } from '../../../components/JButton';
 import { JIcon } from '../../../components/JIcon';
-import ReservationsortItem from './components/ReservationsortItem';
-import ReservationListItem from './components/ReservationListItem';
+import { ReservationsortItem } from './components/ReservationsortItem';
+import { ReservationListItem } from './components/ReservationListItem';
 import { COLORS } from '../../../core/colors';
 import Counter from '../../../components/Counter';
-import Drawer from './components/Drawer';
-import DrawerItem from './components/DrawerItem';
+import { Drawer } from './components/Drawer';
+import { DrawerItem } from './components/DrawerItem';
 import { useState } from 'react';
 import { useJNavigate } from '../../../core/routes';
 

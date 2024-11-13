@@ -10,7 +10,7 @@ interface TabItemProps {
   onClick: () => void;
 }
 
-const TabItem = ({ children, onClick }: TabItemProps) => {
+export const TabItem = ({ children, onClick }: TabItemProps) => {
   return (
     <JButton sx={{ width: '100%' }} onClick={onClick}>
       <Typography
@@ -31,7 +31,7 @@ type TabProps = {
   setActiveTab: React.Dispatch<React.SetStateAction<number>>;
   children: React.ReactNode;
 };
-const Tabs = ({ activeTab, setActiveTab, children }: TabProps) => {
+export const Tabs = ({ activeTab, setActiveTab, children }: TabProps) => {
   return (
     <Stack position={'relative'}>
       <Row>
@@ -66,5 +66,3 @@ const Tabs = ({ activeTab, setActiveTab, children }: TabProps) => {
     </Stack>
   );
 };
-
-export { Tabs, TabItem };

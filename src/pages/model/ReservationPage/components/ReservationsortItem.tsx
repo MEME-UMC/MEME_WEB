@@ -5,7 +5,9 @@ import { COLORS } from '../../../../core/colors';
 type ReservationsortItemProps = {
   defaultValue: string;
 };
-const ReservationsortItem = ({ defaultValue }: ReservationsortItemProps) => {
+export const ReservationsortItem = ({
+  defaultValue,
+}: ReservationsortItemProps) => {
   return (
     <JButton
       sx={{
@@ -23,5 +25,3 @@ const ReservationsortItem = ({ defaultValue }: ReservationsortItemProps) => {
     </JButton>
   );
 };
-
-export default ReservationsortItem;

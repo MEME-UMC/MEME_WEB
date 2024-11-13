@@ -4,15 +4,16 @@ import { MotionWrapper } from '../../../components/MotionWrapper';
 import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
 import { Row } from '../../../components/Row';
-import { JIcon } from '../../../components/JIcon';
 import Counter from '../../../components/Counter';
 import { Tabs, TabItem } from './components/Tabs';
-import ReservationViewInfo from './components/ReservationViewInfo';
-import ReservationViewReview from './components/ReservationViewReview';
+import { ReservationViewInfo } from './ReservationViewInfo';
+import { ReservationViewReview } from './ReservationViewReview';
 import { useState } from 'react';
+import { LikeButton } from './components/likeButton';
 
-const ReserVationViewPage = () => {
+export const ReserVationViewPage = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [isScaled, setIsScaled] = useState(false);
 
   const tabs = [
     {
@@ -98,11 +99,10 @@ const ReserVationViewPage = () => {
                     김차차
                   </Typography>
                 </Row>
-                <Stack>
-                  <JButton>
-                    <JIcon icon="heart-outline" />
-                  </JButton>
-                </Stack>
+                <LikeButton
+                  onClick={() => setIsScaled((prev) => !prev)}
+                  isScaled={isScaled}
+                />
               </Row>
 
               <Stack gap={1} padding={'20px 0'}>
@@ -165,5 +165,3 @@ const ReserVationViewPage = () => {
     </MotionWrapper>
   );
 };
-
-export default ReserVationViewPage;

@@ -8,7 +8,7 @@ type DrawerProps = {
   onClose: () => void;
 };
 
-function Drawer({ children, isOpen, onClose }: DrawerProps) {
+export function Drawer({ children, isOpen, onClose }: DrawerProps) {
   return (
     <Stack
       position={'fixed'}
@@ -39,5 +39,3 @@ function Drawer({ children, isOpen, onClose }: DrawerProps) {
     </Stack>
   );
 }
-
-export default Drawer;

@@ -13,7 +13,7 @@ import { NotificationPage } from '../pages/common/NotificationPage/NotificationP
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
-import ReserVationViewPage from '../pages/model/ReservationViewPage/ReserVationViewPage';
+import { ReserVationViewPage } from '../pages/model/ReservationViewPage/ReserVationViewPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
 import { AppBar } from '../components/AppBar';
