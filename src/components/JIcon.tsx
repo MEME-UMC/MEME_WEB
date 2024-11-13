@@ -1,127 +1,141 @@
-import { Suspense, lazy, memo } from 'react';
-import { Skeleton } from '@mui/material';
-
-type IconMapItem = {
-  src: () => Promise<typeof import('*.svg')>;
-  width: number;
-  height: number;
-  variant?: 'circular' | 'rounded' | 'text' | 'rectangular';
-};
+import { memo } from 'react';
+import reservation from '../assets/booking.svg';
+import heartOutline from '../assets/heart-outline.svg';
+import home from '../assets/home.svg';
+import message from '../assets/message.svg';
+import profile from '../assets/profile.svg';
+import userPlus from '../assets/user-plus.svg';
+import user from '../assets/user.svg';
+import emailLogin from '../assets/email-login.svg';
+import kakaoLogin from '../assets/kakao-login.svg';
+import appleLogin from '../assets/apple-login.svg';
+import filter from '../assets/filter.svg';
+import notice from '../assets/notice.svg';
+import search from '../assets/search.svg';
+import heart from '../assets/heart.svg';
+import location from '../assets/location.svg';
+import price from '../assets/price.svg';
+import leftArrow from '../assets/left-arrow.svg';
+import rightArrow from '../assets/right-arrow.svg';
+import noticeCircle from '../assets/notice-circle.svg';
+import kakaoSm from '../assets/kakao-sm.svg';
+import appleSm from '../assets/apple-sm.svg';
+import circleChecked from '../assets/circle-checked.svg';
+import circleUnchecked from '../assets/circle-unchecked.svg';
 
 const IconMap = {
   reservation: {
-    src: () => import('../assets/booking.svg'),
+    src: reservation,
     width: 16,
     height: 20,
   },
   'heart-outline': {
-    src: () => import('../assets/heart-outline.svg'),
+    src: heartOutline,
     width: 24,
     height: 20,
   },
   home: {
-    src: () => import('../assets/home.svg'),
+    src: home,
     width: 19,
     height: 20,
   },
   message: {
-    src: () => import('../assets/message.svg'),
+    src: message,
     width: 23,
     height: 23,
   },
   profile: {
-    src: () => import('../assets/profile.svg'),
+    src: profile,
     width: 94,
     height: 95,
-    variant: 'circular',
   },
   'user-plus': {
-    src: () => import('../assets/user-plus.svg'),
+    src: userPlus,
     width: 24,
     height: 25,
   },
   user: {
-    src: () => import('../assets/user.svg'),
+    src: user,
     width: 17,
     height: 20,
   },
   'email-login': {
-    src: () => import('../assets/email-login.svg'),
+    src: emailLogin,
     width: 300,
     height: 46,
   },
   'kakao-login': {
-    src: () => import('../assets/kakao-login.svg'),
+    src: kakaoLogin,
     width: 300,
     height: 46,
   },
   'apple-login': {
-    src: () => import('../assets/apple-login.svg'),
+    src: appleLogin,
     width: 300,
     height: 46,
   },
   filter: {
-    src: () => import('../assets/filter.svg'),
+    src: filter,
     width: 15,
     height: 22,
   },
   notice: {
-    src: () => import('../assets/notice.svg'),
+    src: notice,
     width: 18,
     height: 23,
   },
   search: {
-    src: () => import('../assets/search.svg'),
+    src: search,
     width: 17,
     height: 17,
   },
   heart: {
-    src: () => import('../assets/heart.svg'),
+    src: heart,
     width: 12,
     height: 9,
   },
   location: {
-    src: () => import('../assets/location.svg'),
+    src: location,
     width: 15,
     height: 21,
   },
   price: {
-    src: () => import('../assets/price.svg'),
+    src: price,
     width: 16,
     height: 13,
   },
   leftArrow: {
-    src: () => import('../assets/left-arrow.svg'),
+    src: leftArrow,
     width: 10,
     height: 18,
   },
   rightArrow: {
-    src: () => import('../assets/right-arrow.svg'),
+    src: rightArrow,
     width: 8,
     height: 14,
   },
   noticeCircle: {
-    src: () => import('../assets/notice-circle.svg'),
+    src: noticeCircle,
     width: 30,
     height: 30,
   },
   kakaoSm: {
-    src: () => import('../assets/kakao-sm.svg'),
+    src: kakaoSm,
     width: 47,
     height: 47,
   },
   appleSm: {
-    src: () => import('../assets/apple-sm.svg'),
+    src: appleSm,
     width: 47,
     height: 47,
   },
   'circle-checked': {
-    src: () => import('../assets/circle-checked.svg'),
+    src: circleChecked,
     width: 20,
     height: 20,
   },
   'circle-unchecked': {
-    src: () => import('../assets/circle-unchecked.svg'),
+    src: circleUnchecked,
     width: 20,
     height: 20,
   },
@@ -137,20 +151,14 @@ type Props = {
 };
 
 export const JIcon = memo(({ icon, color, height, width }: Props) => {
-  const obj = IconMap[icon] as IconMapItem;
-  const IconComp = lazy(obj.src);
-  const iconWidth = width ?? obj.width;
-  const iconHeight = height ?? obj.height;
-  const variant = obj.variant ?? 'rounded';
+  const obj = IconMap[icon];
+  const IconComponent = obj.src;
 
   return (
-    <Suspense
-      fallback={
-        <Skeleton variant={variant} width={iconWidth} height={iconHeight} />
-      }
-    >
-      {/* <Skeleton variant={variant} width={iconWidth} height={iconHeight} /> */}
-      <IconComp width={iconWidth} height={iconHeight} color={color} />
-    </Suspense>
+    <IconComponent
+      width={width ?? obj.width}
+      height={height ?? obj.height}
+      color={color}
+    />
   );
 });
