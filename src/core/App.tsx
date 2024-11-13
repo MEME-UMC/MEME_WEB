@@ -12,6 +12,22 @@ const theme = createTheme({
       main: COLORS.primary,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          color: COLORS.white,
+          fontSize: 16,
+          borderRadius: 8,
+          padding: 12,
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
+  },
 });
 
 export const App = () => {

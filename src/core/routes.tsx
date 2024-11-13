@@ -6,7 +6,6 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import { EnterPage } from '../pages/common/EnterPage/EnterPage';
-import { JoinPage } from '../pages/common/LoginPage/LoginPage';
 import { EmailPage } from '../pages/common/EmailPage/EmailPage';
 import { PasswordPage } from '../pages/common/PasswordPage/PasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
@@ -15,10 +14,14 @@ import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
 import ReserVationViewPage from '../pages/model/ReservationPage/ReserVationViewPage';
+import { JoinPage } from '../pages/common/JoinPage/JoinPage';
+import { LoginPage } from '../pages/common/LoginPage/LoginPage';
+import { AppBar } from '../components/AppBar';
 
 const paths = {
   enter: '/enter',
   join: '/join',
+  login: '/login',
   email: '/email',
   password: '/password',
   notification: '/notification',
@@ -35,7 +38,16 @@ export const router = createBrowserRouter([
   },
   {
     path: paths.join,
-    element: <JoinPage />,
+    element: (
+      <>
+        <AppBar backIcon />
+        <JoinPage />
+      </>
+    ),
+  },
+  {
+    path: paths.login,
+    element: <LoginPage />,
   },
   {
     path: paths.email,
