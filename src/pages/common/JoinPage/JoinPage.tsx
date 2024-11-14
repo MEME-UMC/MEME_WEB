@@ -48,7 +48,7 @@ export const JoinPage = () => {
             인증코드 요청
           </Button>
         </Row>
-        <Typography>인증코드 입력</Typography>
+        <Typography pt={2}>인증코드 입력</Typography>
         <OutlinedInput
           id="outlined-adornment-weight"
           placeholder="인증코드를 입력해주세요"
@@ -73,9 +73,15 @@ export const JoinPage = () => {
             'aria-label': 'weight',
           }}
         />
-        <Typography>비밀번호</Typography>
+        <Typography fontSize={12} color={COLORS.gray500} pl={1} pt={0.5}>
+          인증코드 일치
+        </Typography>
+        <Typography pt={2}>비밀번호</Typography>
         <JoinTextField placeholder="비밀번호를 입력해주세요" />
-        <JoinTextField placeholder="비밀번호를 한 번 더 입력해주세요" />
+        <JoinTextField placeholder="비밀번호를 한 번 더 입력해주세요" pt={1} />
+        <Typography fontSize={12} color={COLORS.gray500} pl={1} pt={0.5}>
+          영문, 숫자, 특수기호 조합 8~20자
+        </Typography>
       </Stack>
       <Stack padding={2}>
         <Button variant="contained">다음</Button>
