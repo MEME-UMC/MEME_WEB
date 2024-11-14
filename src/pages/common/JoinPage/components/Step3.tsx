@@ -1,10 +1,11 @@
-import { Stack, Button, Typography, Tabs, Tab } from '@mui/material';
+import { Stack, Button } from '@mui/material';
 import { AppBar } from '../../../../components/AppBar';
 import SwipeableViews from 'react-swipeable-views';
-import { JButton } from '../../../../components/JButton';
-import { Row } from '../../../../components/Row';
 import { useState } from 'react';
-import { COLORS } from '../../../../core/colors';
+import { TabIndicator } from './TabIndicator';
+import { Step3Part1 } from './Step3Part1';
+import { Step3Part3 } from './Step3Part3';
+import { Step3Part2 } from './Step3Part2';
 
 type Props = {
   onPrev: () => void;
@@ -12,73 +13,35 @@ type Props = {
 };
 
 export const Step3 = ({ onPrev, onNext }: Props) => {
-  const [value, setValue] = useState('one');
+  const [index, setIndex] = useState(0);
+
+  const handlePrev = () => {
+    if (index === 0) {
+      onPrev();
+    } else {
+      setIndex(index - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (index === 2) {
+      onNext();
+    } else {
+      setIndex(index + 1);
+    }
+  };
   return (
     <>
-      <AppBar backIcon title="회원가입" onBack={onPrev} />
+      <AppBar backIcon title="회원가입" onBack={handlePrev} />
       <Stack flex={1} justifyContent={'space-between'}>
-        <Tabs
-          value={value}
-          onChange={(_, val) => setValue(val)}
-          indicatorColor="primary"
-          sx={{
-            minHeight: '2px',
-            height: '2px',
-            px: 2,
-            '& .MuiTabs-flexContainer': {
-              gap: 1,
-            },
-          }}
-        >
-          <Tab value="one" sx={{ flex: 1, backgroundColor: COLORS.gray300 }} />
-          <Tab value="two" sx={{ flex: 1, backgroundColor: COLORS.gray300 }} />
-          <Tab
-            value="three"
-            sx={{ flex: 1, backgroundColor: COLORS.gray300 }}
-          />
-        </Tabs>
-        <SwipeableViews style={{ flex: 1 }}>
-          <Stack alignItems={'start'} px={2}>
-            <Typography fontWeight={600} py={4}>
-              아티스트인가요, 모델인가요?
-            </Typography>
-            <Stack width={1} alignItems={'center'} gap={4}>
-              <JButton
-                sx={{
-                  height: '120px',
-                  borderRadius: '100px',
-                  width: '327px',
-                  boxShadow: `-5px -5px 20px 0px ${COLORS.gray300} inset`,
-                }}
-              >
-                <Row>
-                  <Stack>
-                    <Typography>메이크업 아티스트</Typography>
-                    <Typography>사업자 등록 번호가 필요해요.</Typography>
-                  </Stack>
-                </Row>
-              </JButton>
-              <JButton
-                sx={{
-                  height: '120px',
-                  borderRadius: '100px',
-                  width: '327px',
-                  boxShadow: `-5px -5px 20px 0px ${COLORS.gray300} inset`,
-                }}
-              >
-                <Row>
-                  <Stack>
-                    <Typography fontWeight={600} fontSize={18}>
-                      모델
-                    </Typography>
-                  </Stack>
-                </Row>
-              </JButton>
-            </Stack>
-          </Stack>
+        <TabIndicator index={index} count={3} />
+        <SwipeableViews index={index} disabled style={{ flex: 1 }}>
+          <Step3Part1 />
+          <Step3Part2 />
+          <Step3Part3 />
         </SwipeableViews>
         <Stack padding={2}>
-          <Button variant="contained" onClick={onNext}>
+          <Button variant="contained" onClick={handleNext}>
             다음
           </Button>
         </Stack>
