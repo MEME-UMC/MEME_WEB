@@ -15,8 +15,6 @@ import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
-import { AppBar } from '../components/AppBar';
-import { PolicyPage } from '../pages/common/PolicyPage/PolicyPage';
 
 const paths = {
   enter: '/enter',
@@ -38,21 +36,7 @@ export const router = createBrowserRouter([
   },
   {
     path: paths.join,
-    element: (
-      <>
-        <AppBar backIcon title="회원가입" />
-        <JoinPage />
-      </>
-    ),
-  },
-  {
-    path: paths.policy,
-    element: (
-      <>
-        <AppBar backIcon />
-        <PolicyPage />
-      </>
-    ),
+    element: <JoinPage />,
   },
   {
     path: paths.login,
