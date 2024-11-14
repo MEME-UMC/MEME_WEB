@@ -2,7 +2,6 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import { JTextField } from '../../../components/JTextField';
 import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
-import logo from '../../../assets/logo-sm.png';
 import { JImage } from '../../../components/JImage';
 import { AppBar } from '../../../components/AppBar';
 import { Row } from '../../../components/Row';
@@ -19,7 +18,7 @@ export const LoginPage = () => {
       <Stack px={2} alignItems={'center'}>
         <Stack maxWidth={'375px'} width={'100%'}>
           <Stack alignItems={'center'} py={6}>
-            <JImage src={logo} width={68} height={43} />
+            <JImage image="logo-sm" />
           </Stack>
           <Stack gap={1}>
             <JTextField label="이메일" />

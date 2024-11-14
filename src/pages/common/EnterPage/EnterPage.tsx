@@ -3,7 +3,6 @@ import { MotionWrapper } from '../../../components/MotionWrapper';
 import { JIcon } from '../../../components/JIcon';
 import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
-import logoLg from '../../../assets/logo-lg.png';
 import { JImage } from '../../../components/JImage';
 import { useJNavigate } from '../../../core/routes';
 
@@ -13,7 +12,7 @@ export const EnterPage = () => {
     <MotionWrapper>
       <Stack flex={1} height={'100%'}>
         <Stack flex={1} justifyContent={'end'} alignItems={'center'} gap={1}>
-          <JImage src={logoLg} width={162} height={101} />
+          <JImage image="logo-lg" />
           <Typography fontSize={18} color={COLORS.primary} fontWeight={600}>
             나만의 메이크업 메이트, 메메!
           </Typography>

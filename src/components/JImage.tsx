@@ -1,38 +1,46 @@
-import { memo, useState } from 'react';
-import { Skeleton } from '@mui/material';
+import { memo } from 'react';
+import logoLg from '../assets/logo-lg.png';
+import logoSm from '../assets/logo-sm.png';
+import sampleMakeup from '../assets/sample-makeup.png';
+
+const ImageMap = {
+  'logo-lg': {
+    src: logoLg,
+    width: 162,
+    height: 101,
+    alt: 'logo-lg',
+  },
+  'logo-sm': {
+    src: logoSm,
+    width: 68,
+    height: 43,
+    alt: 'logo-sm',
+  },
+  'sample-makeup': {
+    src: sampleMakeup,
+    width: 160,
+    height: 160,
+    alt: 'sample-makeup',
+  },
+};
+
+export type Image = keyof typeof ImageMap;
 
 type Props = {
-  src: string;
+  image: Image;
   alt?: string;
   width?: number;
   height?: number;
-  variant?: 'circular' | 'rounded' | 'rectangular' | 'text';
 };
 
-export const JImage = memo(
-  ({ src, alt, width, height, variant = 'rectangular' }: Props) => {
-    const [loaded, setLoaded] = useState(false);
-    return (
-      <>
-        {!loaded && (
-          <Skeleton
-            variant={variant}
-            width={width}
-            height={height}
-            animation="wave"
-          />
-        )}
-        <img
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          onLoad={() => {
-            setLoaded(true);
-          }}
-          style={{ display: loaded ? 'block' : 'none' }}
-        />
-      </>
-    );
-  }
-);
+export const JImage = memo(({ image, alt, width, height }: Props) => {
+  const obj = ImageMap[image];
+  return (
+    <img
+      src={obj.src}
+      alt={alt ?? obj.alt}
+      width={width ?? obj.width}
+      height={height ?? obj.height}
+    />
+  );
+});
