@@ -10,10 +10,12 @@ import { ReservationViewInfo } from './ReservationViewInfo';
 import { ReservationViewReview } from './ReservationViewReview';
 import { useState } from 'react';
 import { LikeButton } from './components/LikeButton';
+import { useJNavigate } from '../../../core/routes';
 
 export const ReserVationViewPage = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isScaled, setIsScaled] = useState(false);
+  const navigate = useJNavigate();
 
   const tabs = [
     {
@@ -151,9 +153,15 @@ export const ReserVationViewPage = () => {
               {tabs[activeTab].content}
             </Stack>
           </Stack>
+
           <Stack padding={'24px 21px'}>
             <JButton
-              sx={{ background: `${COLORS.p_black}`, borderRadius: '10px' }}
+              onClick={() => navigate('/reservation/time')}
+              sx={{
+                height: '49px',
+                background: `${COLORS.p_black}`,
+                borderRadius: '10px',
+              }}
             >
               <Typography lineHeight={3} color="#FFF" fontSize={14}>
                 예약하기
