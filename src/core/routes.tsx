@@ -17,6 +17,8 @@ import { ReserVationViewPage } from '../pages/model/ReservationViewPage/ReserVat
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
 import { AppBar } from '../components/AppBar';
+import { ReservationTimePage } from '../pages/model/ReservationTimePage/ReservationTimePage';
+import { ReservationComplete } from '../pages/model/ReservationComplete/ReservationComplete';
 
 const paths = {
   enter: '/enter',
@@ -27,6 +29,8 @@ const paths = {
   notification: '/notification',
   reservation: '/reservation',
   reservationView: '/reservation/view/:num',
+  ReservationTime: '/reservation/time',
+  ReservationComplete: '/reservation/complete',
   home: '/',
   mypage: '/my',
 } as const;
@@ -65,6 +69,14 @@ export const router = createBrowserRouter([
   {
     path: paths.reservationView,
     element: <ReserVationViewPage />,
+  },
+  {
+    path: paths.ReservationTime,
+    element: <ReservationTimePage />,
+  },
+  {
+    path: paths.ReservationComplete,
+    element: <ReservationComplete />,
   },
 
   {
