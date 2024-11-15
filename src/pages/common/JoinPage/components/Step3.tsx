@@ -16,10 +16,15 @@ export const Step3 = ({ onPrev, onNext }: Props) => {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState({
     type: '',
+    name: '',
+    nickname: '',
   });
 
   const isActiveNext = useMemo(() => {
     if (index === 0 && data.type !== '') {
+      return true;
+    }
+    if (index === 1 && data.name !== '' && data.nickname !== '') {
       return true;
     }
     return false;
@@ -52,7 +57,16 @@ export const Step3 = ({ onPrev, onNext }: Props) => {
               setData({ ...data, type });
             }}
           />
-          <Step3Part2 />
+          <Step3Part2
+            name={data.name}
+            onName={(name) => {
+              setData({ ...data, name });
+            }}
+            nickname={data.nickname}
+            onNickname={(nickname) => {
+              setData({ ...data, nickname });
+            }}
+          />
           <Step3Part3 />
         </SwipeableViews>
         <Stack padding={2}>
