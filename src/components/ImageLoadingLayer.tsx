@@ -37,10 +37,14 @@ export const ImageLoadingLayer = ({ children }: Props) => {
     setLoadedImages((prev) => prev + 1);
   }, []);
 
-  const isCompleted = useMemo(
-    () => loadedImageCount >= count.current,
-    [count, loadedImageCount]
-  );
+  const isCompleted = useMemo(() => {
+    if (count.current === 0) {
+      return false;
+    }
+    return loadedImageCount >= count.current;
+  }, [count, loadedImageCount]);
+
+  console.log(loadedImageCount, count.current, isCompleted);
 
   return (
     <ImageLoadingContext.Provider
