@@ -2,6 +2,7 @@ export const COLORS = {
   primary: '#FF633E',
   primaryLight: '#FF985E',
   white: '#FFFFFF',
+  primarySelect: '#FF633E99',
 
   // Red/Pink Shades/etc
   red_light: '#FCE3D5',
