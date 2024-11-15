@@ -16,12 +16,12 @@ import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage'
 import { ReserVationViewPage } from '../pages/model/ReservationViewPage/ReserVationViewPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
-import { AppBar } from '../components/AppBar';
 import { ReservationTimePage } from '../pages/model/ReservationTimePage/ReservationTimePage';
 import { ReservationComplete } from '../pages/model/ReservationComplete/ReservationComplete';
 
 const paths = {
   enter: '/enter',
+  policy: '/policy',
   join: '/join',
   login: '/login',
   email: '/email',
@@ -42,12 +42,7 @@ export const router = createBrowserRouter([
   },
   {
     path: paths.join,
-    element: (
-      <>
-        <AppBar backIcon />
-        <JoinPage />
-      </>
-    ),
+    element: <JoinPage />,
   },
   {
     path: paths.login,

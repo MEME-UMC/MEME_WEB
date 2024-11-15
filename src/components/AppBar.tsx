@@ -6,8 +6,9 @@ import { useJNavigate } from '../core/routes';
 type AppBarProps = {
   title?: string;
   backIcon?: boolean;
+  onBack?: () => void;
 };
-export const AppBar = ({ title, backIcon }: AppBarProps) => {
+export const AppBar = ({ title, backIcon, onBack }: AppBarProps) => {
   const navigate = useJNavigate();
   return (
     <Stack
@@ -23,9 +24,12 @@ export const AppBar = ({ title, backIcon }: AppBarProps) => {
             borderRadius: '50%',
             ml: 1,
           }}
-          onClick={() => {
-            navigate(-1);
-          }}
+          onClick={
+            onBack ??
+            (() => {
+              navigate(-1);
+            })
+          }
         >
           <JIcon icon="leftArrow" />
         </JButton>
