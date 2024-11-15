@@ -13,6 +13,7 @@ import filter from '../assets/filter.svg';
 import notice from '../assets/notice.svg';
 import search from '../assets/search.svg';
 import heart from '../assets/heart.svg';
+import heartBlack from '../assets/heart-black.svg';
 import location from '../assets/location.svg';
 import price from '../assets/price.svg';
 import leftArrow from '../assets/left-arrow.svg';
@@ -22,6 +23,8 @@ import kakaoSm from '../assets/kakao-sm.svg';
 import appleSm from '../assets/apple-sm.svg';
 import circleChecked from '../assets/circle-checked.svg';
 import circleUnchecked from '../assets/circle-unchecked.svg';
+import starGradient from '../assets/start-gradient.svg';
+import starGray from '../assets/start-gray.svg';
 
 const IconMap = {
   reservation: {
@@ -94,6 +97,12 @@ const IconMap = {
     width: 12,
     height: 9,
   },
+  heartBlack: {
+    src: heartBlack,
+    width: 24,
+    height: 20,
+  },
+
   location: {
     src: location,
     width: 15,
@@ -138,6 +147,16 @@ const IconMap = {
     src: circleUnchecked,
     width: 20,
     height: 20,
+  },
+  starGradient: {
+    src: starGradient,
+    width: 13,
+    height: 12,
+  },
+  starGray: {
+    src: starGray,
+    width: 13,
+    height: 12,
   },
 };
 
