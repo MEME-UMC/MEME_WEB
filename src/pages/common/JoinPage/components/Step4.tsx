@@ -26,7 +26,7 @@ export const Step4 = ({ isActive, onPrev, onNext }: Props) => {
     <>
       <AppBar backIcon title="회원가입" onBack={onPrev} />
       <Stack flex={1} justifyContent={'space-between'}>
-        <ImageLoadingLayer count={2}>
+        <ImageLoadingLayer>
           {isActive && (
             <MotionWrapper>
               <Stack px={2} pt={4} overflow={'hidden'}>

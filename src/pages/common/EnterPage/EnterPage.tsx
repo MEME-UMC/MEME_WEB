@@ -10,7 +10,7 @@ import { ImageLoadingLayer } from '../../../components/ImageLoadingLayer';
 export const EnterPage = () => {
   const navigate = useJNavigate();
   return (
-    <ImageLoadingLayer count={1}>
+    <ImageLoadingLayer>
       <MotionWrapper>
         <Stack flex={1} height={'100%'}>
           <Stack flex={1} justifyContent={'end'} alignItems={'center'} gap={1}>
