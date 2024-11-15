@@ -1,46 +1,41 @@
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import { JButton } from '../../../../components/JButton';
-import { Row } from '../../../../components/Row';
 import { COLORS } from '../../../../core/colors';
+import { JIcon } from '../../../../components/JIcon';
 
 export const Step3Part3 = () => {
   return (
     <Stack alignItems={'start'} px={2}>
       <Typography fontWeight={600} py={4}>
-        아티스트인가요, 모델인가요?
+        프로필 사진을 추가해주세요. (선택)
       </Typography>
       <Stack width={1} alignItems={'center'} gap={4}>
-        <JButton
-          sx={{
-            height: '120px',
-            borderRadius: '100px',
-            width: '327px',
-            boxShadow: `-5px -5px 20px 0px ${COLORS.gray300} inset`,
-          }}
-        >
-          <Row>
-            <Stack>
-              <Typography>메이크업 아티스트</Typography>
-              <Typography>사업자 등록 번호가 필요해요.</Typography>
-            </Stack>
-          </Row>
-        </JButton>
-        <JButton
-          sx={{
-            height: '120px',
-            borderRadius: '100px',
-            width: '327px',
-            boxShadow: `-5px -5px 20px 0px ${COLORS.gray300} inset`,
-          }}
-        >
-          <Row>
-            <Stack>
-              <Typography fontWeight={600} fontSize={18}>
-                모델
-              </Typography>
-            </Stack>
-          </Row>
-        </JButton>
+        <Box position={'relative'}>
+          <JButton
+            sx={{
+              height: '180px',
+              width: '180px',
+              borderRadius: '180px',
+              boxShadow: `-5px -5px 20px 0px ${COLORS.gray300} inset`,
+            }}
+          >
+            <JIcon icon="profile" color={COLORS.gray400} />
+          </JButton>
+          <JButton
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              right: 5,
+              bgcolor: COLORS.p_black,
+              height: 42,
+              width: 42,
+              borderRadius: 42,
+            }}
+            rippleColor={COLORS.white}
+          >
+            <JIcon icon="plus" />
+          </JButton>
+        </Box>
       </Stack>
     </Stack>
   );
