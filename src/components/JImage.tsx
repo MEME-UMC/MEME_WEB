@@ -9,6 +9,7 @@ import partyCannon from '../assets/party-cannon.png';
 import partyConfetti from '../assets/party-confetti.png';
 import reservationBg01 from '../assets/reservationBg01.png';
 import reservationBg02 from '../assets/reservationBg02.png';
+import { useImageLoading } from './ImageLoadingLayer';
 
 const ImageMap = {
   'logo-lg': {
@@ -83,6 +84,8 @@ type Props = {
 };
 
 export const JImage = memo(({ image, alt, width, height }: Props) => {
+  const { addLoadedImage } = useImageLoading();
+
   const obj = ImageMap[image];
   return (
     <img
@@ -90,6 +93,7 @@ export const JImage = memo(({ image, alt, width, height }: Props) => {
       alt={alt ?? obj.alt}
       width={width ?? obj.width}
       height={height ?? obj.height}
+      onLoad={addLoadedImage}
     />
   );
 });
