@@ -13,9 +13,12 @@ import { NotificationPage } from '../pages/common/NotificationPage/NotificationP
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
+import { ReserVationViewPage } from '../pages/model/ReservationViewPage/ReserVationViewPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
 import { AppBar } from '../components/AppBar';
+import { ReservationTimePage } from '../pages/model/ReservationTimePage/ReservationTimePage';
+import { ReservationComplete } from '../pages/model/ReservationComplete/ReservationComplete';
 
 const paths = {
   enter: '/enter',
@@ -25,6 +28,9 @@ const paths = {
   password: '/password',
   notification: '/notification',
   reservation: '/reservation',
+  reservationView: '/reservation/view/:num',
+  ReservationTime: '/reservation/time',
+  ReservationComplete: '/reservation/complete',
   home: '/',
   mypage: '/my',
 } as const;
@@ -59,10 +65,20 @@ export const router = createBrowserRouter([
     path: paths.notification,
     element: <NotificationPage />,
   },
+
   {
-    path: paths.reservation,
-    element: <ReservationPage />,
+    path: paths.reservationView,
+    element: <ReserVationViewPage />,
   },
+  {
+    path: paths.ReservationTime,
+    element: <ReservationTimePage />,
+  },
+  {
+    path: paths.ReservationComplete,
+    element: <ReservationComplete />,
+  },
+
   {
     element: (
       <>
@@ -78,6 +94,10 @@ export const router = createBrowserRouter([
       {
         path: paths.mypage,
         element: <MypagePage />,
+      },
+      {
+        path: paths.reservation,
+        element: <ReservationPage />,
       },
     ],
   },

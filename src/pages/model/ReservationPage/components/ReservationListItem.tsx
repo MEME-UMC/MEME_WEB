@@ -3,12 +3,15 @@ import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 import { COLORS } from '../../../../core/colors';
 import Counter from '../../../../components/Counter';
-import ReservationBedge from './ReservationBedge';
+import { ReservationBadge } from './ReservationBadge';
 
-const ReservationListItem = () => {
+type reservationListItemProps = {
+  onClick: () => void;
+};
+export const ReservationListItem = ({ onClick }: reservationListItemProps) => {
   return (
     <Stack>
-      <JButton>
+      <JButton onClick={onClick}>
         <Row
           width={'100%'}
           justifyContent={'start'}
@@ -37,7 +40,7 @@ const ReservationListItem = () => {
             </Stack>
           </Stack>
           <Stack gap={'2px'}>
-            <ReservationBedge />
+            <ReservationBadge />
             <Typography fontSize={'10px'}>차차 아티스트</Typography>
             <Row gap={1}>
               <Row gap={'1px'}>
@@ -80,5 +83,3 @@ const ReservationListItem = () => {
     </Stack>
   );
 };
-
-export default ReservationListItem;
