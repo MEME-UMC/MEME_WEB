@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import logoLg from '../assets/logo-lg.png';
 import logoSm from '../assets/logo-sm.png';
 import sampleMakeup from '../assets/sample-makeup.png';
@@ -84,9 +84,18 @@ type Props = {
 };
 
 export const JImage = memo(({ image, alt, width, height }: Props) => {
-  const { addLoadedImage } = useImageLoading();
+  const { addLoadedImage, addCount } = useImageLoading();
+  const hasRun = useRef(false);
 
   const obj = ImageMap[image];
+
+  useEffect(() => {
+    if (!hasRun.current) {
+      addCount();
+      hasRun.current = true;
+    }
+  }, [addCount]);
+
   return (
     <img
       src={obj.src}

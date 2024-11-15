@@ -14,7 +14,7 @@ export const LoginPage = () => {
   const navigate = useJNavigate();
 
   return (
-    <ImageLoadingLayer count={1}>
+    <ImageLoadingLayer>
       <MotionWrapper>
         <AppBar backIcon />
         <Stack px={2} alignItems={'center'}>
