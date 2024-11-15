@@ -25,6 +25,7 @@ import circleChecked from '../assets/circle-checked.svg';
 import circleUnchecked from '../assets/circle-unchecked.svg';
 import starGradient from '../assets/start-gradient.svg';
 import starGray from '../assets/start-gray.svg';
+import plus from '../assets/plus.svg';
 
 const IconMap = {
   reservation: {
@@ -49,8 +50,8 @@ const IconMap = {
   },
   profile: {
     src: profile,
-    width: 94,
-    height: 95,
+    width: 37,
+    height: 43,
   },
   'user-plus': {
     src: userPlus,
@@ -157,6 +158,11 @@ const IconMap = {
     src: starGray,
     width: 13,
     height: 12,
+  },
+  plus: {
+    src: plus,
+    width: 17,
+    height: 17,
   },
 };
 

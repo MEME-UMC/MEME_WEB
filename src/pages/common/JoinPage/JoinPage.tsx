@@ -4,6 +4,7 @@ import { Step2 } from './components/Step2';
 import { useJNavigate } from '../../../core/routes';
 import SwipeableViews from 'react-swipeable-views';
 import { Step3 } from './components/Step3';
+import { Step4 } from './components/Step4';
 
 export const JoinPage = () => {
   const navigate = useJNavigate();
@@ -36,7 +37,12 @@ export const JoinPage = () => {
           onNext={() => setStep(2)}
         />
         <Step2 onPrev={() => setStep(1)} onNext={() => setStep(3)} />
-        <Step3 onPrev={() => setStep(2)} onNext={handleSubmit} />
+        <Step3 onPrev={() => setStep(2)} onNext={() => setStep(4)} />
+        <Step4
+          isActive={step === 4}
+          onPrev={() => setStep(3)}
+          onNext={handleSubmit}
+        />
       </SwipeableViews>
     </>
   );

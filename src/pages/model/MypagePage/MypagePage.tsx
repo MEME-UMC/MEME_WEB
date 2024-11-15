@@ -14,7 +14,14 @@ export const MypagePage = () => {
       <Stack>
         <AppBar title="마이페이지" />
         <Stack alignItems={'center'} gap={1} py={1}>
-          <JIcon icon="profile" />
+          <Row
+            width={95}
+            height={95}
+            borderRadius={95}
+            bgcolor={COLORS.primary}
+          >
+            <JIcon icon="profile" color={COLORS.white} width={28} height={28} />
+          </Row>
           <JButton
             sx={{
               width: 'auto',
@@ -27,6 +34,7 @@ export const MypagePage = () => {
               <Typography fontSize={16} fontWeight={600}>
                 차차
               </Typography>
+
               <JIcon icon="rightArrow" />
             </Row>
           </JButton>

@@ -27,6 +27,9 @@ export const Step3 = ({ onPrev, onNext }: Props) => {
     if (index === 1 && data.name !== '' && data.nickname !== '') {
       return true;
     }
+    if (index === 2) {
+      return true;
+    }
     return false;
   }, [index, data]);
 

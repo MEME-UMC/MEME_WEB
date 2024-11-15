@@ -5,6 +5,8 @@ import sampleMakeup from '../assets/sample-makeup.png';
 import palette from '../assets/palette.png';
 import hiMan from '../assets/hi-woman.png';
 import hiWoman from '../assets/hi-man.png';
+import partyCannon from '../assets/party-cannon.png';
+import partyConfetti from '../assets/party-confetti.png';
 
 const ImageMap = {
   'logo-lg': {
@@ -42,6 +44,14 @@ const ImageMap = {
     alt: 'hi-woman',
     width: 50,
     height: 51,
+  },
+  'party-confetti': {
+    src: partyConfetti,
+    alt: 'party-confetti',
+  },
+  'party-cannon': {
+    src: partyCannon,
+    alt: 'party-cannon',
   },
 };
 
