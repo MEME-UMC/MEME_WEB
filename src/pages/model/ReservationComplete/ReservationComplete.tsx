@@ -1,8 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../components/Row';
 import { COLORS } from '../../../core/colors';
-import reservationBg01 from '../../../assets/reservationBg01.png';
-import reservationBg02 from '../../../assets/reservationBg02.png';
 import { JImage } from '../../../components/JImage';
 
 export const ReservationComplete = () => {
@@ -30,7 +28,7 @@ export const ReservationComplete = () => {
       </Stack>
 
       <Stack py={5}>
-        <JImage src={reservationBg01} width={320} height={83} />
+        <JImage image="reservation-bg-01" />
       </Stack>
 
       <Stack padding={'0 23px'}>
@@ -62,7 +60,7 @@ export const ReservationComplete = () => {
         </Stack>
       </Stack>
       <Stack alignItems={'flex-end'} paddingRight={6}>
-        <JImage src={reservationBg02} width={297} height={136} />
+        <JImage image="reservation-bg-02" />
       </Stack>
     </Stack>
   );
