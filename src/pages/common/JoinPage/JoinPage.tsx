@@ -14,36 +14,34 @@ export const JoinPage = () => {
     navigate('/');
   };
   return (
-    <>
-      <SwipeableViews
-        index={step - 1}
-        disabled
-        containerStyle={{
-          width: '100%',
+    <SwipeableViews
+      index={step - 1}
+      disabled
+      containerStyle={{
+        width: '100%',
+      }}
+      style={{
+        flex: 1,
+        display: 'flex',
+      }}
+      slideStyle={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Step1
+        onPrev={() => {
+          navigate(-1);
         }}
-        style={{
-          flex: 1,
-          display: 'flex',
-        }}
-        slideStyle={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <Step1
-          onPrev={() => {
-            navigate(-1);
-          }}
-          onNext={() => setStep(2)}
-        />
-        <Step2 onPrev={() => setStep(1)} onNext={() => setStep(3)} />
-        <Step3 onPrev={() => setStep(2)} onNext={() => setStep(4)} />
-        <Step4
-          isActive={step === 4}
-          onPrev={() => setStep(3)}
-          onNext={handleSubmit}
-        />
-      </SwipeableViews>
-    </>
+        onNext={() => setStep(2)}
+      />
+      <Step2 onPrev={() => setStep(1)} onNext={() => setStep(3)} />
+      <Step3 onPrev={() => setStep(2)} onNext={() => setStep(4)} />
+      <Step4
+        isActive={step === 4}
+        onPrev={() => setStep(3)}
+        onNext={handleSubmit}
+      />
+    </SwipeableViews>
   );
 };

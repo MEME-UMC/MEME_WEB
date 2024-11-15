@@ -31,8 +31,10 @@ export const ImageLoadingLayer = ({ children, count }: Props) => {
 
   return (
     <ImageLoadingContext.Provider value={{ loadedImageCount, addLoadedImage }}>
-      {!isCompleted && <div>Loading...</div>}
-      <Box display={isCompleted ? 'block' : 'none'}>{children}</Box>
+      {!isCompleted && <Box />}
+      <Box display={isCompleted ? 'flex' : 'none'} width={1} height={1}>
+        {children}
+      </Box>
     </ImageLoadingContext.Provider>
   );
 };
