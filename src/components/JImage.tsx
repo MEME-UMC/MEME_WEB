@@ -7,6 +7,8 @@ import hiMan from '../assets/hi-woman.png';
 import hiWoman from '../assets/hi-man.png';
 import partyCannon from '../assets/party-cannon.png';
 import partyConfetti from '../assets/party-confetti.png';
+import reservationBg01 from '../assets/reservationBg01.png';
+import reservationBg02 from '../assets/reservationBg02.png';
 
 const ImageMap = {
   'logo-lg': {
@@ -48,10 +50,26 @@ const ImageMap = {
   'party-confetti': {
     src: partyConfetti,
     alt: 'party-confetti',
+    width: 255,
+    height: 205,
   },
   'party-cannon': {
     src: partyCannon,
     alt: 'party-cannon',
+    width: 283,
+    height: 289,
+  },
+  'reservation-bg-01': {
+    src: reservationBg01,
+    alt: 'reservation-bg-01',
+    width: 320,
+    height: 83,
+  },
+  'reservation-bg-02': {
+    src: reservationBg02,
+    alt: 'reservation-bg-02',
+    width: 297,
+    height: 136,
   },
 };
 
