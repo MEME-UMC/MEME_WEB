@@ -1,9 +1,9 @@
 import { Stack, Typography } from '@mui/material';
-import { Row } from '../Row';
-import { JButton } from '../JButton';
-import { COLORS } from '../../core/colors';
+import { Row } from './Row';
+import { JButton } from './JButton';
+import { COLORS } from '../core/colors';
 import { useEffect, useState } from 'react';
-import { JIcon } from '../JIcon';
+import { JIcon } from './JIcon';
 
 const Calendar = () => {
   const weeks = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
