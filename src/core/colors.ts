@@ -20,6 +20,7 @@ export const COLORS = {
   // Blue Shades
   blue_light: '#D2E6FF',
   blue_bright: '#93C5FF',
+  etc_blue: '#4355FA',
 
   // Grayscale
   p_black: '#222222',
