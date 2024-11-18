@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { OptionButton } from './components/OptionButton';
 import { JButton } from '../../../components/JButton';
 import { useJNavigate } from '../../../core/routes';
-import Calendar from '../../../components/Calendar';
+import Calendar from '../../../components/Calendar/Calendar';
 
 const optionButtons = [
   { label: '샵으로 갈게요', value: 'shop' },
