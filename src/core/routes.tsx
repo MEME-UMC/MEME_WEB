@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import { EnterPage } from '../pages/common/EnterPage/EnterPage';
-import { PasswordPage } from '../pages/common/PasswordPage/PasswordPage';
+import { FindPasswordPage } from '../pages/common/FindPasswordPage/FindPasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
@@ -25,7 +25,7 @@ const paths = {
   join: '/join',
   login: '/login',
   findEmail: '/find-email',
-  password: '/password',
+  findPassword: '/find-password',
   notification: '/notification',
   reservation: '/reservation',
   reservationView: '/reservation/view/:num',
@@ -53,8 +53,8 @@ export const router = createBrowserRouter([
     element: <FindEmailPage />,
   },
   {
-    path: paths.password,
-    element: <PasswordPage />,
+    path: paths.findPassword,
+    element: <FindPasswordPage />,
   },
   {
     path: paths.notification,

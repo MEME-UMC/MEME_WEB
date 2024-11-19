@@ -9,7 +9,7 @@ import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import { Row } from '../../../../components/Row';
 import { COLORS } from '../../../../core/colors';
-import { JoinTextField } from '../../../../components/JoinTextField';
+import { JTextField } from '../../../../components/JTextField';
 import { AppBar } from '../../../../components/AppBar';
 
 type Props = {
@@ -47,7 +47,7 @@ export const Step2 = ({ onPrev, onNext }: Props) => {
         <Stack px={2} pt={2}>
           <Typography>이메일</Typography>
           <Row gap={1}>
-            <JoinTextField placeholder="이메일을 입력해주세요" />
+            <JTextField placeholder="이메일을 입력해주세요" />
             <Button
               variant="contained"
               onClick={handleRequestCode}
@@ -85,11 +85,8 @@ export const Step2 = ({ onPrev, onNext }: Props) => {
             인증코드 일치
           </Typography>
           <Typography pt={2}>비밀번호</Typography>
-          <JoinTextField placeholder="비밀번호를 입력해주세요" />
-          <JoinTextField
-            placeholder="비밀번호를 한 번 더 입력해주세요"
-            pt={1}
-          />
+          <JTextField placeholder="비밀번호를 입력해주세요" />
+          <JTextField placeholder="비밀번호를 한 번 더 입력해주세요" pt={1} />
           <Typography fontSize={12} color={COLORS.gray500} pl={1} pt={0.5}>
             영문, 숫자, 특수기호 조합 8~20자
           </Typography>

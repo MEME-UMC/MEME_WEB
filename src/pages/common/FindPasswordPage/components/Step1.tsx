@@ -10,11 +10,11 @@ export const Step1 = ({ onNext }: Props) => {
     <Stack flex={1}>
       <Stack flex={1} px={2} justifyContent={'space-between'}>
         <Typography fontWeight={600} fontSize={18} pt={6} pb={4}>
-          메메에서 사용하는 닉네임을
+          메메에서 사용하는 이메일을
           <br />
           입력해주세요
         </Typography>
-        <JTextField placeholder="닉네임을 입력해주세요" />
+        <JTextField placeholder="이메일을 입력해주세요" />
       </Stack>
       <Stack padding={2}>
         <Button variant="contained" onClick={onNext}>
