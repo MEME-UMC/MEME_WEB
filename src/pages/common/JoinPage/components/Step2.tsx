@@ -47,7 +47,7 @@ export const Step2 = ({ onPrev, onNext }: Props) => {
         <Stack px={2} pt={2}>
           <Typography>이메일</Typography>
           <Row gap={1}>
-            <JTextField placeholder="이메일을 입력해주세요" />
+            <JTextField placeholder="이메일을 입력해주세요" sx={{ flex: 1 }} />
             <Button
               variant="contained"
               onClick={handleRequestCode}

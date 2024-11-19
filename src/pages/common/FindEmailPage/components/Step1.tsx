@@ -8,7 +8,7 @@ type Props = {
 export const Step1 = ({ onNext }: Props) => {
   return (
     <Stack flex={1}>
-      <Stack flex={1} px={2} justifyContent={'space-between'}>
+      <Stack flex={1} px={2}>
         <Typography fontWeight={600} fontSize={18} pt={6} pb={4}>
           메메에서 사용하는 닉네임을
           <br />
