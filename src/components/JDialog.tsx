@@ -17,15 +17,15 @@ type Props = {
   icon?: ReactNode;
 };
 
-export const Step3 = ({
+export const JDialog = ({
   isOpen,
   onClose,
   title,
   description,
   labelOkay = '네',
   labelNo = '아니오',
-  onOkay = () => {},
-  onNo = () => {},
+  onOkay,
+  onNo,
   icon,
 }: Props) => {
   return (
@@ -46,7 +46,7 @@ export const Step3 = ({
           minHeight={180}
         >
           <Row justifyContent={'flex-end'}>
-            <BlinkButton sx={{ width: 'auto' }}>
+            <BlinkButton sx={{ width: 'auto' }} onClick={onClose}>
               <JIcon icon="close" />
             </BlinkButton>
           </Row>
@@ -61,12 +61,16 @@ export const Step3 = ({
               </Typography>
             </Stack>
             <Row pb={3}>
-              <Button variant="outlined" onClick={onNo}>
-                {labelNo}
-              </Button>
-              <Button variant="outlined" onClick={onOkay}>
-                {labelOkay}
-              </Button>
+              {onNo && (
+                <Button variant="outlined" onClick={onNo}>
+                  {labelNo}
+                </Button>
+              )}
+              {onOkay && (
+                <Button variant="outlined" onClick={onOkay}>
+                  {labelOkay}
+                </Button>
+              )}
             </Row>
           </Stack>
         </Stack>
