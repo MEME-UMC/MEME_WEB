@@ -46,7 +46,10 @@ export const LoginPage = () => {
                 mx={0.5}
               />
               <Box>
-                <JButton sx={{ px: 0.5, borderRadius: 4 }}>
+                <JButton
+                  sx={{ px: 0.5, borderRadius: 4 }}
+                  onClick={() => navigate('/find-email')}
+                >
                   <Typography fontSize={14} color={COLORS.gray400}>
                     이메일 찾기
                   </Typography>

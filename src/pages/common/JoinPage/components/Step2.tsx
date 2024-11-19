@@ -9,7 +9,7 @@ import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
 import { Row } from '../../../../components/Row';
 import { COLORS } from '../../../../core/colors';
-import { JoinTextField } from './JoinTextField';
+import { JoinTextField } from '../../../../components/JoinTextField';
 import { AppBar } from '../../../../components/AppBar';
 
 type Props = {
