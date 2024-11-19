@@ -6,8 +6,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import { EnterPage } from '../pages/common/EnterPage/EnterPage';
-import { EmailPage } from '../pages/common/EmailPage/EmailPage';
-import { PasswordPage } from '../pages/common/PasswordPage/PasswordPage';
+import { FindPasswordPage } from '../pages/common/FindPasswordPage/FindPasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
@@ -18,14 +17,15 @@ import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
 import { ReservationTimePage } from '../pages/model/ReservationTimePage/ReservationTimePage';
 import { ReservationComplete } from '../pages/model/ReservationComplete/ReservationComplete';
+import { FindEmailPage } from '../pages/common/FindEmailPage/FindEmailPage';
 
 const paths = {
   enter: '/enter',
   policy: '/policy',
   join: '/join',
   login: '/login',
-  email: '/email',
-  password: '/password',
+  findEmail: '/find-email',
+  findPassword: '/find-password',
   notification: '/notification',
   reservation: '/reservation',
   reservationView: '/reservation/view/:num',
@@ -49,12 +49,12 @@ export const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: paths.email,
-    element: <EmailPage />,
+    path: paths.findEmail,
+    element: <FindEmailPage />,
   },
   {
-    path: paths.password,
-    element: <PasswordPage />,
+    path: paths.findPassword,
+    element: <FindPasswordPage />,
   },
   {
     path: paths.notification,
