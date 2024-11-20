@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
 
-export const MakeupPage = () => {
+export const ModelProfileEditPage = () => {
   return <Stack></Stack>;
 };

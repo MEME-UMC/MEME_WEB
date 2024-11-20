@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
 
-export const MyinfoPage = () => {
+export const ModelReservationIdPage = () => {
   return <Stack></Stack>;
 };
