@@ -4,7 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { NavigationButton } from './components/NavigationButton';
 import { useJNavigate } from '../../core/routes';
 
-export const Navigation = () => {
+type Props = {
+  type?: 'model' | 'artist' | 'guest';
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const Navigation = ({ type }: Props) => {
   const location = useLocation();
   const value = location.pathname;
   const navigate = useJNavigate();

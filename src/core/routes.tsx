@@ -36,6 +36,8 @@ import { ArtistIdPage } from '../pages/artist/ArtistIdPage/ArtistIdPage';
 import { ArtistSchedulePage } from '../pages/artist/ArtistSchedulePage/ArtistSchedulePage';
 import { MyinfoPage } from '../pages/common/MyinfoPage/MyinfoPage';
 import { ModelProfileEditPage } from '../pages/model/ModelProfileEditPage/ModelProfileEditPage';
+import { Navigation } from '../components/Navigation';
+import { ElementType } from 'react';
 
 const paths = {
   home: '/',
@@ -73,8 +75,15 @@ const paths = {
   myinfo: '/myinfo',
 } as const;
 
+const nav = (Page: ElementType, type?: 'model' | 'artist' | 'guest') => (
+  <>
+    <Page />
+    <Navigation type={type} />
+  </>
+);
+
 export const router = createBrowserRouter([
-  { path: paths.home, element: <ModelHomePage /> },
+  { path: paths.home, element: nav(ModelHomePage, 'guest') },
   { path: paths.enter, element: <EnterPage /> },
   { path: paths.login, element: <LoginPage /> },
   { path: paths.join, element: <JoinPage /> },
