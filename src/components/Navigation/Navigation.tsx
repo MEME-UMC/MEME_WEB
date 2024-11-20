@@ -22,8 +22,12 @@ export const Navigation = () => {
       }}
     >
       <NavigationButton label="홈" value="/" icon="home" />
-      <NavigationButton label="예약" value="/reservation" icon="reservation" />
-      <NavigationButton label="MY" value="/model/mypage" icon="user" />
+      <NavigationButton
+        label="예약"
+        value="/search/makeup"
+        icon="reservation"
+      />
+      <NavigationButton label="MY" value="/mypage" icon="user" />
     </BottomNavigation>,
     document.body
   );

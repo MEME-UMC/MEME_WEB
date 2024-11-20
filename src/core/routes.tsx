@@ -5,16 +5,16 @@ import {
   // eslint-disable-next-line no-restricted-imports
   useNavigate,
 } from 'react-router-dom';
-import { EnterPage } from '../pages/common/EnterPage/EnterPage';
-import { FindPasswordPage } from '../pages/common/FindPasswordPage/FindPasswordPage';
+import { EnterPage } from '../pages/guest/EnterPage/EnterPage';
+import { FindPasswordPage } from '../pages/guest/FindPasswordPage/FindPasswordPage';
 import { HomePage } from '../pages/model/HomePage/HomePage';
 import { NotificationPage } from '../pages/common/NotificationPage/NotificationPage';
 import { Navigation } from '../components/Navigation';
-import { MypagePage } from '../pages/model/MypagePage/MypagePage';
+import { MypagePage } from '../pages/common/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
-import { JoinPage } from '../pages/common/JoinPage/JoinPage';
-import { LoginPage } from '../pages/common/LoginPage/LoginPage';
-import { FindEmailPage } from '../pages/common/FindEmailPage/FindEmailPage';
+import { JoinPage } from '../pages/guest/JoinPage/JoinPage';
+import { LoginPage } from '../pages/guest/LoginPage/LoginPage';
+import { FindEmailPage } from '../pages/guest/FindEmailPage/FindEmailPage';
 
 const paths = {
   home: '/',
