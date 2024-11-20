@@ -12,27 +12,44 @@ import { NotificationPage } from '../pages/common/NotificationPage/NotificationP
 import { Navigation } from '../components/Navigation';
 import { MypagePage } from '../pages/model/MypagePage/MypagePage';
 import { ReservationPage } from '../pages/model/ReservationPage/ReservationPage';
-import { ReserVationViewPage } from '../pages/model/ReservationViewPage/ReserVationViewPage';
 import { JoinPage } from '../pages/common/JoinPage/JoinPage';
 import { LoginPage } from '../pages/common/LoginPage/LoginPage';
-import { ReservationTimePage } from '../pages/model/ReservationTimePage/ReservationTimePage';
-import { ReservationComplete } from '../pages/model/ReservationComplete/ReservationComplete';
 import { FindEmailPage } from '../pages/common/FindEmailPage/FindEmailPage';
 
 const paths = {
+  home: '/',
   enter: '/enter',
-  policy: '/policy',
-  join: '/join',
   login: '/login',
+  join: '/join',
   findEmail: '/find-email',
   findPassword: '/find-password',
+  privacyPolicy: '/privacy-policy',
+  termsOfService: '/terms-of-service',
+  model: '/model/',
+  modelReservation: '/model/reservation',
+  modelReservationId: '/model/reservation/:id',
+  searchMakeup: '/search/makeup',
+  searchMakeupKeyword: '/search/makeup?keyword',
+  makeupId: '/makeup/:id',
+  bookId: '/book/:id',
+  profileEdit: '/profile/edit',
+  leave: '/leave',
+  contact: '/contact',
+  favoriteArtist: '/favorite/artist',
+  favoriteMakeup: '/favorite/makeup',
+  review: '/review',
+  reviewEdit: '/review/edit',
+  artist: '/artist/',
+  artistReservation: '/artist/reservation',
+  artistReservationId: '/artist/reservation/:id',
+  artistProfileEdit: '/artist/profile/edit',
+  artistMakeup: '/artist/makeup',
+  makeupIdEdit: '/makeup/:id/edit',
+  artistId: '/artist/:id',
+  artistSchedule: '/artist/schedule',
   notification: '/notification',
-  reservation: '/reservation',
-  reservationView: '/reservation/view/:num',
-  ReservationTime: '/reservation/time',
-  ReservationComplete: '/reservation/complete',
-  home: '/',
-  mypage: '/my',
+  mypage: '/mypage',
+  myinfo: '/myinfo',
 } as const;
 
 export const router = createBrowserRouter([
@@ -60,20 +77,18 @@ export const router = createBrowserRouter([
     path: paths.notification,
     element: <NotificationPage />,
   },
-
-  {
-    path: paths.reservationView,
-    element: <ReserVationViewPage />,
-  },
-  {
-    path: paths.ReservationTime,
-    element: <ReservationTimePage />,
-  },
-  {
-    path: paths.ReservationComplete,
-    element: <ReservationComplete />,
-  },
-
+  // {
+  //   path: paths.reservationView,
+  //   element: <ReserVationViewPage />,
+  // },
+  // {
+  //   path: paths.reservationTime,
+  //   element: <ReservationTimePage />,
+  // },
+  // {
+  //   path: paths.reservationComplete,
+  //   element: <ReservationComplete />,
+  // },
   {
     element: (
       <>
@@ -91,7 +106,7 @@ export const router = createBrowserRouter([
         element: <MypagePage />,
       },
       {
-        path: paths.reservation,
+        path: paths.searchMakeup,
         element: <ReservationPage />,
       },
     ],

@@ -23,7 +23,7 @@ export const Navigation = () => {
     >
       <NavigationButton label="홈" value="/" icon="home" />
       <NavigationButton label="예약" value="/reservation" icon="reservation" />
-      <NavigationButton label="MY" value="/my" icon="user" />
+      <NavigationButton label="MY" value="/model/mypage" icon="user" />
     </BottomNavigation>,
     document.body
   );
