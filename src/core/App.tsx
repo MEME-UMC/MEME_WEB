@@ -25,6 +25,13 @@ const theme = createTheme({
             boxShadow: 'none',
           },
         },
+        outlined: {
+          color: COLORS.p_black,
+          backgroundColor: COLORS.primary200,
+          '&& .MuiTouchRipple-child': {
+            backgroundColor: COLORS.primary,
+          },
+        },
       },
     },
   },

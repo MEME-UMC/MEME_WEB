@@ -3,6 +3,9 @@ export const COLORS = {
   primaryLight: '#FF985E',
   white: '#FFFFFF',
   primarySelect: '#FF633E99',
+  primary200: '#FFF6F3',
+  primary600: '#FFB3A0',
+  
 
   // Red/Pink Shades/etc
   red_light: '#FCE3D5',
@@ -20,6 +23,7 @@ export const COLORS = {
   // Blue Shades
   blue_light: '#D2E6FF',
   blue_bright: '#93C5FF',
+  etc_blue: '#4355FA',
 
   // Grayscale
   p_black: '#222222',

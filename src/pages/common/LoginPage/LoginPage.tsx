@@ -1,5 +1,4 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
-import { JTextField } from '../../../components/JTextField';
 import { JButton } from '../../../components/JButton';
 import { COLORS } from '../../../core/colors';
 import { JImage } from '../../../components/JImage';
@@ -9,6 +8,7 @@ import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
 import { useJNavigate } from '../../../core/routes';
 import { ImageLoadingLayer } from '../../../components/ImageLoadingLayer';
+import { LoginTextField } from './components/LoginTextField';
 
 export const LoginPage = () => {
   const navigate = useJNavigate();
@@ -23,8 +23,8 @@ export const LoginPage = () => {
               <JImage image="logo-sm" />
             </Stack>
             <Stack gap={1}>
-              <JTextField label="이메일" />
-              <JTextField label="비밀번호" />
+              <LoginTextField label="이메일" />
+              <LoginTextField label="비밀번호" />
             </Stack>
             <Stack marginTop={2}>
               <Button variant="contained" onClick={() => navigate('/')}>
@@ -33,7 +33,10 @@ export const LoginPage = () => {
             </Stack>
             <Row paddingY={4}>
               <Box>
-                <JButton sx={{ px: 0.5, borderRadius: 4 }}>
+                <JButton
+                  sx={{ px: 0.5, borderRadius: 4 }}
+                  onClick={() => navigate('/find-password')}
+                >
                   <Typography fontSize={14} color={COLORS.gray400}>
                     비밀번호 찾기
                   </Typography>
@@ -46,7 +49,10 @@ export const LoginPage = () => {
                 mx={0.5}
               />
               <Box>
-                <JButton sx={{ px: 0.5, borderRadius: 4 }}>
+                <JButton
+                  sx={{ px: 0.5, borderRadius: 4 }}
+                  onClick={() => navigate('/find-email')}
+                >
                   <Typography fontSize={14} color={COLORS.gray400}>
                     이메일 찾기
                   </Typography>

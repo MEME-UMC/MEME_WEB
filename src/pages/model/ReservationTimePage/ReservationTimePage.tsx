@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { OptionButton } from './components/OptionButton';
 import { JButton } from '../../../components/JButton';
 import { useJNavigate } from '../../../core/routes';
+import Calendar from '../../../components/Calendar/Calendar';
 
 const optionButtons = [
   { label: '샵으로 갈게요', value: 'shop' },
@@ -101,6 +102,7 @@ export const ReservationTimePage = () => {
             <Typography fontSize={14} fontWeight={500}>
               예약 날짜를 선택해주세요.
             </Typography>
+            <Calendar />
           </Stack>
           <Stack mt={'32px'}>
             <Typography fontSize={14} fontWeight={500} mb={2}>
