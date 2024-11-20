@@ -4,12 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { NavigationButton } from './components/NavigationButton';
 import { useJNavigate } from '../../core/routes';
 
-type Props = {
-  type?: 'model' | 'artist' | 'guest';
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Navigation = ({ type }: Props) => {
+export const Navigation = () => {
   const location = useLocation();
   const value = location.pathname;
   const navigate = useJNavigate();
@@ -26,7 +21,7 @@ export const Navigation = ({ type }: Props) => {
         maxWidth: 768,
       }}
     >
-      <NavigationButton label="홈" value="/" icon="home" />
+      <NavigationButton label="홈" value="/model/home" icon="home" />
       <NavigationButton
         label="예약"
         value="/search/makeup"

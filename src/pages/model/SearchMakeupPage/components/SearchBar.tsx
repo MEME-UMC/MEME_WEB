@@ -11,7 +11,7 @@ export const SearchBar = () => {
     <Row paddingX={2} py={2}>
       <JButton
         onClick={() => {
-          navigate('/search/makeup');
+          navigate('/search/makeup/keyword');
         }}
         sx={{
           border: 2,

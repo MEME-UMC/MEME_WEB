@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
-import { ReservationReviewItem } from './components/ReservationReviewItem';
-import { StarRating } from './components/StarRating';
+import { ReservationReviewItem } from './ReservationReviewItem';
+import { StarRating } from './StarRating';
 
 export const ReservationViewReview = () => {
   return (

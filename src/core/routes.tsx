@@ -14,12 +14,7 @@ import { LoginPage } from '../pages/guest/LoginPage/LoginPage';
 import { FindEmailPage } from '../pages/guest/FindEmailPage/FindEmailPage';
 import { PrivacyPolicyPage } from '../pages/guest/PrivacyPolicyPage/PrivacyPolicyPage';
 import { TermsOfServicePage } from '../pages/guest/TermsOfServicePage/TermsOfServicePage';
-import { ModelReservationPage } from '../pages/model/ModelReservationPage/ModelReservationPage';
-import { ModelReservationIdPage } from '../pages/model/ModelReservationIdPage/ModelReservationIdPage';
 import { SearchMakeupPage } from '../pages/model/SearchMakeupPage/SearchMakeupPage';
-import { SearchMakeupKeywordPage } from '../pages/model/SearchMakeupKeywordPage/SearchMakeupKeywordPage';
-import { MakeupIdPage } from '../pages/model/MakeupIdPage/MakeupIdPage';
-import { BookIdPage } from '../pages/model/BookIdPage/BookIdPage';
 import { ArtistProfileEditPage } from '../pages/artist/ArtistProfileEditPage/ArtistProfileEditPage';
 import { LeavePage } from '../pages/common/LeavePage/LeavePage';
 import { ContactPage } from '../pages/common/ContactPage/ContactPage';
@@ -38,6 +33,9 @@ import { MyinfoPage } from '../pages/common/MyinfoPage/MyinfoPage';
 import { ModelProfileEditPage } from '../pages/model/ModelProfileEditPage/ModelProfileEditPage';
 import { Navigation } from '../components/Navigation';
 import { ElementType } from 'react';
+import { SearchMakeupKeywordPage } from '../pages/model/SearchMakeupKeywordPage/SearchMakeupKeywordPage';
+import { BookIdPage } from '../pages/model/BookIdPage/BookIdPage';
+import { MakeupIdPage } from '../pages/model/MakeupIdPage/MakeupIdPage';
 
 const paths = {
   home: '/',
@@ -49,10 +47,8 @@ const paths = {
   privacyPolicy: '/privacy-policy',
   termsOfService: '/terms-of-service',
   modelHome: '/model/home',
-  modelReservation: '/model/reservation',
-  modelReservationId: '/model/reservation/:id',
   searchMakeup: '/search/makeup',
-  searchMakeupKeyword: '/search/makeup?keyword',
+  searchMakeupKeyword: '/search/makeup/keyword',
   makeupId: '/makeup/:id',
   bookId: '/book/:id',
   profileEdit: '/profile/edit',
@@ -75,15 +71,15 @@ const paths = {
   myinfo: '/myinfo',
 } as const;
 
-const nav = (Page: ElementType, type?: 'model' | 'artist' | 'guest') => (
+const nav = (Page: ElementType) => (
   <>
     <Page />
-    <Navigation type={type} />
+    <Navigation />
   </>
 );
 
 export const router = createBrowserRouter([
-  { path: paths.home, element: nav(ModelHomePage, 'guest') },
+  { path: paths.home, element: nav(ModelHomePage) },
   { path: paths.enter, element: <EnterPage /> },
   { path: paths.login, element: <LoginPage /> },
   { path: paths.join, element: <JoinPage /> },
@@ -91,11 +87,9 @@ export const router = createBrowserRouter([
   { path: paths.findPassword, element: <FindPasswordPage /> },
   { path: paths.privacyPolicy, element: <PrivacyPolicyPage /> },
   { path: paths.termsOfService, element: <TermsOfServicePage /> },
-  { path: paths.modelHome, element: <ModelHomePage /> },
-  { path: paths.modelReservation, element: <ModelReservationPage /> },
-  { path: paths.modelReservationId, element: <ModelReservationIdPage /> },
-  { path: paths.searchMakeup, element: <SearchMakeupPage /> },
-  { path: paths.searchMakeupKeyword, element: <SearchMakeupKeywordPage /> },
+  { path: paths.modelHome, element: nav(ModelHomePage) },
+  { path: paths.searchMakeup, element: nav(SearchMakeupPage) },
+  { path: paths.searchMakeupKeyword, element: nav(SearchMakeupKeywordPage) },
   { path: paths.makeupId, element: <MakeupIdPage /> },
   { path: paths.bookId, element: <BookIdPage /> },
   { path: paths.profileEdit, element: <ModelProfileEditPage /> },
@@ -114,7 +108,7 @@ export const router = createBrowserRouter([
   { path: paths.artistId, element: <ArtistIdPage /> },
   { path: paths.artistSchedule, element: <ArtistSchedulePage /> },
   { path: paths.notification, element: <NotificationPage /> },
-  { path: paths.mypage, element: <MypagePage /> },
+  { path: paths.mypage, element: nav(MypagePage) },
   { path: paths.myinfo, element: <MyinfoPage /> },
 ]);
 
