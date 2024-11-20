@@ -13,7 +13,7 @@ import { DrawerItem } from './components/DrawerItem';
 import { useState } from 'react';
 import { useJNavigate } from '../../../core/routes';
 
-export const ReservationPage = () => {
+export const ModelReservationPage = () => {
   const makeupSort = [
     { defaultValue: '전체', key: 'all' },
     { defaultValue: '특수 메이크업', key: 'special' },

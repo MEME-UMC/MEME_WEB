@@ -10,7 +10,7 @@ import { MotionWrapper } from '../../../components/MotionWrapper';
 import { JIcon } from '../../../components/JIcon';
 import { ImageLoadingLayer } from '../../../components/ImageLoadingLayer';
 
-export const HomePage = () => {
+export const ModelHomePage = () => {
   const [booking] = useState({
     name: '메이크업명',
     at: new Date(2024, 4, 8, 13),
