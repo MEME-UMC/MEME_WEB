@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
   NavigateOptions,
+  redirect,
   // eslint-disable-next-line no-restricted-imports
   useNavigate,
 } from 'react-router-dom';
@@ -78,38 +79,91 @@ const nav = (Page: ElementType) => (
   </>
 );
 
+type UserType = 'guest' | 'model' | 'artist';
+
+const getUserType = (): UserType => 'model';
+
+const validateUserType = async (accessibleUserTypes: UserType[]) => {
+  const userType = getUserType();
+  if (accessibleUserTypes.includes(userType)) {
+    return null;
+  }
+  if (userType === 'guest') {
+    throw redirect(paths.login);
+  }
+  if (userType === 'artist') {
+    throw redirect(paths.artistHome);
+  }
+  if (userType === 'model') {
+    throw redirect(paths.modelHome);
+  }
+};
+
 export const router = createBrowserRouter([
-  { path: paths.home, element: nav(ModelHomePage) },
-  { path: paths.enter, element: <EnterPage /> },
-  { path: paths.login, element: <LoginPage /> },
-  { path: paths.join, element: <JoinPage /> },
-  { path: paths.findEmail, element: <FindEmailPage /> },
-  { path: paths.findPassword, element: <FindPasswordPage /> },
-  { path: paths.privacyPolicy, element: <PrivacyPolicyPage /> },
-  { path: paths.termsOfService, element: <TermsOfServicePage /> },
-  { path: paths.modelHome, element: nav(ModelHomePage) },
-  { path: paths.searchMakeup, element: nav(SearchMakeupPage) },
-  { path: paths.searchMakeupKeyword, element: nav(SearchMakeupKeywordPage) },
-  { path: paths.makeupId, element: <MakeupIdPage /> },
-  { path: paths.bookId, element: <BookIdPage /> },
-  { path: paths.profileEdit, element: <ModelProfileEditPage /> },
-  { path: paths.leave, element: <LeavePage /> },
-  { path: paths.contact, element: <ContactPage /> },
-  { path: paths.favoriteArtist, element: <FavoriteArtistPage /> },
-  { path: paths.favoriteMakeup, element: <FavoriteMakeupPage /> },
-  { path: paths.review, element: <ReviewPage /> },
-  { path: paths.reviewEdit, element: <ReviewEditPage /> },
-  { path: paths.artistHome, element: <ArtistHomePage /> },
-  { path: paths.artistReservation, element: <ArtistReservationPage /> },
-  { path: paths.artistReservationId, element: <ArtistReservationIdPage /> },
-  { path: paths.artistProfileEdit, element: <ArtistProfileEditPage /> },
-  { path: paths.artistMakeup, element: <ArtistMakeupPage /> },
-  { path: paths.makeupIdEdit, element: <MakeupIdEditPage /> },
-  { path: paths.artistId, element: <ArtistIdPage /> },
-  { path: paths.artistSchedule, element: <ArtistSchedulePage /> },
-  { path: paths.notification, element: <NotificationPage /> },
-  { path: paths.mypage, element: nav(MypagePage) },
-  { path: paths.myinfo, element: <MyinfoPage /> },
+  {
+    id: 'guest-only-access',
+    loader: () => validateUserType(['guest']),
+    children: [
+      { path: paths.home, element: nav(ModelHomePage) },
+      { path: paths.enter, element: <EnterPage /> },
+      { path: paths.login, element: <LoginPage /> },
+      { path: paths.join, element: <JoinPage /> },
+      { path: paths.findEmail, element: <FindEmailPage /> },
+      { path: paths.findPassword, element: <FindPasswordPage /> },
+    ],
+  },
+  {
+    id: 'everyone-access',
+    loader: () => validateUserType(['guest', 'artist', 'model']),
+    children: [
+      { path: paths.privacyPolicy, element: <PrivacyPolicyPage /> },
+      { path: paths.termsOfService, element: <TermsOfServicePage /> },
+    ],
+  },
+  {
+    id: 'model-only-access',
+    loader: () => validateUserType(['model']),
+    children: [
+      { path: paths.modelHome, element: nav(ModelHomePage) },
+      { path: paths.searchMakeup, element: nav(SearchMakeupPage) },
+      {
+        path: paths.searchMakeupKeyword,
+        element: nav(SearchMakeupKeywordPage),
+      },
+      { path: paths.makeupId, element: <MakeupIdPage /> },
+      { path: paths.bookId, element: <BookIdPage /> },
+      { path: paths.profileEdit, element: <ModelProfileEditPage /> },
+      { path: paths.favoriteArtist, element: <FavoriteArtistPage /> },
+      { path: paths.favoriteMakeup, element: <FavoriteMakeupPage /> },
+      { path: paths.review, element: <ReviewPage /> },
+      { path: paths.reviewEdit, element: <ReviewEditPage /> },
+    ],
+  },
+  {
+    id: 'artist-only-access',
+    loader: () => validateUserType(['artist']),
+    children: [
+      { path: paths.artistHome, element: <ArtistHomePage /> },
+      { path: paths.artistReservation, element: <ArtistReservationPage /> },
+      { path: paths.artistReservationId, element: <ArtistReservationIdPage /> },
+      { path: paths.artistProfileEdit, element: <ArtistProfileEditPage /> },
+      { path: paths.artistMakeup, element: <ArtistMakeupPage /> },
+      { path: paths.makeupIdEdit, element: <MakeupIdEditPage /> },
+      { path: paths.artistId, element: <ArtistIdPage /> },
+      { path: paths.artistSchedule, element: <ArtistSchedulePage /> },
+    ],
+  },
+  {
+    id: 'login-only-access',
+    loader: () => validateUserType(['guest', 'model']),
+    children: [
+      { path: paths.notification, element: <NotificationPage /> },
+      { path: paths.mypage, element: nav(MypagePage) },
+      { path: paths.myinfo, element: <MyinfoPage /> },
+      { path: paths.leave, element: <LeavePage /> },
+      { path: paths.contact, element: <ContactPage /> },
+    ],
+  },
 ]);
 
 export type Path = (typeof paths)[keyof typeof paths];
