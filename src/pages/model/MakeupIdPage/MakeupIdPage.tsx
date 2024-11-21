@@ -6,13 +6,13 @@ import { COLORS } from '../../../core/colors';
 import { Row } from '../../../components/Row';
 import Counter from '../../../components/Counter';
 import { Tabs, TabItem } from './components/Tabs';
-import { ReservationViewInfo } from './ReservationViewInfo';
-import { ReservationViewReview } from './ReservationViewReview';
+import { ReservationViewInfo } from './components/ReservationViewInfo';
+import { ReservationViewReview } from './components/ReservationViewReview';
 import { useState } from 'react';
 import { LikeButton } from './components/LikeButton';
 import { useJNavigate } from '../../../core/routes';
 
-export const ReserVationViewPage = () => {
+export const MakeupIdPage = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isScaled, setIsScaled] = useState(false);
   const navigate = useJNavigate();
@@ -156,7 +156,7 @@ export const ReserVationViewPage = () => {
 
           <Stack padding={'24px 21px'}>
             <JButton
-              onClick={() => navigate('/reservation/time')}
+              onClick={() => navigate('/book/:id')}
               sx={{
                 height: '49px',
                 background: `${COLORS.p_black}`,

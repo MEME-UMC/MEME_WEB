@@ -4,7 +4,7 @@ import { Stack, Typography } from '@mui/material';
 import { Row } from '../../../components/Row';
 import { JButton } from '../../../components/JButton';
 import { JIcon } from '../../../components/JIcon';
-import { ReservationsortItem } from './components/ReservationsortItem';
+import { ReservationsortItem } from './components/ReservationsortItem2';
 import { ReservationListItem } from './components/ReservationListItem';
 import { COLORS } from '../../../core/colors';
 import Counter from '../../../components/Counter';
@@ -13,7 +13,7 @@ import { DrawerItem } from './components/DrawerItem';
 import { useState } from 'react';
 import { useJNavigate } from '../../../core/routes';
 
-export const ReservationPage = () => {
+export const SearchMakeupKeywordPage = () => {
   const makeupSort = [
     { defaultValue: '전체', key: 'all' },
     { defaultValue: '특수 메이크업', key: 'special' },
@@ -74,9 +74,7 @@ export const ReservationPage = () => {
           </Row>
         </Stack>
         <Stack px={'19px'}>
-          <ReservationListItem
-            onClick={() => navigate(`/reservation/view/:num`)}
-          />
+          <ReservationListItem onClick={() => navigate('/makeup/:id')} />
         </Stack>
       </MotionWrapper>
       <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>

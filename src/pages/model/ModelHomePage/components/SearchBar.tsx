@@ -3,12 +3,16 @@ import { Row } from '../../../../components/Row';
 import { JButton } from '../../../../components/JButton';
 import { COLORS } from '../../../../core/colors';
 import { JIcon } from '../../../../components/JIcon';
+import { useJNavigate } from '../../../../core/routes';
 
 export const SearchBar = () => {
+  const navigate = useJNavigate();
   return (
     <Row paddingX={2} py={2}>
       <JButton
-        onClick={() => {}}
+        onClick={() => {
+          navigate('/search/makeup');
+        }}
         sx={{
           border: 2,
           borderColor: COLORS.primary,

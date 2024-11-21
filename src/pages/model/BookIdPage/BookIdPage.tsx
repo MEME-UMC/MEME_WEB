@@ -70,7 +70,7 @@ const BothOptions = ({
     )}
   </Stack>
 );
-export const ReservationTimePage = () => {
+export const BookIdPage = () => {
   const [visitType, setVisitType] = useState('both'); // 'shop', 'artist', 'both'
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const navigate = useJNavigate();
