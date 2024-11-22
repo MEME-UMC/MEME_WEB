@@ -29,6 +29,7 @@ export const MypagePage = () => {
               paddingY: 0.5,
               borderRadius: 4,
             }}
+            onClick={() => navigate('/myinfo')}
           >
             <Row alignItems={'center'} justifyContent={'center'} gap={1}>
               <Typography fontSize={16} fontWeight={600}>
