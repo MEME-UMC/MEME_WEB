@@ -29,6 +29,8 @@ import plus from '../assets/plus.svg';
 import checked from '../assets/checked.svg';
 import close from '../assets/close.svg';
 import pencil from '../assets/pencil.svg';
+import circleCheckedOutlined from '../assets/circle-checked-outline.svg';
+import circleAlertOutlined from '../assets/circle-alert-outlined.svg';
 
 const IconMap = {
   reservation: {
@@ -181,6 +183,16 @@ const IconMap = {
     src: pencil,
     width: 16,
     height: 16,
+  },
+  'circle-checked-outlined': {
+    src: circleCheckedOutlined,
+    width: 18,
+    height: 18,
+  },
+  'circle-alert-outlined': {
+    src: circleAlertOutlined,
+    width: 18,
+    height: 18,
   },
 };
 
