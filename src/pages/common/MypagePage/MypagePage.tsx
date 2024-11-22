@@ -6,6 +6,7 @@ import { COLORS } from '../../../core/colors';
 import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
 import { useJNavigate } from '../../../core/routes';
+import { MypageRowButton } from './components/MypageRowButton';
 
 export const MypagePage = () => {
   const navigate = useJNavigate();
@@ -70,26 +71,30 @@ export const MypagePage = () => {
           </Row>
         </Stack>
         <Stack px={2}>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>프로필 수정</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>약관 및 정책</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>문의하기</Typography>
-          </JButton>
-          <JButton
-            onClick={() => {
-              navigate('/enter');
-            }}
-            sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}
-          >
-            <Typography fontSize={14}>로그아웃</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>탈퇴하기</Typography>
-          </JButton>
+          <MypageRowButton
+            label="프로필 수정"
+            onClick={() => navigate('/model/profile/edit')}
+          />
+          <MypageRowButton
+            label="개인정보 처리방침"
+            onClick={() => navigate('/privacy-policy')}
+          />
+          <MypageRowButton
+            label="서비스 이용약관"
+            onClick={() => navigate('/terms-of-service')}
+          />
+          <MypageRowButton
+            label="문의하기"
+            onClick={() => navigate('/contact')}
+          />
+          <MypageRowButton
+            label="로그아웃"
+            onClick={() => navigate('/enter')}
+          />
+          <MypageRowButton
+            label="탈퇴하기"
+            onClick={() => navigate('/leave')}
+          />
           <Row
             sx={{ justifyContent: 'space-between', paddingY: 1.5, paddingX: 1 }}
           >
