@@ -11,7 +11,7 @@ export const LeavePage = () => {
       <Stack flex={1} justifyContent={'space-between'}>
         <Stack px={2} pt={4}>
           <Row px={1} justifyContent={'start'}>
-            <Typography fontWeight={700} fontSize={18}>
+            <Typography fontWeight={600} fontSize={18}>
               차차님,
               <br />
               정말 탈퇴하시겠어요?
