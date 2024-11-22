@@ -6,9 +6,17 @@ import { COLORS } from '../../../core/colors';
 import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
 import { useJNavigate } from '../../../core/routes';
+import { MypageRowButton } from './components/MypageRowButton';
+import { useState } from 'react';
+import { JDialog } from '../../../components/JDialog';
 
 export const MypagePage = () => {
   const navigate = useJNavigate();
+  const [isShowLogout, setIsShowLogout] = useState(false);
+
+  const handleCancelLogout = () => {
+    setIsShowLogout(false);
+  };
   return (
     <MotionWrapper>
       <Stack>
@@ -29,6 +37,7 @@ export const MypagePage = () => {
               paddingY: 0.5,
               borderRadius: 4,
             }}
+            onClick={() => navigate('/myinfo')}
           >
             <Row alignItems={'center'} justifyContent={'center'} gap={1}>
               <Typography fontSize={16} fontWeight={600}>
@@ -69,26 +78,30 @@ export const MypagePage = () => {
           </Row>
         </Stack>
         <Stack px={2}>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>프로필 수정</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>약관 및 정책</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>문의하기</Typography>
-          </JButton>
-          <JButton
-            onClick={() => {
-              navigate('/enter');
-            }}
-            sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}
-          >
-            <Typography fontSize={14}>로그아웃</Typography>
-          </JButton>
-          <JButton sx={{ justifyContent: 'start', paddingY: 1.5, paddingX: 1 }}>
-            <Typography fontSize={14}>탈퇴하기</Typography>
-          </JButton>
+          <MypageRowButton
+            label="프로필 수정"
+            onClick={() => navigate('/model/profile/edit')}
+          />
+          <MypageRowButton
+            label="개인정보 처리방침"
+            onClick={() => navigate('/privacy-policy')}
+          />
+          <MypageRowButton
+            label="서비스 이용약관"
+            onClick={() => navigate('/terms-of-service')}
+          />
+          <MypageRowButton
+            label="문의하기"
+            onClick={() => navigate('/contact')}
+          />
+          <MypageRowButton
+            label="로그아웃"
+            onClick={() => setIsShowLogout(true)}
+          />
+          <MypageRowButton
+            label="탈퇴하기"
+            onClick={() => navigate('/leave')}
+          />
           <Row
             sx={{ justifyContent: 'space-between', paddingY: 1.5, paddingX: 1 }}
           >
@@ -101,6 +114,16 @@ export const MypagePage = () => {
           </Row>
         </Stack>
       </Stack>
+      <JDialog
+        isOpen={isShowLogout}
+        onClose={handleCancelLogout}
+        title="로그아웃"
+        description="정말 로그아웃 하시겠습니까?"
+        onOkay={handleCancelLogout}
+        labelOkay="아니오"
+        onNo={() => navigate('/enter')}
+        labelNo="네"
+      />
     </MotionWrapper>
   );
 };

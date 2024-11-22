@@ -32,6 +32,10 @@ const theme = createTheme({
             backgroundColor: COLORS.primary,
           },
         },
+        text: {
+          color: COLORS.p_black,
+          textDecorationLine: 'underline !important',
+        },
       },
     },
   },
