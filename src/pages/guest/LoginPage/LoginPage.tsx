@@ -9,10 +9,23 @@ import { MotionWrapper } from '../../../components/MotionWrapper';
 import { useJNavigate } from '../../../core/routes';
 import { ImageLoadingLayer } from '../../../components/ImageLoadingLayer';
 import { LoginTextField } from './components/LoginTextField';
+import { useState } from 'react';
+import { JDialog } from '../../../components/JDialog';
+import { login } from '../../../core/auth';
 
 export const LoginPage = () => {
   const navigate = useJNavigate();
+  const [isShowSelectUserRole, setIsShowSelectUserRole] = useState(false);
 
+  const loginByArtist = () => {
+    login('artist', 'artist');
+    navigate('/artist/home');
+  };
+
+  const loginByModel = () => {
+    login('model', 'model');
+    navigate('/model/home');
+  };
   return (
     <ImageLoadingLayer>
       <MotionWrapper>
@@ -27,7 +40,10 @@ export const LoginPage = () => {
               <LoginTextField label="비밀번호" />
             </Stack>
             <Stack marginTop={2}>
-              <Button variant="contained" onClick={() => navigate('/')}>
+              <Button
+                variant="contained"
+                onClick={() => setIsShowSelectUserRole(true)}
+              >
                 로그인
               </Button>
             </Stack>
@@ -86,6 +102,18 @@ export const LoginPage = () => {
             </Row>
           </Stack>
         </Stack>
+        <JDialog
+          isOpen={isShowSelectUserRole}
+          onClose={() => {
+            setIsShowSelectUserRole(false);
+          }}
+          title="(임시)역할선택"
+          description="로그인 역할을 선택하세요"
+          labelOkay="아티스트"
+          onOkay={loginByArtist}
+          labelNo="모델"
+          onNo={loginByModel}
+        />
       </MotionWrapper>
     </ImageLoadingLayer>
   );

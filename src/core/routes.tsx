@@ -37,6 +37,7 @@ import { ElementType } from 'react';
 import { SearchMakeupKeywordPage } from '../pages/model/SearchMakeupKeywordPage/SearchMakeupKeywordPage';
 import { BookIdPage } from '../pages/model/BookIdPage/BookIdPage';
 import { MakeupIdPage } from '../pages/model/MakeupIdPage/MakeupIdPage';
+import { getUserRole, UserRole } from './auth';
 
 const paths = {
   home: '/',
@@ -79,22 +80,18 @@ const nav = (Page: ElementType) => (
   </>
 );
 
-type UserType = 'guest' | 'model' | 'artist';
-
-const getUserType = (): UserType => 'model';
-
-const validateUserType = async (accessibleUserTypes: UserType[]) => {
-  const userType = getUserType();
-  if (accessibleUserTypes.includes(userType)) {
+const validateUserType = async (accessibleUserTypes: UserRole[]) => {
+  const role = getUserRole();
+  if (accessibleUserTypes.includes(role)) {
     return null;
   }
-  if (userType === 'guest') {
+  if (role === 'guest') {
     throw redirect(paths.login);
   }
-  if (userType === 'artist') {
+  if (role === 'artist') {
     throw redirect(paths.artistHome);
   }
-  if (userType === 'model') {
+  if (role === 'model') {
     throw redirect(paths.modelHome);
   }
 };

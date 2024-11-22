@@ -9,6 +9,7 @@ import { useJNavigate } from '../../../core/routes';
 import { MypageRowButton } from './components/MypageRowButton';
 import { useState } from 'react';
 import { JDialog } from '../../../components/JDialog';
+import { logout } from '../../../core/auth';
 
 export const MypagePage = () => {
   const navigate = useJNavigate();
@@ -121,7 +122,10 @@ export const MypagePage = () => {
         description="정말 로그아웃 하시겠습니까?"
         onOkay={handleCancelLogout}
         labelOkay="아니오"
-        onNo={() => navigate('/enter')}
+        onNo={() => {
+          logout();
+          navigate('/enter');
+        }}
         labelNo="네"
       />
     </MotionWrapper>
