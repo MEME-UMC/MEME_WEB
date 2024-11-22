@@ -53,7 +53,7 @@ export const JDialog = ({
           <Stack justifyContent={'space-between'} flex={1}>
             <Stack flex={1} justifyContent={'center'} alignItems={'center'}>
               {icon}
-              <Typography fontSize={14} fontWeight={600} textAlign={'center'}>
+              <Typography fontSize={17} fontWeight={700} textAlign={'center'}>
                 {title}
               </Typography>
               <Typography fontSize={14} fontWeight={600} textAlign={'center'}>
@@ -62,7 +62,7 @@ export const JDialog = ({
             </Stack>
             <Row pb={3}>
               {onNo && (
-                <Button variant="outlined" onClick={onNo}>
+                <Button variant="text" onClick={onNo}>
                   {labelNo}
                 </Button>
               )}

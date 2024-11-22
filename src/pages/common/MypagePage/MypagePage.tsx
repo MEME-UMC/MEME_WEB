@@ -7,9 +7,16 @@ import { JIcon } from '../../../components/JIcon';
 import { MotionWrapper } from '../../../components/MotionWrapper';
 import { useJNavigate } from '../../../core/routes';
 import { MypageRowButton } from './components/MypageRowButton';
+import { useState } from 'react';
+import { JDialog } from '../../../components/JDialog';
 
 export const MypagePage = () => {
   const navigate = useJNavigate();
+  const [isShowLogout, setIsShowLogout] = useState(false);
+
+  const handleCancelLogout = () => {
+    setIsShowLogout(false);
+  };
   return (
     <MotionWrapper>
       <Stack>
@@ -89,7 +96,7 @@ export const MypagePage = () => {
           />
           <MypageRowButton
             label="로그아웃"
-            onClick={() => navigate('/enter')}
+            onClick={() => setIsShowLogout(true)}
           />
           <MypageRowButton
             label="탈퇴하기"
@@ -107,6 +114,16 @@ export const MypagePage = () => {
           </Row>
         </Stack>
       </Stack>
+      <JDialog
+        isOpen={isShowLogout}
+        onClose={handleCancelLogout}
+        title="로그아웃"
+        description="정말 로그아웃 하시겠습니까?"
+        onOkay={handleCancelLogout}
+        labelOkay="아니오"
+        onNo={() => navigate('/enter')}
+        labelNo="네"
+      />
     </MotionWrapper>
   );
 };
