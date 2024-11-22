@@ -28,6 +28,7 @@ import starGray from '../assets/start-gray.svg';
 import plus from '../assets/plus.svg';
 import checked from '../assets/checked.svg';
 import close from '../assets/close.svg';
+import pencil from '../assets/pencil.svg';
 
 const IconMap = {
   reservation: {
@@ -175,6 +176,11 @@ const IconMap = {
     src: close,
     width: 24,
     height: 24,
+  },
+  pencil: {
+    src: pencil,
+    width: 16,
+    height: 16,
   },
 };
 
