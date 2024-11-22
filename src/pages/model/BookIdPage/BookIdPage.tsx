@@ -8,7 +8,6 @@ import { TimeItem } from './components/TimeItem';
 import { useState } from 'react';
 import { OptionButton } from './components/OptionButton';
 import { JButton } from '../../../components/JButton';
-import { useJNavigate } from '../../../core/routes';
 import Calendar from '../../../components/Calendar/Calendar';
 
 const optionButtons = [
@@ -73,7 +72,6 @@ const BothOptions = ({
 export const BookIdPage = () => {
   const [visitType, setVisitType] = useState('both'); // 'shop', 'artist', 'both'
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const navigate = useJNavigate();
 
   const handleOptionSelect = (type: string) => {
     setSelectedOption(type);
@@ -152,7 +150,7 @@ export const BookIdPage = () => {
               alert(
                 '0월 0일 00시에 예약하시겠습니까?\n\n아티스트가 예약 확인 후 확정되면\n알림을 통해 알려드립니다!'
               );
-              navigate('/reservation/complete');
+              // navigate('/reservation/complete');
             }}
             sx={{
               height: '49px',
