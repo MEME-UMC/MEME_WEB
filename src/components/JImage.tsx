@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef } from 'react';
+import { memo } from 'react';
 import logoLg from '../assets/logo-lg.png';
 import logoSm from '../assets/logo-sm.png';
 import sampleMakeup from '../assets/sample-makeup.png';
@@ -9,7 +9,7 @@ import partyCannon from '../assets/party-cannon.png';
 import partyConfetti from '../assets/party-confetti.png';
 import reservationBg01 from '../assets/reservationBg01.png';
 import reservationBg02 from '../assets/reservationBg02.png';
-import { useImageLoading } from './ImageLoadingLayer';
+import Image from 'next/image';
 
 const ImageMap = {
   'logo-lg': {
@@ -83,26 +83,17 @@ type Props = {
   height?: number;
 };
 
-export const JImage = memo(({ image, alt, width, height }: Props) => {
-  const { addLoadedImage, addCount } = useImageLoading();
-  const hasRun = useRef(false);
-
+const JImageComp = ({ image, alt, width, height }: Props) => {
   const obj = ImageMap[image];
 
-  useEffect(() => {
-    if (!hasRun.current) {
-      addCount();
-      hasRun.current = true;
-    }
-  }, [addCount]);
-
   return (
-    <img
+    <Image
       src={obj.src}
       alt={alt ?? obj.alt}
       width={width ?? obj.width}
       height={height ?? obj.height}
-      onLoad={addLoadedImage}
     />
   );
-});
+};
+
+export const JImage = memo(JImageComp);
