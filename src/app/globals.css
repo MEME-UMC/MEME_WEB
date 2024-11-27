@@ -35,18 +35,25 @@ html {
   overflow: hidden !important;
 }
 body {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   position: fixed;
+  width: 100%;
   margin: 0px;
   align-items: center;
   color: #222;
   background-color: #fff2eb;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-width: 768px; /* iPad Mini 768*/
-  width: 100%;
-  background-color: #ffffff;
+  #root {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 768px; /* iPad Mini 768*/
+    width: 100%;
+    background-color: #ffffff;
+  }
   &:has(.navigation) {
     #root {
       height: calc(100% - 56px);
