@@ -1,7 +1,10 @@
 import { JButton } from '@/components/JButton';
 import { JIcon } from '@/components/JIcon';
+import { JImage } from '@/components/JImage';
 import { Row } from '@/components/Row';
+import { COLORS } from '@/styles/colors';
 import { Stack, Typography } from '@mui/material';
+import { PortfolioCard } from './PortfolioCard';
 
 const booking = {
   name: '메이크업명',
@@ -13,7 +16,29 @@ const booking = {
 
 const ModelHomePage = () => {
   return (
-    <Stack pt={1}>
+    <Stack pt={1} overflow={'scroll'}>
+      <Row justifyContent={'space-between'} paddingX={2}>
+        <JImage image="logo-sm" />
+        <JButton sx={{ borderRadius: 6, width: 40, height: 40 }}>
+          <JIcon icon="notice" />
+        </JButton>
+      </Row>
+      <Row paddingX={2} py={2}>
+        <JButton
+          sx={{
+            border: 2,
+            borderColor: COLORS.primary,
+            borderRadius: 6,
+          }}
+        >
+          <Row justifyContent={'space-between'} flex={1} px={2} py={1}>
+            <Typography color={COLORS.gray300}>
+              원하는 메이크업을 검색해보세요!
+            </Typography>
+            <JIcon icon="search" />
+          </Row>
+        </JButton>
+      </Row>
       <Stack px={2}>
         <Typography fontSize={18} fontWeight={600}>
           OOO 님, 환영합니다!
@@ -46,7 +71,12 @@ const ModelHomePage = () => {
           p={2}
           sx={{ overflowX: 'scroll' }}
           justifyContent={'start'}
-        ></Row>
+        >
+          <PortfolioCard />
+          <PortfolioCard />
+          <PortfolioCard />
+          <PortfolioCard />
+        </Row>
       </Stack>
       <Stack py={1}>
         <Stack px={2}>
@@ -62,7 +92,12 @@ const ModelHomePage = () => {
           p={2}
           sx={{ overflowX: 'scroll' }}
           justifyContent={'start'}
-        ></Row>
+        >
+          <PortfolioCard />
+          <PortfolioCard />
+          <PortfolioCard />
+          <PortfolioCard />
+        </Row>
       </Stack>
     </Stack>
   );
