@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { Box } from '@mui/material';
 import {
   createContext,
