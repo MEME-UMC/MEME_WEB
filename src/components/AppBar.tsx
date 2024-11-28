@@ -1,7 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { JButton } from './JButton';
 import { JIcon } from './JIcon';
-import { useJNavigate } from '../core/routes';
 
 type AppBarProps = {
   title?: string;
@@ -9,7 +8,6 @@ type AppBarProps = {
   onBack?: () => void;
 };
 export const AppBar = ({ title, backIcon, onBack }: AppBarProps) => {
-  const navigate = useJNavigate();
   return (
     <Stack
       sx={{ position: 'relative', width: '100%', height: '48px' }}
@@ -27,7 +25,7 @@ export const AppBar = ({ title, backIcon, onBack }: AppBarProps) => {
           onClick={
             onBack ??
             (() => {
-              navigate(-1);
+              // navigate(-1);
             })
           }
         >
