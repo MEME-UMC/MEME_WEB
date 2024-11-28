@@ -1,3 +1,4 @@
+'use client';
 import { Stack } from '@mui/material';
 import { Step1 } from './components/Step1';
 import { Step2 } from './components/Step2';
