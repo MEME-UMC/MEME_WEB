@@ -1,5 +1,5 @@
+import { JTextField } from '@/components/JTextField';
 import { Button, Stack, Typography } from '@mui/material';
-import { JTextField } from '../../../../components/JTextField';
 
 type Props = {
   onNext: () => void;

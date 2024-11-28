@@ -1,8 +1,8 @@
+import { JButton } from '@/components/JButton';
+import { JIcon } from '@/components/JIcon';
+import { Row } from '@/components/Row';
+import { COLORS } from '@/styles/colors';
 import { Stack, Typography } from '@mui/material';
-import { JButton } from '../../../../components/JButton';
-import { COLORS } from '../../../../core/colors';
-import { JIcon } from '../../../../components/JIcon';
-import { Row } from '../../../../components/Row';
 
 type Props = {
   onNext: () => void;
