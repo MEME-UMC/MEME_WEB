@@ -1,3 +1,5 @@
+'use client';
+
 import { AppBar } from '@/components/AppBar';
 import { JTextField } from '@/components/JTextField';
 import { Row } from '@/components/Row';
