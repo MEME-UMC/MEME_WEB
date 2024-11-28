@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { AppBar } from '@/components/AppBar';
 import { ImageLoadingLayer } from '@/components/ImageLoadingLayer';

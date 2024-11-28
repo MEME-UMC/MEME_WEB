@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import { Row } from '../../../../components/Row';
-import { COLORS } from '../../../../core/colors';
+import { COLORS } from '@/styles/colors';
 
 type Props = {
   title: string;

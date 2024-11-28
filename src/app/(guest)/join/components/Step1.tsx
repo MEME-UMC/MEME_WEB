@@ -1,10 +1,12 @@
+'use client';
 import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import { JIcon } from '../../../../components/JIcon';
 import { Row } from '../../../../components/Row';
-import { COLORS } from '../../../../core/colors';
+
 import { PolicyCheckbox } from './PolicyCheckbox';
 import { AppBar } from '../../../../components/AppBar';
+import { COLORS } from '@/styles/colors';
 
 type Props = {
   onPrev: () => void;

@@ -1,3 +1,4 @@
+'use client';
 import { Checkbox, keyframes, Typography } from '@mui/material';
 import { JButton } from '../../../../components/JButton';
 import { JIcon } from '../../../../components/JIcon';

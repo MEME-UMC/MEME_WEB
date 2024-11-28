@@ -1,3 +1,4 @@
+'use client';
 import { JDialog } from '@/components/JDialog';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { Row } from '@/components/Row';

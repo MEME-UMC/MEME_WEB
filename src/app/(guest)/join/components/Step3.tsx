@@ -1,3 +1,4 @@
+'use client';
 import { Stack, Button } from '@mui/material';
 import { AppBar } from '../../../../components/AppBar';
 import SwipeableViews from 'react-swipeable-views';

@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { Step1 } from './components/Step1';
