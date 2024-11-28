@@ -105,6 +105,7 @@ const Calendar = () => {
           <Row
             sx={{ width: '14.44444%' }}
             borderBottom={`1px solid ${COLORS.gray400}`}
+            key={index}
           >
             <Typography
               key={week}
