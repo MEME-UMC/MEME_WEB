@@ -1,3 +1,4 @@
+'use client';
 import { AppBar } from '@/components/AppBar';
 import { JButton } from '@/components/JButton';
 import { JIcon } from '@/components/JIcon';

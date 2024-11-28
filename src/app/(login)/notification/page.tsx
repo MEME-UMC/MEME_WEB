@@ -1,3 +1,4 @@
+'use client';
 import { AppBar } from '@/components/AppBar';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { Stack } from '@mui/material';
