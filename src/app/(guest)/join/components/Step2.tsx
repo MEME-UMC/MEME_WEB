@@ -23,7 +23,7 @@ export const Step2 = ({ onPrev, onNext }: Props) => {
   const [isTimerActive, setIsTimerActive] = useState(false);
 
   useEffect(() => {
-    let timer = 0;
+    let timer: NodeJS.Timeout | number = 0;
     if (isTimerActive && time > 0) {
       timer = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
