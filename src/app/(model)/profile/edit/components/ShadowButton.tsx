@@ -1,5 +1,5 @@
-import { JButton } from '../../../../components/JButton';
-import { COLORS } from '../../../../core/colors';
+import { JButton } from '@/components/JButton';
+import { COLORS } from '@/styles/colors';
 import { ReactNode } from 'react';
 
 type Props = {
