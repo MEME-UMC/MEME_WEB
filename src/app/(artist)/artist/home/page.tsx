@@ -1,3 +1,4 @@
+'use client';
 import { logout } from '@/app/auth';
 import { Box, Button, Typography } from '@mui/material';
 
