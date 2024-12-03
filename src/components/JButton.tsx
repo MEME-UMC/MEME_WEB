@@ -1,6 +1,6 @@
+import { COLORS } from '@/styles/colors';
 import { ButtonBase, ButtonBaseProps } from '@mui/material';
 import { ReactNode } from 'react';
-import { COLORS } from '../core/colors';
 
 type Props = {
   children: ReactNode;

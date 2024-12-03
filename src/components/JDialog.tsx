@@ -1,9 +1,9 @@
 import { Button, Fade, Modal, Stack, Typography } from '@mui/material';
-import { COLORS } from '../core/colors';
 import { BlinkButton } from './BlinkButton';
 import { JIcon } from './JIcon';
 import { Row } from './Row';
 import { ReactNode } from 'react';
+import { COLORS } from '@/styles/colors';
 
 type Props = {
   isOpen: boolean;

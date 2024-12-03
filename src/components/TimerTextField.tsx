@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import { format } from 'date-fns';
 import { useState, useEffect } from 'react';
-import { COLORS } from '../core/colors';
+import { COLORS } from '@/styles/colors';
 import { JIcon } from './JIcon';
 
 type Props = {
@@ -27,7 +27,7 @@ export const TimerTextField = ({
   const [time, setTime] = useState(180);
 
   useEffect(() => {
-    let timer = 0;
+    let timer: NodeJS.Timeout | number = 0;
     if (isTimerActive && time > 0) {
       timer = setInterval(() => {
         setTime((prevTime) => prevTime - 1);

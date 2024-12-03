@@ -205,7 +205,7 @@ type Props = {
   width?: number;
 };
 
-export const JIcon = memo(({ icon, color, height, width }: Props) => {
+const JIconComp = ({ icon, color, height, width }: Props) => {
   const obj = IconMap[icon];
   const IconComponent = obj.src;
 
@@ -216,4 +216,6 @@ export const JIcon = memo(({ icon, color, height, width }: Props) => {
       color={color}
     />
   );
-});
+};
+
+export const JIcon = memo(JIconComp);

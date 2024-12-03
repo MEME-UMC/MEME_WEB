@@ -1,10 +1,12 @@
+'use client';
 import { Stack, Typography } from '@mui/material';
 import { Row } from '../Row';
 import { JButton } from '../JButton';
-import { COLORS } from '../../core/colors';
+
 import { useEffect, useState } from 'react';
 import { JIcon } from '../JIcon';
 import { CalendarDayButton } from './components/CalendarDayButton';
+import { COLORS } from '@/styles/colors';
 
 const Calendar = () => {
   const weeks = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
@@ -104,6 +106,7 @@ const Calendar = () => {
           <Row
             sx={{ width: '14.44444%' }}
             borderBottom={`1px solid ${COLORS.gray400}`}
+            key={index}
           >
             <Typography
               key={week}

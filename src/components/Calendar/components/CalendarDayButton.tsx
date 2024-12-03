@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import { JButton } from '../../JButton';
-import { COLORS } from '../../../core/colors';
+import { COLORS } from '@/styles/colors';
 
 type CalendarDayButtonProps = {
   day: number | null;

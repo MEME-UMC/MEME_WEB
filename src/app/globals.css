@@ -1,0 +1,65 @@
+/* 폰트 */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src: local('Pretendard ExtraBold'),
+    url('../../public/fonts/Pretendard-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Pretendard SemiBold'),
+    url('../../public/fonts/Pretendard-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src: local('Pretendard Medium'),
+    url('../../public/fonts/Pretendard-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pretendard Regular'),
+    url('../../public/fonts/Pretendard-Regular.woff2') format('woff2');
+}
+
+html {
+  overflow: hidden !important;
+}
+body {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  align-items: center;
+  color: #222;
+  background-color: #fff2eb;
+  #root {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 768px; /* iPad Mini 768*/
+    width: 100%;
+    background-color: #ffffff;
+  }
+  &:has(.navigation) {
+    #root {
+      height: calc(100% - 56px);
+    }
+  }
+  &:has(.bg-ivory) {
+    background-color: #fefcfa;
+  }
+}
