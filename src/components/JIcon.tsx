@@ -25,12 +25,16 @@ import circleChecked from '../assets/circle-checked.svg';
 import circleUnchecked from '../assets/circle-unchecked.svg';
 import starGradient from '../assets/start-gradient.svg';
 import starGray from '../assets/start-gray.svg';
+import star from '../assets/star.svg';
 import plus from '../assets/plus.svg';
 import checked from '../assets/checked.svg';
 import close from '../assets/close.svg';
 import pencil from '../assets/pencil.svg';
 import circleCheckedOutlined from '../assets/circle-checked-outline.svg';
 import circleAlertOutlined from '../assets/circle-alert-outlined.svg';
+import userIcon from '../assets/user-icon.svg';
+import insta from '../assets/insta.svg';
+import atSign from '../assets/at-sign.svg';
 
 const IconMap = {
   reservation: {
@@ -154,6 +158,11 @@ const IconMap = {
     width: 20,
     height: 20,
   },
+  star: {
+    src: star,
+    width: 11,
+    height: 10,
+  },
   starGradient: {
     src: starGradient,
     width: 13,
@@ -193,6 +202,21 @@ const IconMap = {
     src: circleAlertOutlined,
     width: 18,
     height: 18,
+  },
+  userIcon: {
+    src: userIcon,
+    width: 30,
+    height: 40,
+  },
+  insta: {
+    src: insta,
+    width: 15,
+    height: 15,
+  },
+  'at-sign': {
+    src: atSign,
+    width: 16,
+    height: 16,
   },
 };
 
