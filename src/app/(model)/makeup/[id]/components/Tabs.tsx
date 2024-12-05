@@ -1,7 +1,7 @@
 import { JButton } from '@/components/JButton';
 import { Row } from '@/components/Row';
 import { COLORS } from '@/styles/colors';
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 
 import React from 'react';
 
@@ -13,7 +13,7 @@ interface TabItemProps {
 export const TabItem = ({ children, onClick }: TabItemProps) => {
   return (
     <JButton sx={{ width: '100%' }} onClick={onClick}>
-      <Typography
+      <Box
         width={'100%'}
         fontSize={14}
         fontWeight={600}
@@ -21,7 +21,7 @@ export const TabItem = ({ children, onClick }: TabItemProps) => {
         textAlign={'center'}
       >
         {children}
-      </Typography>
+      </Box>
     </JButton>
   );
 };
