@@ -20,7 +20,7 @@ export const TabItem = ({ children, onClick }: TabItemProps) => {
         padding={'12px 0'}
         textAlign={'center'}
       >
-        <Row>{children}</Row>
+        {children}
       </Typography>
     </JButton>
   );

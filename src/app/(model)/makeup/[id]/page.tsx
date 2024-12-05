@@ -11,6 +11,8 @@ import { JButton } from '@/components/JButton';
 import { COLORS } from '@/styles/colors';
 import { LikeButton } from './components/LikeButton';
 import { TabItem, Tabs } from './components/Tabs';
+import Link from 'next/link';
+import { SquareImage } from '@/components/SquareImage';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -40,22 +42,7 @@ const Page = () => {
     <MotionWrapper>
       <AppBar title={'예약하기'} backIcon />
       <Stack>
-        <Stack width={'100%'} overflow="hidden">
-          <Stack sx={{ position: 'relative', paddingBottom: '100%' }}>
-            <Stack
-              sx={{
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                backgroundImage:
-                  'url(https://s3-alpha-sig.figma.com/img/bf5a/e5e0/70f6c8f1705371f9e749966c61f36935?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f4wSkVFOzSNd7F9YytD8gR7P5NexXWRCM1kAyvXDAMSWeuuif9aeM1lfitCUO7SOINrqqRBsQSpr1pK27YGQ6DsUjKBSRlmGMwc9DdDpgSsCZ5OWYwrvt24dBahAV7xg0WKC2EsVj-t7VGEmkeXQMKFLNmReGEIHs-5FIYunqgl6IlrTPUGfrgT6S288VUHYp5u0jORT78bMWmA5R0V7k13w8YInJOPgefCxX-jy2j5AChR~iJBnB0996sU6NNCg0XOBLc11l3XiAnglZA-yVFOj9etGMu3i3s~F2GzdHXj6g2jmd2fjnu7UIzMYDoqnaMQtBT3vLyYwBro5Gk~gZw__)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                overflow: 'hidden',
-              }}
-            ></Stack>
-          </Stack>
-        </Stack>
+        <SquareImage url="https://s3-alpha-sig.figma.com/img/2c54/dce4/40f0f12cf28c01cbb8d2b2759118efac?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p3Tvx-CENYtVMmP~QTJzztu1qD4XGvZmQ~-fyH1xoM0XQpN-Zl9EVfBHR8AQszhK47YOqD9SyNL7JcrsCURFLqjeGwNbgjeUrD2o52OQOCc3BpuqBDiebU2xUdbvpkdz7SSd9rJBj9kPUxqrfDvf0SLvW23uHcikZvLoMnosL~8faWfHtFtY46Gwm3EkBxWuEG5uDA-zTITVooFZmKWbe2xySMnjXwZvHhFKrvoA3bKS12ulW73KrVgyQA2HLt3rx6tj8UmYpfrHZ-RKqyMeom7qnmeGd2LJCP5lD0PSHbGeF1Yq3sJZCWAbF7xaUTYJALhSziuZg~3~rsZUknS~EA__" />
         <Stack
           position={'relative'}
           zIndex={999}
@@ -74,28 +61,31 @@ const Page = () => {
             <Stack padding={'0 31px'}>
               <Row justifyContent={'space-between'}>
                 <Row gap={2}>
-                  <JButton
-                    sx={{
-                      width: '52px',
-                      height: '52px',
-                      borderRadius: '50%',
-                      background: `${COLORS.primary}`,
-                      overflow: 'hidden',
-                    }}
-                  >
+                  <Link href={'/artist/profile'}>
                     <Stack
                       sx={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '100%',
-                        backgroundImage:
-                          'url(https://s3-alpha-sig.figma.com/img/bf5a/e5e0/70f6c8f1705371f9e749966c61f36935?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f4wSkVFOzSNd7F9YytD8gR7P5NexXWRCM1kAyvXDAMSWeuuif9aeM1lfitCUO7SOINrqqRBsQSpr1pK27YGQ6DsUjKBSRlmGMwc9DdDpgSsCZ5OWYwrvt24dBahAV7xg0WKC2EsVj-t7VGEmkeXQMKFLNmReGEIHs-5FIYunqgl6IlrTPUGfrgT6S288VUHYp5u0jORT78bMWmA5R0V7k13w8YInJOPgefCxX-jy2j5AChR~iJBnB0996sU6NNCg0XOBLc11l3XiAnglZA-yVFOj9etGMu3i3s~F2GzdHXj6g2jmd2fjnu7UIzMYDoqnaMQtBT3vLyYwBro5Gk~gZw__)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+                        width: '52px',
+                        height: '52px',
+                        borderRadius: '50%',
+                        background: `${COLORS.primary}`,
                         overflow: 'hidden',
                       }}
-                    ></Stack>
-                  </JButton>
+                    >
+                      <Stack
+                        sx={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                          backgroundImage:
+                            'url(https://s3-alpha-sig.figma.com/img/bf5a/e5e0/70f6c8f1705371f9e749966c61f36935?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f4wSkVFOzSNd7F9YytD8gR7P5NexXWRCM1kAyvXDAMSWeuuif9aeM1lfitCUO7SOINrqqRBsQSpr1pK27YGQ6DsUjKBSRlmGMwc9DdDpgSsCZ5OWYwrvt24dBahAV7xg0WKC2EsVj-t7VGEmkeXQMKFLNmReGEIHs-5FIYunqgl6IlrTPUGfrgT6S288VUHYp5u0jORT78bMWmA5R0V7k13w8YInJOPgefCxX-jy2j5AChR~iJBnB0996sU6NNCg0XOBLc11l3XiAnglZA-yVFOj9etGMu3i3s~F2GzdHXj6g2jmd2fjnu7UIzMYDoqnaMQtBT3vLyYwBro5Gk~gZw__)',
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          overflow: 'hidden',
+                        }}
+                      ></Stack>
+                    </Stack>
+                  </Link>
+
                   <Typography fontSize={'18px'} fontWeight={600}>
                     김차차
                   </Typography>
