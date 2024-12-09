@@ -172,7 +172,7 @@ const page = () => {
               rating={'4.8'}
               information={'아티스트 김제니 / 150,000'}
               type={'makeup'}
-            ></CardFrame>
+            />
           </Row>
         </Stack>
       </Stack>
