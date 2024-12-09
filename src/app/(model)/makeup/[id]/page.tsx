@@ -7,7 +7,6 @@ import { ReservationViewInfo } from './components/ReservationViewInfo';
 import { ReservationViewReview } from './components/ReservationViewReview';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { AppBar } from '@/components/AppBar';
-import { JButton } from '@/components/JButton';
 import { COLORS } from '@/styles/colors';
 import { LikeButton } from './components/LikeButton';
 import { TabItem, Tabs } from './components/Tabs';
@@ -71,18 +70,11 @@ const Page = () => {
                         overflow: 'hidden',
                       }}
                     >
-                      <Stack
-                        sx={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '100%',
-                          backgroundImage:
-                            'url(https://s3-alpha-sig.figma.com/img/bf5a/e5e0/70f6c8f1705371f9e749966c61f36935?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f4wSkVFOzSNd7F9YytD8gR7P5NexXWRCM1kAyvXDAMSWeuuif9aeM1lfitCUO7SOINrqqRBsQSpr1pK27YGQ6DsUjKBSRlmGMwc9DdDpgSsCZ5OWYwrvt24dBahAV7xg0WKC2EsVj-t7VGEmkeXQMKFLNmReGEIHs-5FIYunqgl6IlrTPUGfrgT6S288VUHYp5u0jORT78bMWmA5R0V7k13w8YInJOPgefCxX-jy2j5AChR~iJBnB0996sU6NNCg0XOBLc11l3XiAnglZA-yVFOj9etGMu3i3s~F2GzdHXj6g2jmd2fjnu7UIzMYDoqnaMQtBT3vLyYwBro5Gk~gZw__)',
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center',
-                          overflow: 'hidden',
-                        }}
-                      ></Stack>
+                      <SquareImage
+                        url={
+                          'https://github.com/MEME-UMC/MEME_WEB/blob/main/src/assets/sample-makeup.png?raw=true'
+                        }
+                      />
                     </Stack>
                   </Link>
 
@@ -144,17 +136,20 @@ const Page = () => {
           </Stack>
 
           <Stack padding={'24px 21px'}>
-            <JButton
-              sx={{
-                height: '49px',
-                background: `${COLORS.p_black}`,
-                borderRadius: '10px',
-              }}
-            >
-              <Typography lineHeight={3} color="#FFF" fontSize={14}>
+            <Link href={'/book/0'}>
+              <Typography
+                lineHeight={'49px'}
+                color="#FFF"
+                fontSize={14}
+                sx={{
+                  textAlign: 'center',
+                  background: `${COLORS.p_black}`,
+                  borderRadius: '10px',
+                }}
+              >
                 예약하기
               </Typography>
-            </JButton>
+            </Link>
           </Stack>
         </Stack>
       </Stack>
