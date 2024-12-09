@@ -9,7 +9,7 @@ import { AppBar } from '@/components/AppBar';
 import Calendar from '@/components/Calendar/Calendar';
 import { JTextField } from './components/JTextField';
 import { TimeItem } from './components/TimeItem';
-import { JButton } from '@/components/JButton';
+import Link from 'next/link';
 
 const optionButtons = [
   { label: '샵으로 갈게요', value: 'shop' },
@@ -147,23 +147,20 @@ const Page = () => {
           </Stack>
         </Stack>
         <Stack padding={'24px 21px'}>
-          <JButton
-            onClick={() => {
-              alert(
-                '0월 0일 00시에 예약하시겠습니까?\n\n아티스트가 예약 확인 후 확정되면\n알림을 통해 알려드립니다!'
-              );
-              // navigate('/reservation/complete');
-            }}
-            sx={{
-              height: '49px',
-              background: `${COLORS.primary}`,
-              borderRadius: '10px',
-            }}
-          >
-            <Typography lineHeight={3} color="#FFF" fontSize={14}>
-              예약하기
+          <Link href={'0/complete'}>
+            <Typography
+              lineHeight={'49px'}
+              color="#FFF"
+              fontSize={14}
+              sx={{
+                textAlign: 'center',
+                background: `${COLORS.primary}`,
+                borderRadius: '10px',
+              }}
+            >
+              다음
             </Typography>
-          </JButton>
+          </Link>
         </Stack>
       </Stack>
     </MotionWrapper>
