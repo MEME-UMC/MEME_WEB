@@ -8,6 +8,7 @@ export const MotionWrapper = ({ ...props }: BoxProps) => {
 
   return (
     <Box
+      position={'relative'}
       component={motion.div as any}
       flex={1}
       initial={{ opacity: 0, y: 50 }}
