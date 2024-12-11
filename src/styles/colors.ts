@@ -5,7 +5,6 @@ export const COLORS = {
   primarySelect: '#FF633E99',
   primary200: '#FFF6F3',
   primary600: '#FFB3A0',
-  
 
   // Red/Pink Shades/etc
   red_light: '#FCE3D5',
@@ -31,6 +30,8 @@ export const COLORS = {
   gray300: '#D9D9D9',
   gray400: '#B9B9B9',
   gray500: '#5C5C5C',
+  gray600: '#888686',
+  gray700: '#979797',
   text_grey: '#999999',
 
   transparent: 'transparent',
