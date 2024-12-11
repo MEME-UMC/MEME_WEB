@@ -1,17 +1,20 @@
 import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Row } from './Row';
+import { COLORS } from '@/styles/colors';
 
 type CounterProps = {
   targetNumber: number | string;
   fontSize: number;
   fontWeight?: number;
+  color?: string;
 };
 
 const Counter = ({
   targetNumber,
   fontSize,
   fontWeight = 400,
+  color,
 }: CounterProps) => {
   const [displayedNumbers, setDisplayedNumbers] = useState<string[]>([]);
   // 쉼표가 포함된 숫자 문자열을 처리하여 배열로 변환
@@ -48,6 +51,7 @@ const Counter = ({
             transition: 'transform 0.4s ease, opacity 0.4s ease',
             transitionDelay: `${index * 0.1}s`,
             fontWeight: fontWeight,
+            color: color ? color : COLORS.p_black,
           }}
         >
           {num}
