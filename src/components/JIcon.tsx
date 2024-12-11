@@ -35,6 +35,7 @@ import circleAlertOutlined from '../assets/circle-alert-outlined.svg';
 import userIcon from '../assets/user-icon.svg';
 import insta from '../assets/insta.svg';
 import atSign from '../assets/at-sign.svg';
+import check from '../assets/check.svg';
 
 const IconMap = {
   reservation: {
@@ -217,6 +218,11 @@ const IconMap = {
     src: atSign,
     width: 16,
     height: 16,
+  },
+  check: {
+    src: check,
+    width: 8,
+    height: 7,
   },
 };
 
