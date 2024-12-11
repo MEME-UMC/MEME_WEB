@@ -5,6 +5,7 @@ import { Row } from '@/components/Row';
 import { COLORS } from '@/styles/colors';
 import { Stack, Typography } from '@mui/material';
 import { PortfolioCard } from './PortfolioCard';
+import Link from 'next/link';
 
 const booking = {
   name: '메이크업명',
@@ -51,10 +52,12 @@ const ModelHomePage = () => {
       </Stack>
       <Stack px={2} py={2}>
         <Row justifyContent={'end'}>
-          <JButton sx={{ gap: 0.7, width: 'auto', px: 1, borderRadius: 8 }}>
-            <Typography fontSize={14}>전체 예약 보기</Typography>
-            <JIcon icon="rightArrow" />
-          </JButton>
+          <Link href={'/model/reservation'}>
+            <Row sx={{ gap: 0.7, width: 'auto', px: 1, borderRadius: 8 }}>
+              <Typography fontSize={14}>전체 예약 보기</Typography>
+              <JIcon icon="rightArrow" />
+            </Row>
+          </Link>
         </Row>
       </Stack>
       <Stack py={1}>
