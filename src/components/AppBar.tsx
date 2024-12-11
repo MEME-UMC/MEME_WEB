@@ -3,6 +3,7 @@ import { Stack, Typography } from '@mui/material';
 import { JButton } from './JButton';
 import { JIcon } from './JIcon';
 import { useRouter } from 'next/navigation';
+import { COLORS } from '@/styles/colors';
 
 type AppBarProps = {
   title?: string;
@@ -13,7 +14,12 @@ export const AppBar = ({ title, backIcon, onBack }: AppBarProps) => {
   const router = useRouter();
   return (
     <Stack
-      sx={{ position: 'relative', width: '100%', height: '48px' }}
+      sx={{
+        position: 'relative',
+        width: '100%',
+        height: '48px',
+        background: COLORS.white,
+      }}
       justifyContent={'center'}
     >
       {backIcon && (
