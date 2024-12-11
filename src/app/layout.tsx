@@ -33,6 +33,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
           <BottomNav />
         </div>
+        <div id="modal-wrap"></div>
       </body>
     </html>
   );
