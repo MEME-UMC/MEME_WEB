@@ -2,7 +2,7 @@
 
 import { AppBar } from '@/components/AppBar';
 import { JButton } from '@/components/JButton';
-import { Modal } from '@/components/Modal/modal';
+import { Modal } from '@/components/Modal/Modal';
 import { ModalContent } from '@/components/Modal/ModalContent';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { Row } from '@/components/Row';
