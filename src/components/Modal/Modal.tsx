@@ -34,6 +34,8 @@ export const Modal = ({ isOpen, children }: ModalProps) => {
       left={0}
       bgcolor="rgba(0, 0, 0, 0.5)"
       zIndex={999}
+      justifyContent={'center'}
+      alignItems={'center'}
     >
       {children}
     </Stack>,
