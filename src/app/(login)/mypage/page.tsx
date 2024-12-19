@@ -10,9 +10,10 @@ import { JIcon } from '@/components/JIcon';
 import { AppBar } from '@/components/AppBar';
 import { useState } from 'react';
 import { logout } from '@/app/auth';
+import { useRouter } from 'next/navigation';
 
 const Page = () => {
-  // const navigate = useJNavigate();
+  const router = useRouter();
   const [isShowLogout, setIsShowLogout] = useState(false);
 
   const handleCancelLogout = () => {
@@ -21,7 +22,7 @@ const Page = () => {
   return (
     <MotionWrapper>
       <Stack>
-        <AppBar title="마이페이지" />
+        <AppBar title="마이페이지" backIcon />
         <Stack alignItems={'center'} gap={1} py={1}>
           <Row
             width={95}
@@ -58,19 +59,28 @@ const Page = () => {
               gap: 1,
             }}
           >
-            <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
+            <JButton
+              onClick={() => router.push('/model/favorite/artist')}
+              sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}
+            >
               <Stack justifyContent={'center'} height={24}>
                 <JIcon icon="user-plus" color={COLORS.primary} />
               </Stack>
               <Typography fontSize={12}>관심 아티스트</Typography>
             </JButton>
-            <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
+            <JButton
+              onClick={() => router.push('/model/favorite/makeup')}
+              sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}
+            >
               <Stack justifyContent={'center'} height={24}>
                 <JIcon icon="heart-outline" color={COLORS.primary} />
               </Stack>
               <Typography fontSize={12}>관심 메이크업</Typography>
             </JButton>
-            <JButton sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}>
+            <JButton
+              onClick={() => router.push('/review')}
+              sx={{ flexDirection: 'column', p: 1, borderRadius: 8 }}
+            >
               <Stack justifyContent={'center'} height={24}>
                 <JIcon icon="message" color={COLORS.primary} />
               </Stack>
