@@ -13,7 +13,7 @@ type Props = {
   onNext: () => void;
   step: number;
 };
-const Step2 = ({ onNext, step }: Props) => {
+export const Step2 = ({ onNext, step }: Props) => {
   const [time, setTime] = useState(180);
   const [isTimerActive, setIsTimerActive] = useState(false);
 
@@ -83,5 +83,3 @@ const Step2 = ({ onNext, step }: Props) => {
     </Stack>
   );
 };
-
-export default Step2;
