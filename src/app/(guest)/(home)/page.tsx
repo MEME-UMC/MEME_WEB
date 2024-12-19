@@ -8,6 +8,7 @@ import { Stack, Typography } from '@mui/material';
 import { PortfolioCard } from './PortfolioCard';
 import Link from 'next/link';
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { useRouter } from 'next/navigation';
 
 const booking = {
   name: '메이크업명',
@@ -18,12 +19,16 @@ const booking = {
 };
 
 const ModelHomePage = () => {
+  const router = useRouter();
   return (
     <MotionWrapper>
       <Stack pt={1} overflow={'scroll'}>
         <Row justifyContent={'space-between'} paddingX={2}>
           <JImage image="logo-sm" />
-          <JButton sx={{ borderRadius: 6, width: 40, height: 40 }}>
+          <JButton
+            sx={{ borderRadius: 6, width: 40, height: 40 }}
+            onClick={() => router.push('/notification')}
+          >
             <JIcon icon="notice" />
           </JButton>
         </Row>
@@ -34,6 +39,7 @@ const ModelHomePage = () => {
               borderColor: COLORS.primary,
               borderRadius: 6,
             }}
+            onClick={() => router.push('/search/makeup')}
           >
             <Row justifyContent={'space-between'} flex={1} px={2} py={1}>
               <Typography color={COLORS.gray300}>
