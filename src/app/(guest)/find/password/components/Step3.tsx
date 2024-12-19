@@ -6,10 +6,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
-type Props = {
-  onNext: () => void;
-};
-export const Step3 = ({ onNext }: Props) => {
+export const Step3 = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isValid, setIsValid] = useState<boolean | null>(null);

@@ -34,7 +34,7 @@ const Page = () => {
       >
         <Step1 onNext={() => setStep(2)} />
         <Step2 onNext={() => setStep(3)} step={step} />
-        <Step3 onNext={() => setStep(4)} />
+        <Step3 />
       </SwipeableViews>
     </Stack>
   );
