@@ -140,10 +140,11 @@ const Page = () => {
       <Row
         position={'relative'}
         width={'100%'}
-        justifyContent={'space-between'}
         bottom={0}
         left={0}
+        px={3}
         gap={'13px'}
+        boxSizing={'border-box'}
       >
         <JButton
           onClick={() => setIsOpen(!isOpen)}

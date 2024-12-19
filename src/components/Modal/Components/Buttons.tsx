@@ -14,6 +14,7 @@ export const UnderLineButton = ({ text, onClick }: ButtonsProps) => {
         width: '109px',
         fontSize: '17px',
         fontWeight: '600',
+        borderRadius: '10px',
       }}
     >
       <Typography

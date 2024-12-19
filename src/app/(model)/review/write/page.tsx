@@ -132,14 +132,14 @@ const Page = () => {
         </Stack>
         <Stack pb={2}>
           <Button variant="contained" onClick={() => setIsOpen(true)}>
-            수정하기
+            등록하기
           </Button>
         </Stack>
       </Stack>
       <Modal isOpen={isOpen}>
         <ModalContent type="confirm" onClose={() => setIsOpen(false)}>
           <Typography fontSize={17} fontWeight={700} textAlign={'center'}>
-            리뷰를 수정하시겠습니까?
+            리뷰를 등록하시겠습니까?
           </Typography>
         </ModalContent>
       </Modal>

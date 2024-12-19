@@ -1,6 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 
-export const ReservationBadge = () => {
+type ReservationBadgeProps = { text: string | undefined };
+export const ReservationBadge = ({ text }: ReservationBadgeProps) => {
   return (
     <Stack flexDirection={'row'}>
       <Typography
@@ -11,7 +12,7 @@ export const ReservationBadge = () => {
         sx={{ background: '#FFC8B0' }}
         borderRadius={'5px'}
       >
-        면접 메이크업
+        {text}
       </Typography>
     </Stack>
   );

@@ -134,23 +134,22 @@ const Page = () => {
               {tabs[activeTab].content}
             </Stack>
           </Stack>
-
-          <Stack padding={'24px 21px'}>
-            <Link href={'/book/0'}>
-              <Typography
-                lineHeight={'49px'}
-                color="#FFF"
-                fontSize={14}
-                sx={{
-                  textAlign: 'center',
-                  background: `${COLORS.p_black}`,
-                  borderRadius: '10px',
-                }}
-              >
-                예약하기
-              </Typography>
-            </Link>
-          </Stack>
+        </Stack>
+        <Stack padding={'24px 21px'}>
+          <Link href={'/book/0'}>
+            <Typography
+              lineHeight={'49px'}
+              color="#FFF"
+              fontSize={14}
+              sx={{
+                textAlign: 'center',
+                background: `${COLORS.p_black}`,
+                borderRadius: '10px',
+              }}
+            >
+              예약하기
+            </Typography>
+          </Link>
         </Stack>
       </Stack>
     </MotionWrapper>

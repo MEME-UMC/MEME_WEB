@@ -33,7 +33,12 @@ export const ModalContent = ({
           <JIcon icon="close" />
         </JButton>
       </Stack>
-      <Stack height={'100vh'} justifyContent={'center'} px={2}>
+      <Stack
+        height={'100vh'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        px={2}
+      >
         {children}
       </Stack>
       <Row alignItems={'center'}>

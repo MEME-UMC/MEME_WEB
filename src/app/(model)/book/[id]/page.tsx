@@ -83,7 +83,7 @@ const Page = () => {
   return (
     <MotionWrapper>
       <AppBar title={'예약하기'} backIcon />
-      <Stack py={'36px'}>
+      <Stack py={'36px'} justifyContent={'space-between'}>
         <Stack px={3}>
           {visitType === 'both' ? (
             <BothOptions
@@ -146,22 +146,22 @@ const Page = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack padding={'24px 21px'}>
-          <Link href={'0/complete'}>
-            <Typography
-              lineHeight={'49px'}
-              color="#FFF"
-              fontSize={14}
-              sx={{
-                textAlign: 'center',
-                background: `${COLORS.primary}`,
-                borderRadius: '10px',
-              }}
-            >
-              다음
-            </Typography>
-          </Link>
-        </Stack>
+      </Stack>
+      <Stack padding={'24px 21px'}>
+        <Link href={'0/complete'}>
+          <Typography
+            lineHeight={'49px'}
+            color="#FFF"
+            fontSize={14}
+            sx={{
+              textAlign: 'center',
+              background: `${COLORS.primary}`,
+              borderRadius: '10px',
+            }}
+          >
+            다음
+          </Typography>
+        </Link>
       </Stack>
     </MotionWrapper>
   );

@@ -22,6 +22,9 @@ const Counter = ({
   const formattedString = numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // 숫자에 쉼표 추가
   const numberArray = Array.from(formattedString); // 쉼표를 포함한 배열로 변환
 
+  const commaCount = (formattedString.match(/,/g) || []).length; // 쉼표 개수 계산
+  const numberLengthWithoutCommas = numberArray.length - (commaCount + 1); // 쉼표 제외한 숫자 길이
+
   useEffect(() => {
     setDisplayedNumbers(new Array(numberArray.length).fill('')); // 빈 배열로 초기화
 
@@ -39,13 +42,15 @@ const Counter = ({
   return (
     <Row
       justifyContent={'left'}
-      style={{ minWidth: `${(numberArray.length - 1) * 1.14}ch` }}
+      style={{ minWidth: `${numberLengthWithoutCommas * 1.14}ch` }}
+      sx={{ fontVariantNumeric: 'tabular-nums' }}
     >
       {displayedNumbers.map((num, index) => (
         <Typography
           key={index}
           style={{
             fontSize,
+
             transform: `translateY(${num ? 0 : '20px'})`,
             opacity: num ? 1 : 0,
             transition: 'transform 0.4s ease, opacity 0.4s ease',
