@@ -36,6 +36,13 @@ import userIcon from '../assets/user-icon.svg';
 import insta from '../assets/insta.svg';
 import atSign from '../assets/at-sign.svg';
 import check from '../assets/check.svg';
+import keyWordClose from '../assets/keyword-close.svg';
+import userIconBig from '../assets/human-white.svg';
+import option from '../assets/option.svg';
+import camera from '../assets/camera.svg';
+import star2 from '../assets/star-primary2.svg';
+import starGray2 from '../assets/star-gray2.svg';
+import closeWhite from '../assets/close-white.svg';
 
 const IconMap = {
   reservation: {
@@ -223,6 +230,41 @@ const IconMap = {
     src: check,
     width: 8,
     height: 7,
+  },
+  'keyword-close': {
+    src: keyWordClose,
+    width: 8,
+    height: 8,
+  },
+  userIconBig: {
+    src: userIconBig,
+    width: 45.33,
+    height: 50.72,
+  },
+  option: {
+    src: option,
+    width: 24,
+    height: 24,
+  },
+  camera: {
+    src: camera,
+    width: 24,
+    height: 24,
+  },
+  star2: {
+    src: star2,
+    width: 30.38,
+    height: 29.32,
+  },
+  'star-gray2': {
+    src: starGray2,
+    width: 30.38,
+    height: 29.32,
+  },
+  'close-white': {
+    src: closeWhite,
+    width: 12,
+    height: 12,
   },
 };
 
