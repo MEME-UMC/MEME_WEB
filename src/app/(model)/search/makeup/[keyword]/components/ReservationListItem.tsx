@@ -7,9 +7,13 @@ import { COLORS } from '@/styles/colors';
 import Counter from '@/components/Counter';
 
 type reservationListItemProps = {
+  badgeText: string | undefined;
   onClick: () => void;
 };
-export const ReservationListItem = ({ onClick }: reservationListItemProps) => {
+export const ReservationListItem = ({
+  onClick,
+  badgeText,
+}: reservationListItemProps) => {
   return (
     <Stack>
       <JButton onClick={onClick}>
@@ -41,7 +45,7 @@ export const ReservationListItem = ({ onClick }: reservationListItemProps) => {
             </Stack>
           </Stack>
           <Stack gap={'2px'}>
-            <ReservationBadge />
+            <ReservationBadge text={badgeText} />
             <Typography fontSize={'10px'}>차차 아티스트</Typography>
             <Row gap={1}>
               <Row gap={'1px'}>
@@ -74,10 +78,16 @@ export const ReservationListItem = ({ onClick }: reservationListItemProps) => {
               메이크업명
             </Typography>
             <Row justifyContent={'left'}>
-              <Counter fontSize={16} targetNumber={'100,000'} />
-              <Typography>원</Typography>
+              <Counter
+                fontSize={12}
+                targetNumber={'100,000'}
+                fontWeight={600}
+              />
+              <Typography fontSize={12}>원</Typography>
             </Row>
-            <Stack fontSize={'10px'}>⭐️ 4.74 (리뷰 수)</Stack>
+            <Stack fontSize={'10px'} fontWeight={400}>
+              ⭐️ 4.74 (리뷰 수)
+            </Stack>
           </Stack>
         </Row>
       </JButton>

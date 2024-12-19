@@ -1,19 +1,21 @@
 'use client';
 import { AppBar } from '@/components/AppBar';
-import Counter from '@/components/Counter';
-import { JButton } from '@/components/JButton';
-import { JIcon } from '@/components/JIcon';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { Row } from '@/components/Row';
-import { COLORS } from '@/styles/colors';
-import { Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import { useState } from 'react';
 import { Drawer } from './components/Drawer';
 import { DrawerItem } from './components/DrawerItem';
-import { ReservationListItem } from './components/ReservationListItem';
+
 import { ReservationsortItem } from './components/ReservationsortItem2';
+import { useParams, useRouter } from 'next/navigation';
+import { ReserVationList } from './components/ReserVationList';
 
 const Page = () => {
+  const router = useRouter();
+  const params = useParams();
+  const keyword = params.keyword;
+
   const makeupSort = [
     { defaultValue: '전체', key: 'all' },
     { defaultValue: '특수 메이크업', key: 'special' },
@@ -23,7 +25,10 @@ const Page = () => {
     { defaultValue: '기타 메이크업', key: 'etc' },
     { defaultValue: '파티/이벤트 메이크업', key: 'party' },
     { defaultValue: '스튜디오 메이크업', key: 'studio' },
+    { defaultValue: '웨딩 메이크업', key: 'wedding' },
   ];
+
+  const matchedSort = makeupSort.find((item) => item.key === keyword);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -41,41 +46,11 @@ const Page = () => {
             ))}
           </Row>
         </Stack>
-        <Stack px={3} py={'11px'}>
-          <Row
-            borderTop={'1px solid #DFDFDF'}
-            paddingTop={'11px'}
-            sx={{ justifyContent: 'space-between' }}
-          >
-            <Stack>
-              <Row>
-                <Counter fontSize={12} targetNumber={100} />
-                <Typography fontSize={12} fontWeight={400}>
-                  개의 검색 결과
-                </Typography>
-              </Row>
-            </Stack>
-            <Stack>
-              <JButton
-                sx={{
-                  width: '81px',
-                  height: '27px',
-                  border: `1px solid ${COLORS.primary}`,
-                  borderRadius: '20px',
-                }}
-                onClick={() => setIsDrawerOpen(true)}
-              >
-                <Typography fontSize={10} sx={{ marginRight: '10px' }}>
-                  리뷰순
-                </Typography>
-                <JIcon icon="filter" />
-              </JButton>
-            </Stack>
-          </Row>
-        </Stack>
-        <Stack px={'19px'}>
-          <ReservationListItem onClick={() => alert('아이템!')} />
-        </Stack>
+        <ReserVationList
+          drawerOpen={() => setIsDrawerOpen(true)}
+          badgeText={matchedSort?.defaultValue}
+          onClick={() => router.push('/makeup/0')}
+        />
       </MotionWrapper>
       <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
         <DrawerItem text="리뷰순" />
