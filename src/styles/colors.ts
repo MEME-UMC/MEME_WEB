@@ -32,6 +32,7 @@ export const COLORS = {
   gray500: '#5C5C5C',
   gray600: '#888686',
   gray700: '#979797',
+  gray800: '#979797',
   text_grey: '#999999',
 
   transparent: 'transparent',
