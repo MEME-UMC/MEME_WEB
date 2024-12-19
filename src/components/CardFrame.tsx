@@ -32,7 +32,7 @@ export const CardFrame = ({
       <Stack
         sx={{
           flexDirection: 'column',
-          width: 160,
+          width: 141,
           borderRadius: 3,
           boxShadow: '2px 4px 10px rgba(0, 0, 0, .2)',
           alignItems: 'start',
@@ -45,13 +45,13 @@ export const CardFrame = ({
             <Typography fontSize={10} color={COLORS.text_grey}>
               {subTitle}
             </Typography>
-            <Typography fontSize={16} fontWeight={600}>
+            <Typography fontSize={14} fontWeight={600}>
               {title}
             </Typography>
           </Stack>
           <Row justifyContent={'start'} gap={0.3}>
             <JIcon icon={type === 'artist' ? 'heart' : 'star'} />
-            <Typography fontSize={14} color={COLORS.p_black}>
+            <Typography fontSize={10} color={COLORS.p_black}>
               {rating}
             </Typography>
           </Row>
