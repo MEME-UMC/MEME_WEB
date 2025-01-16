@@ -12,7 +12,6 @@ import { COLORS } from '@/styles/colors';
 import { useState } from 'react';
 
 type Props = {
-  onPrev: () => void;
   onNext: () => void;
 };
 
@@ -33,7 +32,7 @@ const makeupLocation = {
   etc: '둘 다 상관없어요',
 };
 
-const ChocieSpecialization = ({ onPrev, onNext }: Props) => {
+const ChocieSpecialization = ({ onNext }: Props) => {
   const [formData, setFormData] = useState({
     Specialization: [] as string[],
     location: [] as string[],

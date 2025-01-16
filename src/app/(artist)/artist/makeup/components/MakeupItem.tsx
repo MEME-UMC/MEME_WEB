@@ -1,7 +1,6 @@
 import { JButton } from '@/components/JButton';
 import { JIcon } from '@/components/JIcon';
 import { Row } from '@/components/Row';
-import { SquareImage } from '@/components/SquareImage';
 import { COLORS } from '@/styles/colors';
 import { Stack, Typography } from '@mui/material';
 

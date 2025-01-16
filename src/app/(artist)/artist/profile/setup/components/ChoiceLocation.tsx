@@ -4,7 +4,6 @@ import { LocationButton } from './LocationButton';
 import { useState } from 'react';
 
 type Props = {
-  onPrev: () => void;
   onNext: () => void;
 };
 
@@ -26,7 +25,7 @@ const location = {
   seongDong: '성동구',
 };
 
-const ChoiceLocation = ({ onPrev, onNext }: Props) => {
+const ChoiceLocation = ({ onNext }: Props) => {
   const [selectLocation, setSelectLocation] = useState<String | null>(null);
 
   const isButtonDisabled = !selectLocation?.trim();

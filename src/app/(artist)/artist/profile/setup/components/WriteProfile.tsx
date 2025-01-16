@@ -14,11 +14,10 @@ import { useState } from 'react';
 import { SelectBox } from './SelectBox';
 
 type Props = {
-  onPrev: () => void;
   onNext: () => void;
 };
 
-const WriteProfile = ({ onPrev, onNext }: Props) => {
+const WriteProfile = ({ onNext }: Props) => {
   const [formData, setFormData] = useState({
     nickName: '',
     gender: '',
