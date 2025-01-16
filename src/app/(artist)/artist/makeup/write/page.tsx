@@ -1,5 +1,4 @@
 'use client';
-import { AppBar } from '@/components/AppBar';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { Row } from '@/components/Row';
 import {
@@ -9,12 +8,13 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { SpecializationItem } from '../../profile/setup/components/SpecializationItem';
 import { useRef, useState } from 'react';
-import { SpecializationItem } from '../../../profile/setup/components/SpecializationItem';
-import { JButton } from '@/components/JButton';
 import { COLORS } from '@/styles/colors';
+import { AppBar } from '@/components/AppBar';
 import { JIcon } from '@/components/JIcon';
-import { ImageThumb } from '../../components/ImageThumb';
+import { JButton } from '@/components/JButton';
+import { ImageThumb } from '../components/ImageThumb';
 
 const category = {
   daily: '데일리 메이크업',
@@ -77,7 +77,7 @@ const Page = () => {
     <MotionWrapper>
       <Stack height={'100%'}>
         <Stack flex={1}>
-          <AppBar title='포트폴리오 수정' backIcon />
+          <AppBar title='포트폴리오 추가' backIcon />
           <Stack px={3}>
             <Typography fontSize={14} fontWeight={400} mt={3} mb={'4.5px'}>
               사진 등록 (최대 3장)
@@ -176,7 +176,7 @@ const Page = () => {
         </Stack>
         <Stack p={3}>
           <Button variant='contained' disabled={isButtonDisabled}>
-            수정하기
+            등록하기
           </Button>
         </Stack>
       </Stack>

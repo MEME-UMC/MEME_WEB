@@ -43,6 +43,8 @@ import camera from '../assets/camera.svg';
 import star2 from '../assets/star-primary2.svg';
 import starGray2 from '../assets/star-gray2.svg';
 import closeWhite from '../assets/close-white.svg';
+import calendar from '../assets/calendar.svg';
+import gallery from '../assets/gallery.svg';
 
 const IconMap = {
   reservation: {
@@ -265,6 +267,16 @@ const IconMap = {
     src: closeWhite,
     width: 12,
     height: 12,
+  },
+  calendar: {
+    src: calendar,
+    width: 24,
+    height: 24,
+  },
+  gallery: {
+    src: gallery,
+    width: 27,
+    height: 20,
   },
 };
 

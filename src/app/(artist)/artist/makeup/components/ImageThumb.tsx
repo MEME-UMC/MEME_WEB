@@ -1,8 +1,8 @@
 import { JIcon } from '@/components/JIcon';
 import { Row } from '@/components/Row';
 import { SquareImage } from '@/components/SquareImage';
+import { COLORS } from '@/styles/colors';
 import { Stack } from '@mui/material';
-import React from 'react';
 
 type ImageThumbProps = {
   images: File[];
@@ -15,9 +15,11 @@ export const ImageThumb = ({ images, onDelete }: ImageThumbProps) => {
         <Stack
           position={'relative'}
           key={index}
-          width={131}
+          width={80}
           onClick={() => onDelete(index)}
           sx={{ cursor: 'pointer' }}
+          borderRadius={'5px'}
+          overflow={'hidden'}
         >
           <SquareImage url={URL.createObjectURL(item)} />
           <Stack
@@ -28,7 +30,7 @@ export const ImageThumb = ({ images, onDelete }: ImageThumbProps) => {
             alignItems={'center'}
             top={0}
             right={0}
-            bgcolor={' #00000033'}
+            bgcolor={COLORS.gray400}
           >
             <JIcon icon='close-white' />
           </Stack>
