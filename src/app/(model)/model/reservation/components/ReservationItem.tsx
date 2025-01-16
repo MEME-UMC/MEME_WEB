@@ -13,7 +13,7 @@ type ReservationItemProps = {
   location: string;
   artistName: string;
   price: string;
-  type?: 'wait';
+  type?: 'wait' | 'today' | 'confirm';
   onClick: () => void;
 };
 export const ReservationItem = ({
@@ -28,18 +28,27 @@ export const ReservationItem = ({
 }: ReservationItemProps) => {
   return (
     <Stack width={'100%'}>
-      <Typography
-        fontSize={16}
-        fontWeight={600}
-        mb={1.5}
-        color={type && COLORS.gray500}
-      >
-        {date}
-      </Typography>
+      {type !== 'today' && (
+        <Typography
+          fontSize={16}
+          fontWeight={600}
+          mb={1.5}
+          color={type && COLORS.gray500}
+        >
+          {date}
+        </Typography>
+      )}
 
       <Stack
         sx={{
-          background: type ? COLORS.gray300 : COLORS.white,
+          background:
+            type === 'wait'
+              ? COLORS.gray300
+              : type === 'today'
+              ? COLORS.p_black
+              : type === 'confirm'
+              ? COLORS.gray100
+              : COLORS.white,
           borderRadius: '10px',
         }}
         borderRadius={10}
@@ -51,7 +60,7 @@ export const ReservationItem = ({
               <Typography
                 fontSize={18}
                 fontWeight={600}
-                color={type && COLORS.gray500}
+                color={type === 'today' ? COLORS.white : COLORS.p_black}
               >
                 {makeup}
               </Typography>
@@ -66,28 +75,35 @@ export const ReservationItem = ({
                 <Typography
                   fontSize={18}
                   fontWeight={600}
-                  color={type && COLORS.gray500}
+                  color={type === 'today' ? COLORS.white : COLORS.p_black}
                 >
-                  {type ? '예약 대기' : '예약'}
+                  {type === 'today' ? '예약' : '예약 대기 중'}
                 </Typography>
               </Row>
             </Row>
-            <Typography fontWeight={600} color={type && COLORS.gray500}>
+            <Typography
+              fontWeight={600}
+              color={type === 'today' ? COLORS.white : COLORS.p_black}
+            >
               {artistName}
             </Typography>
             <Row justifyContent={'flex-start'} gap={0.5}>
-              <JIcon icon="location" />
+              <JIcon icon='location' />
 
-              <Typography fontSize={14} fontWeight={400}>
+              <Typography
+                fontSize={14}
+                fontWeight={400}
+                color={type === 'today' ? COLORS.white : COLORS.p_black}
+              >
                 {location}
               </Typography>
             </Row>
             <Row justifyContent={'flex-start'} gap={0.5}>
-              <JIcon icon="price" />
+              <JIcon icon='price' />
               <Counter
                 targetNumber={`${price}원`}
                 fontSize={14}
-                color={type && COLORS.gray500}
+                color={type === 'today' ? COLORS.white : COLORS.p_black}
               />
             </Row>
           </Stack>

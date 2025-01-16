@@ -10,7 +10,7 @@ type Props = {
 export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
   return (
     <ButtonBase
-      component="div"
+      component='div'
       sx={[
         {
           height: '100%',
@@ -18,6 +18,7 @@ export const JButton = ({ children, rippleColor, sx, ...props }: Props) => {
           '&& .MuiTouchRipple-child': {
             backgroundColor: rippleColor ?? COLORS.primary,
           },
+          fontFamily: 'pretendard',
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}

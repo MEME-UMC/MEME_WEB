@@ -29,20 +29,20 @@ const Page = () => {
 
   return (
     <MotionWrapper>
-      <AppBar title="나의 리뷰" backIcon />
+      <AppBar title='나의 리뷰' backIcon />
       <Stack height={'calc(100% - (48px + 78px)) '} px={2} pt={'78px'}>
         <Stack flex={1}>
           <Typography
             fontSize={20}
             fontWeight={400}
-            textAlign="center"
-            component="p"
+            textAlign='center'
+            component='p'
           >
             <Typography
-              display="inline"
+              display='inline'
               fontSize={20}
               fontWeight={600}
-              component="span"
+              component='span'
             >
               아티스트명
             </Typography>
@@ -51,14 +51,14 @@ const Page = () => {
           <Typography
             fontSize={20}
             fontWeight={400}
-            textAlign="center"
-            component="p"
+            textAlign='center'
+            component='p'
           >
             <Typography
-              display="inline"
+              display='inline'
               fontSize={20}
               fontWeight={600}
-              component="span"
+              component='span'
             >
               메이크업명
             </Typography>
@@ -90,19 +90,19 @@ const Page = () => {
               메이크업 후기를 남겨주세요
             </Typography>
             <Button
-              component="label"
-              variant="contained"
+              component='label'
+              variant='contained'
               sx={{ fontWeight: 400 }}
             >
               <input
-                type="file"
+                type='file'
                 multiple
                 hidden
-                accept="image/*"
+                accept='image/*'
                 onChange={FileChange}
               />
               <Row gap={1}>
-                <JIcon icon="camera" />
+                <JIcon icon='camera' />
                 <Typography fontSize={14} fontWeight={400}>
                   사진 업로드
                 </Typography>
@@ -124,20 +124,20 @@ const Page = () => {
             <TextField
               multiline
               rows={10}
-              variant="outlined"
-              placeholder="여기에 내용을 작성해주세요."
+              variant='outlined'
+              placeholder='여기에 내용을 작성해주세요.'
               fullWidth
             />
           </Stack>
         </Stack>
         <Stack pb={2}>
-          <Button variant="contained" onClick={() => setIsOpen(true)}>
+          <Button variant='contained' onClick={() => setIsOpen(true)}>
             등록하기
           </Button>
         </Stack>
       </Stack>
       <Modal isOpen={isOpen}>
-        <ModalContent type="confirm" onClose={() => setIsOpen(false)}>
+        <ModalContent type='confirm' onClose={() => setIsOpen(false)}>
           <Typography fontSize={17} fontWeight={700} textAlign={'center'}>
             리뷰를 등록하시겠습니까?
           </Typography>
