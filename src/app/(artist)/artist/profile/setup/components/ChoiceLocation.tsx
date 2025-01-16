@@ -26,7 +26,7 @@ const location = {
 };
 
 const ChoiceLocation = ({ onNext }: Props) => {
-  const [selectLocation, setSelectLocation] = useState<String | null>(null);
+  const [selectLocation, setSelectLocation] = useState<string | null>(null);
 
   const isButtonDisabled = !selectLocation?.trim();
   return (
